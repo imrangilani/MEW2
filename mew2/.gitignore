@@ -1,0 +1,52 @@
+# Don't commit OSX files or npm generated files
+.DS_Store
+.sass-cache
+npm-debug.log
+.grunt
+.project
+node_modules/.bin
+.settings
+.settings/*
+.metadata
+bin/coverage
+.idea
+
+# Vagrant configuration (virtual machine'd environments automation)
+.vagrant
+
+# Ignore everything in the target folder
+target
+
+# Ignore generated ruby file
+Gemfile.lock
+
+# Ignore generated jasmine files
+_SpecRunner.html
+jasminexml
+
+# Ignore generated images
+*icon2x-*
+
+# Don't want Tern's generated files. Check out the project: ternjs.net
+.tern-port
+
+# Don't want Sublime's generated files.
+*.sublime-workspace
+
+# Ignore heroku .env config files
+.env*
+
+# Ignore custom files with the .ign extension
+*.ign
+
+# Ignore sonar-runner's generated files
+.sonar/
+node_modules/grunt-sonar-runner/sonar-runner-2.3/conf/sonar-runner.properties
+
+# Ignore Nexus files
+bcom.zip
+mcom.zip
+test/**
+
+# New Relic
+newrelic_agent.log

@@ -1,0 +1,38 @@
+
+<div class="m-header boldtext">
+  <button class="mb-j-overlay-close m-modal-button">&nbsp;</button>
+  <span>{{registry.quantity}} item{{#if_gt itemQuantity compare="1" }}s{{/if_gt}} added to {{registry.registrant}} and {{registry.coregistrant}}'s registry</span>
+
+</div>
+<div class="m-content">
+  <div class="m-image-gr">
+    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image.image}}" class="m-upc-img" />
+    {{#if image.swatch}}
+      <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image.swatch}}" class="m-upc-swatch" />
+    {{/if}}
+  </div>
+
+  <div class="m-upc-details">
+    <h6>{{product.name}}</h6>
+
+    {{> addToDetails }}
+
+    <div class="m-product-price-gr">
+      {{#each product.prices}}
+        <div class="m-product-price {{stripNonAlpha label}}">
+          {{#if label}}
+            <span class="m-product-price-label">{{label}} </span>
+          {{/if}}
+          <span class="m-product-price-amt">{{amt}}</span>
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
+</div>
+<div class="m-footer">
+  <div class="m-bag-buttons">
+    <button class="mb-j-overlay-continue">continue shopping</button>
+    <a class="m-viewregistry" href="/registry/wedding/registrant">view registry</a>
+  </div>
+</div>

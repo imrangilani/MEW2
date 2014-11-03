@@ -1,0 +1,13 @@
+<div class="m-product-price-details m-rule-bottom">
+  <strong>Price Details:</strong>
+
+  <div class="row">
+    <div class="small-{{#if saleEndDate}}6{{else}}12{{/if}} columns">{{> productPriceTiered}}</div>
+    {{#if_and onsale pricingPolicyText}}
+      <div class="small-6 columns" style="text-align: right; padding-left: 0;">
+        {{#if saleEndDate}}{{> productSaleEndDate}}{{/if}}
+        <a class="m-link m-pricing-policy" href="#" id="m-pricing-policy">Pricing Policy</a>
+      </div>
+    {{/if_and}}
+  </div>
+</div>

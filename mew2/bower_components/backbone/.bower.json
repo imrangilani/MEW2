@@ -1,0 +1,26 @@
+{
+  "name": "backbone",
+  "main": "backbone.js",
+  "dependencies": {
+    "underscore": ">=1.5.0"
+  },
+  "ignore": [
+    "backbone-min.js",
+    "docs",
+    "examples",
+    "test",
+    "*.yml",
+    "*.map",
+    ".html",
+    "*.ico"
+  ],
+  "homepage": "https://github.com/jashkenas/backbone",
+  "_release": "5821bc03a3",
+  "_resolution": {
+    "type": "commit",
+    "commit": "5821bc03a31b06be3bb69d6344a2acb62024e231"
+  },
+  "_source": "git://github.com/jashkenas/backbone.git",
+  "_target": "5821bc03a31b06be3bb69d6344a2acb62024e231",
+  "_originalSource": "git://github.com/jashkenas/backbone"
+}

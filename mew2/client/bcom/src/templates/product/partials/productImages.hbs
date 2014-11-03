@@ -1,0 +1,23 @@
+<section id="b-pdp-images-wrapper" class="swiper-container b-product-images">
+  {{!-- <div class="swiper-wrapper" {{#if imageHeight}}style="height: {{../imageHeight}}"{{/if}}> --}}
+  <div class="swiper-wrapper" {{#if imageHeight}}style="height: {{../imageHeight}}px"{{/if}}>
+
+    {{#get images index=activeImageset}}
+      {{#each this}}
+
+        <div class="swiper-slide b-pdp-image-wrapper {{#ifSize ../this compare=1}}swiper-slide-active{{/ifSize}}">
+          {{#if this.image}}
+          <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.image}}{{pdpImageWidthOptimize}}" class="b-pdp-image"{{#unless ../../isMaster}}{{#if_eq @index compare="0"}} itemprop="image"{{/if_eq}}{{/unless}} />
+          {{/if}}
+          {{#if this.swatch}}
+          <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}?wid=120&hei=120&fit=fit,1" class="b-product-swatch-img" />
+          {{/if}}
+        </div>
+
+      {{/each}}
+    {{/get}}
+  </div>
+  {{#unless isEGC}}
+    <span id="b-pdp-images-zoom-icon" class="zoom-plus"></span>
+  {{/unless}}
+</section>

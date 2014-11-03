@@ -1,0 +1,15 @@
+#m-catsplash-header {
+  h1 {
+    font-size: 1em;
+    height: $m-header-height;
+    line-height: $m-header-height;
+    margin: 0;
+  }
+}
+
+#m-catsplash-featured {
+  $margin: (emCalc(20px) * $multiplier-med);
+  font-size: $font-med;
+  font-weight: normal;
+  margin: $margin 0 0 $margin;
+}

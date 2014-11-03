@@ -1,0 +1,19 @@
+<div class="b-product-member-images">
+{{#if images}}
+  {{#get images index=activeImageset}}
+    {{#if this.length}}
+      {{#get this index=0}}
+        <div class="b-product-member-image-wrapper" {{#if ../../imageHeight}}style="height: {{../../../imageHeight}}"{{/if}}>
+          <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.image}}?wid=240" class="b-product-img" />
+          {{#if this.swatch}}
+            <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}?wid=60&hei=60&fit=fit,1" class="b-product-member-swatch-img" />
+          {{/if}}
+        </div>
+      {{/get}}
+    {{/if}}
+  {{/get}}
+  {{#ifSize colors compare="1" operator=">"}}
+    <div class="b-more-colors">more colors</div>
+  {{/ifSize}}
+{{/if}}
+</div>

@@ -1,0 +1,33 @@
+<section id="b-pdp-reviews" class="b-pdp-info-section-container {{#unless rating}}b-pdp-reviews-empty{{/unless}}">
+  <div class="b-pdp-info-section">
+    <div class="b-pdp-info-label">Reviews</div>
+    
+    <div class="b-pdp-rating-value">({{#if rating.cnt}}{{rating.cnt}}{{else}}0{{/if}})</div>
+    
+    <div class="b-pdp-rating b-pdp-rating-qe-bottom">
+      <div style="width: {{formatRatings rating.avg}}%"></div>
+    </div>
+  </div>
+  
+  <div id="b-pdp-reviews-content" class="b-product-buttons">
+    {{#if rating}}
+      {{#if rating.values}}
+        {{> productRatingsSliders}}
+      {{else}}
+        {{#if rating.detailedRatings}}
+          {{> productRatingsHistogram}}
+        {{/if}}
+      {{/if}}
+    {{else}}
+      <span class="b-pdp-rating-be-first">Be the first to share your review!</span>
+    {{/if}}
+
+    <button class="b-j-write-review">Write a review</button>
+    
+    {{#if rating}}
+      <button class="b-j-read-reviews">Read reviews</button>
+    {{/if}}
+
+  </div>
+  
+</section>

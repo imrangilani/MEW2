@@ -1,0 +1,60 @@
+#bops-errorContainer {
+  color: $primary-color;
+  font-weight: bold;
+  margin-bottom: emCalc(10px);
+}
+
+#m-bops-search {
+  margin-bottom: emCalc(20px);
+}
+
+.m-search-section {
+  margin: emCalc(20px) 0;
+}
+
+#m-bops-results-header {
+  border-bottom: 1px solid #666;
+  font-size: $font-sm;
+  padding: 0 1em emCalc(8px);
+
+  .itemcount {
+    text-align: center;
+  }
+}
+
+ul.facet-selection-items li.facet-value.facet-value-bops {
+  height: auto;
+
+  .display-inner {
+    height: emCalc(65px);
+    line-height: emCalc(16px);
+    padding: emCalc(9px) 0;
+    position: relative;
+
+    .display-name {
+      color: #000;
+      line-height: 1em * $multiplier-med;
+    }
+
+    .display-address-wrapper {
+      @include vertical-align();
+
+      .display-address {
+        color: #999;
+        font-size: $font-sm;
+      }
+    }
+
+    .count-display-name-wrapper {
+      @include vertical-align();
+
+      height: emCalc(32px);
+      line-height: emCalc(32px);
+      text-align: center;
+    }
+  }
+
+  &.facet-value-disabled .display-inner .display-address {
+    color: $secondary-color;
+  }
+}

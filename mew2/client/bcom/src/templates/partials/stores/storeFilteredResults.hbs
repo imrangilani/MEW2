@@ -1,0 +1,27 @@
+<li class="mb-j-store-list-entry" data-location="{{locationNumber}}" data-name="{{name}}">
+  <div class="b-store-list-entry-primary-info">
+    {{#if myLocalStore}}
+      <div class="b-store-list-my-local-store">My Local Store</div>
+    {{/if}}
+    {{#if showOtherNearbyStoresTitle}}
+      <div class="b-store-list-other-nearby-stores">Other nearby stores</div>
+    {{/if}}
+    <div class="b-store-list-entry-name">{{name}}</div>
+    <div class="b-store-list-entry-address">
+      <div class="b-store-list-entry-address-line">{{address.line1}}</div>
+      {{#if address.line2}}
+        <div class="b-store-list-entry-address-line">{{address.line2}}</div>
+      {{/if}}
+      <div class="b-store-list-entry-address-line">{{address.city}}, {{address.state}} {{address.zipCode}}</div>
+    </div>
+  </div>
+  <div class="b-store-list-entry-secondary-info">
+    <div class="b-store-list-entry-open">
+        {{#if isOpenNow}}Open{{else}}Closed{{/if}}
+    </div>
+    <div class="b-store-list-entry-distance">{{formatNumber distance 1 1}} Miles</div>
+  </div>
+  <div class="b-store-list-entry-arrow-container">
+    <span class="b-store-list-entry-arrow-icon"></span>
+  </div>
+</li>

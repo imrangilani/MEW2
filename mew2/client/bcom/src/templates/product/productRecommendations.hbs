@@ -1,0 +1,58 @@
+{{#if recommendedproducts}}
+  <section id="b-product-recommendations">
+
+    <div id="b-product-recommendations-header" class="b-pdp-info-section">
+      <div class="b-product-recommendations-label b-pdp-info-label"> {{#if zoneName}} {{zoneName}} {{else}} Customers Also Purchased {{/if}}</div>
+    </div>
+
+    <div id="mb-product-recommendations-swiper-wrapper">
+
+      <div id="mb-product-recommendations-swiper">
+
+        <div id="mb-product-recommendations-products" class="swiper-wrapper swiper-no-swiping">
+          {{#each recommendedproducts}}
+            <div data-product-id="{{productid}}" class="mb-product-recommendations-product swiper-slide" data-index="{{@index}}">
+              <a href="{{productURL}}">
+
+                <div class="mb-product-recommendations-img-outter">
+                  <div class="mb-product-recommendations-img-wrapper">
+                    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.primaryimage}}"/>
+                    <div class="mb-product-recommendations-img-overlay"></div>
+                  </div>
+                </div>
+
+                <div class="mb-product-recommendations-name truncated">{{name}}</div>
+
+                {{#if reviewrating}}
+                  <div class="b-pdp-rating"><div style="width: {{formatRatings this.reviewrating}}%"></div></div>
+                {{/if}}
+
+                <div class="mb-product-recommendations-price">
+
+                {{#each productprice}}
+                  <div class="b-product-price {{stripNonAlpha label}}">
+                    {{#if label}}
+                      <span class="b-product-price-label">{{stripNonAlpha label}} </span>
+                    {{/if}}
+                    <span class="b-product-price-amt">{{amt}}</span>
+                  </div>
+                {{/each}}
+
+                </div>
+
+              </a>
+            </div>
+          {{/each}}
+        </div>
+
+      </div>
+
+      <div id="mb-product-recommendations-arrow-left" class="mb-product-recommendations-arrow icon-pdpArrowLeftBlack"></div>
+      <div id="mb-product-recommendations-arrow-right" class="mb-product-recommendations-arrow icon-pdpArrowRightBlack"></div>
+    </div>
+
+  </section>
+
+{{!--   Please, don't add a blank line in the end of this file. The :empty pseudo-class --}}
+{{!--   doesn't works when the element contains any kind of caracteres (e.g.: spaces) --}}
+{{/if}}

@@ -1,0 +1,23 @@
+<a id="m-prev-page" class="pagination-icons {{#unless previousPage}}m-invisible{{/unless}}"
+   {{#if previousPage}}href="{{formatPageUrl previousPage}}"{{/if}}>
+   <div class="arrow-prev"></div><div>Prev</div>
+</a>
+
+{{#each tokenList}}
+  {{#if pageNumber}}
+    {{#if currentPage}}
+      <span class="m-current-page">{{pageNumber}}</span>
+    {{else}}
+      <a class="m-page-number" href="{{formatPageUrl pageNumber}}">{{pageNumber}}</a>
+    {{/if}}
+  {{else}}
+    <span>{{separator}}</span>
+  {{/if}}
+{{/each}}
+
+
+<a id="m-next-page" class="pagination-icons {{#unless nextPage}}m-invisible{{/unless}}"
+   {{#if nextPage}}href="{{formatPageUrl nextPage}}"{{/if}}>
+   <div>Next</div><div class="arrow-next"></div>
+</a>
+

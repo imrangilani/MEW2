@@ -1,0 +1,29 @@
+<div id="m-bops-results">
+  {{#if_eq errorCode compare='INVALID_SEARCH'}}
+    <div class="m-bops-error-invalid-search">
+      <b>Either the location you entered is invalid or there are no stores within {{distance}} miles. Please try again.
+    </div>
+  {{else}}
+    {{#unless stores}}
+      <div class="m-bops-error-nostores">
+        There are no stores within {{requestParams.radius}} miles of where you live. You can always have your item(s) shipped or choose a store outside of your area.
+      </div>
+    {{else}}
+
+      <div id="m-bops-results-header">
+        <div class="row">
+          <div class="small-9 columns nopad">Store</div>
+          <div class="small-3 columns nopad itemcount">Items</div>
+        </div>
+      </div>
+
+      <ul id="m-bops-results-wrapper" class="facet-selection-items small-block-grid-1 facet-single">
+        {{#each stores}}
+          <li class="facet-value facet-value-bops {{#if_eq values compare=../selectedStore}}facet-value-selected{{/if_eq}} {{#if_eq productcount compare=0}}facet-value-disabled{{/if_eq}}" data-facet-value="{{values}}" data-facet-bops-store-name="{{name}}" data-facet-bops-zip="{{address.zipCode}}">
+            {{> bopsFacetResult}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/unless}}
+  {{/if_eq}}
+</div>

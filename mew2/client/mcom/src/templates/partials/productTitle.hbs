@@ -1,0 +1,16 @@
+<div class="m-product-title">
+  <div class="m-product-title-row row">
+    <div class="small-{{#if badges.new}}8{{else}}12{{/if}} columns">
+      <h1 class="m-title truncated" itemprop="name">
+        {{#if closeout}}CLOSEOUT!&nbsp;{{/if}}
+        {{name}}
+      </h1>
+      {{#if brand}}<meta itemprop="brand" content="{{brand}}">{{/if}}
+    </div>
+    {{#if badges.new}}
+      <div class="small-4 columns">
+        <div class="m-product-new">NEW!</div>
+      </div>
+    {{/if}}
+  </div>
+</div>

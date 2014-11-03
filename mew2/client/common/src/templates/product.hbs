@@ -1,0 +1,19 @@
+<article id="m-product-container" class="m-product-transition">
+
+	<header>
+		<h5 class="m-name">{{title}}</h5>
+	</header>
+
+	<section class="m-images">
+		<img class="m-primary" src="{{primaryImage.imageurl}}">
+		{{#if alternativeImages}}
+			<div id="m-alt-images">
+				{{#each alternativeImages}}
+					<img class="m-alt m-alt-active" id="m-alt_{{this.sequenceNumber}}" src="{{this.imageurl}}">
+				{{/each}}
+			</div>
+		{{/if}}
+
+	</section>
+
+</article>

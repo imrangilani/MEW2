@@ -1,0 +1,23 @@
+<section class="b-pdp-info-section-container b-product-prices tiered">
+	<div id="b-product-price-section" class="b-pdp-info-section">
+    <div class="b-pdp-info-label"> Price Details </div>
+	</div>
+	
+  <div class="b-product-prices-wrapper">
+    {{> productPriceTiered}}
+    
+    <div class="b-product-prices-info">
+      {{#if saleEndDate}}
+        <div class="b-product-saleEndDate">
+          <span class="b-product-sale-label">Sale ends</span>
+          <span class="b-product-price-amt">{{saleEndDate}}</span>
+        </div>
+      {{/if}}
+      {{#if onsale}}
+        {{> productPricingPolicy}}
+      {{/if}}
+    </div>
+  </div>
+	
+</section>
+

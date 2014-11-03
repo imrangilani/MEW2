@@ -1,0 +1,51 @@
+<div class="b-product-warranty-info">
+
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-4 columns b-header-first">
+        <div class="mb-j-modalHeader-left b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-8 columns b-header-title ">
+        {{whichOffer promotions}}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    {{#each promotions}}
+      {{#isValidPromo this}}
+        {{#each giftOffer}}
+          <div class="b-offers-modal-content">
+            <div class="b-offers-shortDesc">{{shortDescription}}</div>
+            <div class="b-offers-longDesc">{{{longDescription}}}</div>
+            <div class="b-offers-details">
+              <div class="b-offer-Left">
+                <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image}}?wid=120{{#displayConfig}}{{paths.product.imageClarity}}{{/displayConfig}}"/>
+              </div>
+              <div class="b-offer-right">
+                <ul class="b-pdp-bullets">
+                {{#if warranty}}
+                  <li id="b-j-product-warranty-link-{{@index}}" class="b-product-warranty-link">Warranty Information</li>
+                {{/if}}
+                {{#each bullets}}
+                  <li>{{{this}}}</li>
+                {{/each}}
+                <li>Web ID: {{../id}}</li>
+                </ul>
+              </div>
+              <div class="clearBoth"> </div>
+            </div>
+            <div class="b-offer-return-content">
+              In the event you return qualifying item(s), please be sure to include the bonus with the
+              return. If you would like to keep the bonus but not the qualifying item(s), your account
+              will be charged for the value of the bonus.
+            </div>
+          </div>
+        {{/each}}
+      {{/isValidPromo}}
+    {{/each}}
+  </div>
+
+</div>

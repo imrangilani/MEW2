@@ -1,0 +1,98 @@
+<div id="b-product-bops-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-header-first">
+        <div class="mb-j-modalHeader-left b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title left nopad b-product-bops-modal-title">
+        Choose a Store
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <div id="bops-modal-errorContainer"></div>
+
+    <section id="bops-form-section">
+      <div id="bops-form">
+        <div class="b-search-section">
+          <button id="mb-bops-nearme" type="button">Near Me</button>
+          <div class="b-bops-address-wrapper">
+            <div id="mb-bops-search-icon" class="icon-search"></div>
+            <input name="address" type="search" id="mb-bops-address" placeholder="Search by zip code or city, state" value="{{defaultZipCode}}" autocorrect="off" autocomplete="off">
+            <span class="mb-bops-search-clear icon-searchClear"></span>
+          </div>
+        </div>
+
+        <div class="b-search-section">
+          <div id="b-bops-distance-wrapper">
+            <label for="bops-distance" class="b-select-button inline">Distance</label>
+            <div class="b-select-wrapper">
+              <select name="distance" class="b-select" id="mb-bops-distance">
+                <option value="5">5 miles</option>
+                <option value="10">10 miles</option>
+                <option value="25" selected>25 miles</option>
+                <option value="50">50 miles</option>
+                <option value="100">100 miles</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="b-bops-button b-bops-search-wrapper small-12">
+            <button id="mb-bops-search">Search</button>
+          </div>
+
+      </div>
+    </section>
+
+    <section id="bops-product-info">
+      <div class="b-bops-img">
+        <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{productPrimaryImage product.images product.activeImageset}}" class="b-product-img" />
+        {{#get product.images index=product.activeImageset}}
+          {{#each this}}
+            {{#if this.swatch}}
+            <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}?wid=30&hei=30&fit=fit,1" class="b-product-swatch-img" />
+            {{/if}}
+          {{/each}}
+        {{/get}}
+      </div>
+      <div class="b-bops-prod-details">
+        <span class="b-bops-prod-name">{{product.name}}</span><br/>
+        {{#if product.prices}}
+          {{#productCurrentPrice product.prices}}
+          <div class="b-product-price single {{stripNonAlpha label}}">
+            {{#if this.label}}
+              <span class="b-product-price-label">{{this.label}}:</span>
+            {{/if}}
+            <span class="b-product-price-amt">{{this.amt}}</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          {{/productCurrentPrice}}
+        {{/if}}
+
+        {{#if product.activeColor}}
+          <span>Color:</span> <span>{{productColorName product.colors product.activeColor}}</span> <br />
+        {{/if}}
+        {{#if product.activeSize}}
+          <span>Size:</span> <span>{{productSizeName product.sizes product.activeSize}}</span> <br />
+        {{/if}}
+        <span>Web ID:</span> <span>{{product.id}}</span> <br />
+      </div>
+      <div class="clearboth"></div>
+    </section>
+
+    <section id="bops-results"></section>
+
+    <section id="bops_legal_copy">
+      <div class="bops_copy_note">*PLEASE NOTE: Prices and promotions may vary in stores.</div>
+      <div>We make every effort to give you current product availabilty information, but our store inventory is always changing,
+        the stock status information is approximate, and an item's availability cannot be guaranteed. At this time, the Dubai
+        Mall store and Bloomingdale's Outlet stores are not participating in this feature.
+      </div>
+    </section>
+
+  </div>
+</div>

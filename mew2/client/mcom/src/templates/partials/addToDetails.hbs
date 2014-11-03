@@ -1,0 +1,11 @@
+{{#if product.activeColor}}
+  <p><span class="m-upc-details-label">Color:</span> <span class="m-upc-details-value boldtext">{{productColorName product.colors product.activeColor}}</span></p>
+{{/if}}
+
+{{#if product.activeSize}}
+  <p><span class="m-upc-details-label">Size:</span> <span class="m-upc-details-value boldtext">{{productSizeName product.sizes product.activeSize}}</span></p>
+{{/if}}
+
+{{#if product.activeType}}
+  <p><span class="m-upc-details-label">Type:</span> <span class="m-upc-details-value boldtext">{{productTypeName product.types product.activeType}}</span></p>
+{{/if}}

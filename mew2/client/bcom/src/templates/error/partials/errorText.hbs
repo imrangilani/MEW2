@@ -1,0 +1,19 @@
+{{#if_eq errorCode compare='unexpectedError'}}
+  <p>Sorry, we are experiencing technical issues. Please contact Customer Service at <a href="tel:+1-800-777-0000" class="b-phone-link">1-800-777-0000</a> for immediate assistance or try again later.</p>
+{{/if_eq}}
+{{#if_eq errorCode compare='notFound'}}
+  <p class="b-error-succint">Sorry, this page is no longer available.</p>
+{{/if_eq}}
+{{#if_eq errorCode compare='productNotFound'}}
+  <p class="b-error-succint">Sorry, this product is no longer available.</p>
+{{/if_eq}}
+{{#if_eq errorCode compare='notSupported'}}
+  {{#if_eq type compare='chanel'}}
+    <p class="b-error-succint">For Chanel fragrances and cosmetics, please visit our full website. Chanel ready-to-wear and accessories are available at select stores.</p>
+  {{/if_eq}}
+{{/if_eq}}
+{{#if_eq errorCode compare='globalNavError'}}
+	<div class="m-error-center b-global-nav-error">
+	  <p>Sorry, our menu has timed out. Please <a class='mb-overlay-tryagain'>try again</a> or use search.</p>
+	</div>
+{{/if_eq}}

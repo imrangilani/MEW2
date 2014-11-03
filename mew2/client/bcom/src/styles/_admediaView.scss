@@ -1,0 +1,65 @@
+/* --------------------------------------
+  Ad Media View
+-----------------------------------------*/
+
+
+.b-banner-img-link,
+.b-banner-img {
+  display: block;
+  width: 100%;
+}
+
+.b-banner-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  &> .b-banner-img-link,
+  &> .b-banner-img {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+  }
+
+}
+
+.swiper-slide {
+  &> .b-banner-img-link,
+  &> .b-banner-img {
+    float: left;
+  }
+}
+
+.swiper-container {
+  min-width: 320px;
+}
+
+.swiper-container,
+.swiper-slide {
+  width: 100%;
+  z-index: auto;
+  position: relative;
+}
+
+/**
+ Dots under the slider for changing slides
+*/
+.b-j-banners-pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 7px 0 7px 0;
+}
+
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  background: #999;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.swiper-active-switch {
+  background: #000;
+}

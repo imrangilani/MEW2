@@ -1,0 +1,116 @@
+$navigationTransitionLength : .25s;
+$navMenuWidth : 160px;
+$navTextSize : 16px;
+$navPadding : 4px;
+$border : 1px solid rgba(0, 0, 0, 0.2);
+$borderWidth: 1px;
+$navMenuLeftOffset : - ( $navMenuWidth + 2 * $navPadding + 2 * $borderWidth );
+
+body.nav-toggle #mb-j-nav-container {
+  box-shadow: 3px 0px 3px rgba(0,0,0,.3);
+}
+
+#mb-j-nav-container{
+  z-index: 1;
+  width: $navMenuWidth;
+  overflow: hidden;
+  background-color: #d8d8d8;
+  @include transform(translate3d(0,0,0));
+  box-shadow: none;
+  min-height: 100%;
+}
+
+#mb-j-nav-menu {
+  margin-bottom: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  li {
+    font-size: 15px;
+    min-height : 42px;
+    height : auto;
+    overflow: hidden;
+    width: $navMenuWidth;
+    @include transform(translate3d(0,0,0));
+    @include transition(top .5s);
+    background : #FFF;
+    color: #111;
+    box-sizing: border-box;
+    border-bottom: solid 1px #d8d8d8;
+    margin-top :0px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    display: table;
+
+
+    a {
+      color: #000000;
+      display: table-cell;
+      width: 100%;
+      line-height: 25px;
+      vertical-align: middle;
+      padding: 10px 9px 10px 9px;
+    }
+
+    &.currentRow:first-child {
+      background: #CCCCCC none;
+      a {
+        color: #000000;
+      }
+    }
+
+    &.headerRow {
+      background-color: #CCCCCC;
+      border-bottom-color: white;
+
+      a {
+        color: #000000;
+      }
+    }
+
+    &.currentRow {
+      background: #000000 none;
+      color: white;
+      font-weight: bold;
+      border-bottom-color: white;
+
+      a {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  li#top, li#shop, li#deals, li#stores, li#myAccount, li#loyallist, li#registry, li#designers {
+    text-transform: uppercase;
+  }
+
+  #shop.currentRow ~ li {
+    text-transform: uppercase;
+  }
+
+  li.fob13668, li.fob2911, li.fob2910, li.fob16961, li.fob16958, li.fob3376, li.fob2921, li.fob3864, li.fob3866, li.fob3865, li.fob3948, li.fob3977, {
+    &.headerRow {
+      text-transform: uppercase;
+    }
+  }
+
+  li.fob3376 {
+    a{
+      margin-top: -3px;
+    }
+  }
+
+  // fob9326: Collection's siblings
+  li.fob9326.headerRow ~ li.headerRow {
+    text-transform: none;
+  }
+}
+
+.mb-j-hidden-list-item {
+  z-index: -20;
+  position: absolute;
+  top: 0;
+}

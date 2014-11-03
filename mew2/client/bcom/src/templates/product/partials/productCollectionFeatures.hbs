@@ -1,0 +1,29 @@
+<section id="b-product-collection-features" class="b-pdp-info-section-container">
+  <div class="b-pdp-info-section">
+    <div class="b-product-details-label b-pdp-info-label"> Features </div>
+    <div class="b-j-product-web-id b-pdp-info-extra">Web ID {{id}}</div>
+  </div>
+
+  <div class="b-product-collection-details-content">
+    {{#if longDescription}}
+      <p class="b-pdp-master-desc">{{{longDescription}}}</p>
+    {{/if}}
+    {{#if details}}
+      {{#if_gt details.length compare="1"}}
+        <ul class="b-pdp-bullets">
+          {{#if warranty}}
+            <li id="b-j-product-warranty-link-{{id}}" class="b-product-warranty-link">Warranty Information</li>
+          {{/if}}
+          {{#each details}}
+            <li>{{{this}}}</li>
+          {{/each}}
+        </ul>
+      {{/if_gt}}
+    {{/if}}
+
+    {{#if onsale}}
+      {{> productPricingPolicy}}
+    {{/if}}
+
+  </div>
+</section>

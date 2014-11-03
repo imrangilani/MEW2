@@ -1,0 +1,65 @@
+{{> modalHeader}}
+
+<div class="mb-modal-content">
+  <div class="facet-button-clear" id="facet-list-button-clear">
+    <button>clear all</button>
+  </div>
+
+  <div id="facet-list-items">
+    {{#each facets}}
+    <div class="facet-list-item" data-facet-name="{{name}}">
+      {{!-- hasFacetSessionValues class used for normalizing rounded border-radius on select button --}}
+      <div id="m-j-facet-list-{{name}}" class="select {{#ifHasFacetSessionValues ../facetSessionValues name}}hasFacetSessionValues{{/ifHasFacetSessionValues}}">
+        <div class="facet-label display m-bg-arrow">{{displayname}}</div>
+      </div>
+      {{#ifHasFacetSessionValues ../facetSessionValues name}}
+
+        {{#displayFacetSessionValues ../../facetSessionValues name}}
+          <ul class="facet-selection-items remove-items small-block-grid-1 facet-{{../name}}">
+          {{#each selected}}
+            <li class="facet-value facet-value-{{stripNonAlpha this}}" data-facet-value="{{this}}">
+              <div class="display">
+                <div class="display-inner">
+                  <div class="display-name">
+                    {{#if_eq ../../name compare='UPC_BOPS_PURCHASABLE'}}
+                      {{bopsFacetStoreName  ../../../name ../../../../../facets this}}
+                    {{else}}
+                      {{normalizeIfPrice ../../../name this 'mcom'}}
+                    {{/if_eq}}
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+          {{/each}}
+          {{#if disabled}}
+            {{#ifSpecialFacetBlock ../../name}}
+              </ul>
+              <div class="m-unavailable-values">
+                <p class="m-unavailable-values-label">Based on your selections, these options are no longer available.</p>
+              </div>
+            <ul class="facet-selection-items facet-disabled-items remove-items small-block-grid-1 facet-{{../../../name}}">
+            {{/ifSpecialFacetBlock}}
+              {{#each disabled}}
+                <li class="facet-value facet-value-disabled facet-value-{{stripNonAlpha this}}" data-facet-value="{{this}}">
+                  <div class="display">
+                    <div class="display-inner">
+                      <div class="display-name">
+                        {{#if_eq ../../name compare='UPC_BOPS_PURCHASABLE'}}
+                          {{bopsFacetStoreName  ../../../name ../../../../../facets this}}
+                        {{else}}
+                          {{normalizeIfPrice ../../../name this 'mcom'}}
+                        {{/if_eq}}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {{/each}}
+              </ul>
+          {{/if}}
+        {{/displayFacetSessionValues}}
+      {{/ifHasFacetSessionValues}}
+    </div>
+    {{/each}}
+  </div>
+</div>

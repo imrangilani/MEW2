@@ -1,0 +1,45 @@
+<article id="product-{{id}}" data-id="{{id}}" data-member="true" class="m-product-wrapper m-product-member-of-master" itemscope itemtype="http://schema.org/Product">
+
+  {{> productTitle}}
+
+  <div class="m-product-member-summary">
+    {{#if images}}
+      <div class="m-product-member-images">
+        {{> productImagesMember}}
+        <a href="{{productUrl}}" class="m-link m-view-details m-view-details">VIEW ALL DETAILS</a><br/><br/>
+      </div>
+    {{/if}}
+    <div class="m-product-member-basic-info {{#unless images}}no-image{{/unless}}">
+      <div class="row">
+        <div class="small-{{#if images}}12{{else}}6{{/if}} columns price-column">
+          {{#if prices}}{{> productPriceTiered this}}{{/if}}
+        </div>
+        {{#if promotions}}
+          {{#productBadgePromotion promotions}}
+            <section class="small-12 columns m-product-promotion">
+              <span class="m-product-promotion-name">{{value}}</span>
+            </section>
+          {{/productBadgePromotion}}
+        {{/if}}
+        {{#if badges.Rebate}}
+          <div class="small-{{#if images}}12{{else}}6{{/if}} columns m-member-rebate">
+          <div>Qualifies for Rebate</div>
+          </div>
+        {{/if}}
+        {{#if saleEndDate}}{{> productSaleEndDate}}{{/if}}
+        <div class="small-{{#if images}}12{{else}}6{{/if}} columns qty-column">{{> productQuantity}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  {{#if colors}}{{> productSwatches}}{{/if}}
+
+  {{#if sizes}}{{> productSizes}}{{/if}}
+
+  {{#if types}}{{> productTypes}}{{/if}}
+
+  <div id="m-j-product-availability-container-{{id}}"></div>
+
+  {{> productButtons}}
+</article>

@@ -1,0 +1,130 @@
+<div id="m-special-offers-modal">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Special Offers</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+
+      <div class="small-18 small-centered columns">
+
+        <div id="m-special-offers-container">
+
+          {{!-- Displays the message only if we have 2 or more non GWP/PWP --}}
+          {{#if_gt numberOfBadgeNotWP compare="1"}}<header class="m-promocode-restriction">Only one promo code may be used per Order.{{/if_gt}}</header>
+
+          <div class="m-special-offers-modal-content">
+
+            {{#each product.promotions}}
+
+              {{#unless isMarketingPromo}}
+
+                {{!-- Display the promotion badge --}}
+                {{#badgeText this}}
+                  <header class="m-special-offers-title">{{value}}</header>
+                {{/badgeText}}
+
+                <article class="m-special-offers-content">
+
+                  <p>{{promoOfferDescription}}</p>
+                  <p>{{promoDescription}}</p>
+
+                  {{#if_not_contained promoType list='Bundled GWP,PWP,Threshold GWP,Multi Threshold GWP,Site-Wide PWP'}}
+                    {{#if legalDisclaimer}}
+                      <div class="m-product-legal-disclaimer content">
+                        <p> {{legalDisclaimer}} </p>
+                        <a class="m-j-more m-link" href="#">more</a>
+                      </div>
+                    {{/if}}
+                  {{/if_not_contained}}
+
+                  {{#each this.giftOffer}}
+                    <div class="row">
+                      <div class="text-center">
+                        <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image}}" />
+                      </div>
+                    </div>
+
+                    <div class="m-product-details-description content">
+                      {{!-- Promotion Description --}}
+                      <p>
+                        <strong>{{shortDescription}}</strong><br>
+                        {{longDescription}}
+                      </p>
+
+                      {{!-- Promotion bullets --}}
+                      {{#if_gt bullets compare="0"}}
+                        <div class="m-product-details-bullets">
+                          <ul class="no-margin">
+                            {{#each bullets}}
+                              <li>{{this}}</li>
+                            {{/each}}
+                          </ul>
+                        </div>
+                      {{/if_gt}}
+
+                      {{!-- Product type map --}}
+                      {{#if typeMap}}
+                        <div class="m-product-details-types">
+                          <p>Type (select at checkout):</p>
+                          <ul>
+                            {{#each typeMap}}
+                              <li>{{type}}</li>
+                            {{/each}}
+                          </ul>
+                        </div>
+                      {{/if}}
+
+                      {{#if ../legalDisclaimer}}
+                        <div class="m-product-legal-disclaimer">
+                          <p> {{../../legalDisclaimer}} </p>
+                        </div>
+                      {{/if}}
+
+                      {{!-- Warranty information --}}
+                      {{#if warranty}}
+                        <div class='m-product-warranty'>
+                          <p>Warranty Information: </p>
+                          <ul>
+                            <li class="m-product-warranty-link">
+                              <p>Certain items are covered by warranty as indicated. To obtain a copy of the warranty prior to purchase, please write to:</p>
+
+                              macys.com Customer Service Dept.
+                              P.O.Box 8215
+                              Mason, Ohio 45040
+                              Attention: Small Ticket Department - Warranty
+                            </li>
+                          </ul>
+                        </div>
+                      {{/if}}
+
+                      {{!-- Display the message only in case the offer is not giftWrappable --}}
+                      {{#unless giftWrappable}}
+                        <p class="m-gift-wrappable">
+                          Our Normal Gift Boxing is not available for this item.
+                        </p>
+                      {{/unless}}
+
+                      <p class="m-product-return">
+                        In the event you return qualifying item(s), please be sure to include the bonus with the return. If you would like to keep the bonus but not the qualifying item(s), your account will be charged for the value of the bonus.
+                      </p>
+
+                      <a class="m-j-more m-link" href="#">more</a>
+                    </div>
+                  {{/each}}
+
+
+                </article>
+              {{/unless}}
+            {{/each}}
+
+          </div>
+
+        </div>
+
+      </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+{{#each prices}}
+  {{#if_eq label compare='Sale'}}
+    <section class="m-product-prices tiered" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <div class="m-product-price {{stripNonAlpha label}}">
+        {{#if label}}
+          <span class="m-product-price-label">{{label}} </span>
+        {{/if}}
+          <span class="m-product-price-amt" itemprop="price">{{amt}}</span>
+          <meta itemprop="priceValidUntil" content="{{priceValidDate ../saleEndDate}}" />
+          <meta itemprop="priceCurrency" content="USD" />
+      </div>
+    </section>
+  {{else}}
+    <div class="m-product-price {{stripNonAlpha label}}">
+      {{#if label}}
+        <span class="m-product-price-label">{{label}} </span>
+      {{/if}}
+        <span class="m-product-price-amt">{{amt}}</span>
+    </div>
+  {{/if_eq}}
+{{/each}}

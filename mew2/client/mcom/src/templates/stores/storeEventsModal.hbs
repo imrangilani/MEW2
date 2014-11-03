@@ -1,0 +1,22 @@
+<div id="m-store-events-modal">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Store Events</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+
+    {{#if storeEvents}}
+      <h1 class="m-store-name">{{storeName}}</h1>
+
+      <div class="m-store-events-content">
+        {{> storeEvents}}
+      </div>
+
+    {{/if}}
+
+  </div>
+</div>

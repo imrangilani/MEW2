@@ -1,0 +1,55 @@
+<section id="b-product-upper">
+    <header>
+      <h5 class="b-name"{{#unless isMaster}} itemprop="name"{{/unless}}>{{name}}</h5>
+    </header>
+
+    <div class="b-product-price-sale-rating">
+      <span {{#unless isMaster}} itemprop="offers" itemscope itemtype="http://schema.org/Offer"{{/unless}}>
+        {{#unless isMaster}}{{#unless isEGC}}{{#if prices}}
+          {{#productCurrentPrice prices}}
+          <div class="b-product-price single {{stripNonAlpha label}}">
+            {{#if label}}
+              <span class="b-product-price-label">{{label}}:</span>
+            {{/if}}
+            <span class="b-product-price-amt"{{#unless isMaster}} itemprop="price"{{/unless}}>{{amt}}</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          {{/productCurrentPrice}}
+        {{/if}}{{/unless}}{{/unless}}
+      
+        {{#if saleEndDate}}
+          <span class="b-sale-end-date">
+            Sale ends <span{{#unless isMaster}} itemprop="priceValidUntil"{{/unless}}>{{saleEndDate}}</span>
+          </span>
+        {{/if}}
+      </span>
+    
+      {{#if rating}}
+        <div class="b-pdp-rating b-pdp-rating-qe-top">
+          <div style="width: {{formatRatings rating.avg}}%"></div>
+        </div>
+        <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+          <meta itemprop="ratingValue" content="{{rating.avg}}">
+          <meta itemprop="ratingCount" content="{{rating.cnt}}">
+        </span>
+      {{/if}}
+      
+      {{#if promotions}}
+        {{#unless isMaster}}<div class="clearfix"></div>{{/unless}}
+        {{#isValidPromoType promotions}}
+          <div class="icon-offersBackground">
+            <section id="b-pdp-offers-top" class="b-pdp-offers">
+              <div class="b-pdp-info-section" >
+                <div id="b-pdp-offers-label-top" class="b-pdp-info-label">{{whichOffer promotions}}{{offersCount promotions}}</div>
+                <div class="icon-right-arrow-gray"></div>
+              </div>
+            </section>
+          </div>
+        {{/isValidPromoType}}
+      {{/if}}
+    
+      <div class="clearfix"></div>
+      
+    </div>
+    
+  </section>

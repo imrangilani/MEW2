@@ -1,0 +1,21 @@
+<div class="m-size-chart">
+  <div class="mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Size & Fit</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <div class="m-size-chart-category"></div>
+    <div class="m-size-chart-img">
+      {{#if sizeCharts.us}}
+        <img src="{{#displayConfig}}{{paths.product.sizeChart}}{{/displayConfig}}{{sizeCharts.us}}" />
+      {{/if}}
+      {{#if sizeCharts.intl}}
+        <img src="{{#displayConfig}}{{paths.product.sizeChart}}{{/displayConfig}}{{sizeCharts.intl}}" />
+      {{/if}}
+    </div>
+  </div>
+</div>

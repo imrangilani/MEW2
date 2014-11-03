@@ -1,0 +1,124 @@
+#b-search-container {
+  #b-search-paging {
+    margin-bottom: 20px;
+  }
+
+  .b-search-secton {
+    padding: 20px 10px 0 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    
+    .b-search-keyword {
+      font-weight: bold;
+      word-wrap: break-word;
+      text-transform: none;
+    }
+  }
+  ul.mobileSortButtons {
+    li.original {
+        width: 23%;
+        border-right: 1px solid #BBB7B7;
+    }
+    li#NEWNESS {
+        width: 23%;
+        border-right: 1px solid #BBB7B7;
+    }
+    li#BEST_SELLERS {
+        width: 32%;
+        border-right: 1px solid #BBB7B7;
+    }
+    li#PRICE_ASCENDING, li#PRICE_DESCENDING {
+        width: 22%;
+    }
+
+    li.selected.original span.pointer{
+        margin: 30px 0 0 -38px;
+    }
+    li.selected#NEWNESS span.pointer {
+        margin: 30px 0 0 -31px;
+    }
+    li.selected#BEST_SELLERS span.pointer{
+        margin: 30px 0 0 -50px;
+    }
+    li.selected#PRICE_ASCENDING span.pointer, li.selected#PRICE_DESCENDING span.pointer{
+        margin: 30px 0 0 -30px;
+    }
+    
+    li#PRICE_ASCENDING span.priceArrow {
+      border-bottom: 5px solid #000000;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: inline-block;
+      margin: 0 0 2px 3px;
+    }
+    li#PRICE_DESCENDING span.priceArrow {
+      border-top: 5px solid #000000;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: inline-block;
+      margin: 0 0 2px 3px;
+    }
+    li.selected#PRICE_ASCENDING span.priceArrow {
+      border-bottom: 5px solid #FFFFFF;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: inline-block;
+      margin: 0 0 2px 3px;
+    }
+    li.selected#PRICE_DESCENDING span.priceArrow {
+      border-top: 5px solid #FFFFFF;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: inline-block;
+      margin: 0 0 2px 3px;
+    }
+  }
+  
+  #b-search-messages {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    
+    a{
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+  
+}
+
+#b-search-no-results {
+  padding: 20px 10px;
+  .b-search-secton{
+    text-transform: none;
+    line-height: 18px;
+    margin-bottom: 15px;
+    font-size: emCalc(14px);
+    padding: 0;
+  }
+  
+  #b-featured-desginers,
+  #b-featured-categories{
+    display: none;
+    padding-top: 10px;
+    &.selectedLatchKey {
+      display: block;
+    }
+    > .facet-list-item:first-child{
+      border-top: 1px solid #CCC;
+    }
+    div.select {
+      text-transform: none;
+    }
+  }
+  
+  .facet-list-item.faqs{
+    margin-top: 20px;
+    border-top: 1px solid #CCC;
+  }
+  .b-search-latchkeys {
+    font-size: emCalc(15px);
+  }
+
+}
+

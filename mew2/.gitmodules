@@ -1,0 +1,3 @@
+[submodule "mew2properties"]
+	path = mew2properties
+	url = ../mew2properties.git

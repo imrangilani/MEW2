@@ -1,0 +1,24 @@
+<ul class="mb-store-list">
+  {{#each stores}}
+    <li class="mb-j-store-list-entry {{#if isInFavorites}}m-favorite-store{{/if}}" data-location="{{locationNumber}}" data-name="{{name}}">
+      <div class="row">
+
+        <div class="small-9 columns section-left">
+          <div class="m-store-list-entry-name">{{name}}</div>
+          <div class="m-store-list-entry-location">{{address.city}}, {{address.state}}</div>
+        </div>
+
+        <div class="small-3 columns section-right">
+          <div class="m-store-list-entry-open {{#if isOpenNow}}open{{else}}closed{{/if}}">
+              {{#if isOpenNow}}Open{{else}}Closed{{/if}}
+          </div>
+
+          {{#if distance}}
+            <div class="m-store-list-entry-distance">{{formatNumber distance 1 1}} mi</div>
+          {{/if}}
+        </div>
+
+      </div>
+    </li>
+  {{/each}}
+</ul>

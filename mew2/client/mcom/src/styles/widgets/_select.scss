@@ -1,0 +1,29 @@
+.mb-select-widget {
+  background: url('../../images/arrow-down.png') 95% center no-repeat;
+  border-bottom: 1px solid #000;
+  line-height: emCalc(16px);
+  margin: 0;
+  padding: emCalc(12px) emCalc(35px) emCalc(12px) emCalc(10px);
+  position: relative;
+
+  .form-label {
+    margin: 0;
+  }
+
+  select {
+    cursor: pointer;
+    height: emCalc(40px);
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-appearance: button;
+  }
+
+  .mb-j-select-value-display {
+    color: #666;
+    font-size: $font-sm;
+  }
+}

@@ -1,0 +1,71 @@
+body.marketorial-open {
+  overflow: hidden;
+}
+
+#marketorial {
+  background: rgba(0,0,0,0.8);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+
+  #marketorial-inner {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+
+    #marketorial-burger {
+      background: url('../../images/tutorial/tutorial_burger.svg') no-repeat 0 0;
+      background-size: 30px 22px;
+      height: 22px;
+      left: emCalc(10px);
+      position: absolute;
+      top: 12px;
+      width: 30px;
+    }
+
+    #marketorial-close {
+      background: url('../../images/tutorial/tutorial_close.svg') no-repeat right center;
+      background-size: auto 20px;
+      height: 45px;
+      position: absolute;
+      right: emCalc(10px);
+      top: 0;
+      width: 80px;
+    }
+
+    #marketorial-arrow {
+      background: url('../../images/tutorial/tutorial_arrow.svg') no-repeat 0 0;
+      height: 70px;
+      left: 45px;
+      position: absolute;
+      top: 18px;
+      width: 122px;
+    }
+
+    #marketorial-text {
+      background: url('../../images/tutorial/tutorial_text.svg') no-repeat center 0;
+      background-size: 160px auto;
+      height: 55px;
+      left: 85px;
+      position: absolute;
+      top: 95px;
+      width: 160px;
+    }
+
+    #marketorial-welcome {
+      background: url('../../images/tutorial/tutorial_welcome.svg') no-repeat center center;
+      background-size: 280px auto;
+      height: 65px;
+      left: 50%;
+      margin-left: -140px;
+      position: absolute;
+      top: 235px;
+      width: 280px;
+    }
+  }
+}

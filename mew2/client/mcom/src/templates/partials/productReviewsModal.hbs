@@ -1,0 +1,34 @@
+<div id="m-product-reviews-modal">
+  <div class="mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Reviews</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <div class="m-product-rating">{{> rating rating}}</div>
+
+    {{#if rating}}
+      <section id="m-product-reviews-modal-summary">{{> productReviews}}</section>
+    {{/if}}
+
+    {{#ifSize reviews compare='1' operator='>'}}
+      <section id="m-product-reviews-sortby">
+        <div class="m-select-wrapper" id="m-product-reviews-sortby-wrapper">
+          <div class="m-select-button"><div class="display">sort by featured</div></div>
+          <select name="sortby" class="m-select" id="m-j-reviews-sortby">
+            <option value="featured" selected>featured</option>
+            <option value="latest">newest</option>
+            <option value="oldest">oldest</option>
+            <option value="highestRating">highest rating</option>
+            <option value="lowestRating">lowest rating</option>
+          </select>
+        </div>
+      </section>
+    {{/ifSize}}
+
+    <section id="mb-product-reviews-list">{{> productReviewsList}}</section>
+  </div>
+</div>

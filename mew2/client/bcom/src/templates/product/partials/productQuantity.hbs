@@ -1,0 +1,10 @@
+<section class="b-pdp-info-section-container b-product-qty">
+  <div class="b-product-qty-wrapper">
+    <label class="b-product-qty-label">Quantity: </label>
+    <select class="b-j-product-qty-values">
+      {{#times maxQty}}
+        <option class="b-product-qty-option" value="{{@current}}" {{#if_eq activeQty compare=@current}}selected="selected"{{/if_eq}}>{{@current}}</option>
+      {{/times}}
+    </select>
+  </div>
+</section>

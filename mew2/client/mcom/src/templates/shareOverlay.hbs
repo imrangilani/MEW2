@@ -1,0 +1,49 @@
+
+<div class="m-header boldtext">
+  <button class="mb-j-overlay-close m-modal-button">&nbsp;</button>
+  <span>How would you like to share this?</span>
+</div>
+<div class="m-content">
+  <div class="m-share-content">
+    <div class="m-share-content-row">
+      <div class="m-share-content-col m-share-email-click" data-service="Email">
+        <a href="{{productShareEmailLink this}}" id="m-social-share-email">
+          <div id="m-share-email" class="" displayText="Macys"></div>
+          <div class="m-j-share-div">Email</div>
+        </a>
+      </div>
+      <div class="m-share-content-col" data-service="Pinterest">
+        <a href="http://pinterest.com/pin/create/button/?{{constructProductShareLink this 'pinterest'}}" target="_blank" id="m-social-share-pinterest">
+          <div id="m-share-pinterest"></div>
+          <div class="m-j-share-div">Pinterest</div>
+        </a>
+      </div>
+      <div class="m-share-content-col" data-service="Facebook">
+        <a href="http://reviews.macys.com/bvstaging/7129aa/share.htm?site=Facebook&{{constructProductShareLink this 'facebook'}}" target="_blank" id="m-social-share-facebook">
+          <div id="m-share-facebook"></div>
+          <div class="m-j-share-div">Facebook</div>
+        </a>
+      </div>
+
+    </div>
+    <div class="m-share-content-row">
+      <div class="m-share-content-col" data-service="Twitter">
+        
+        <a href="https://twitter.com/intent/tweet?{{constructProductShareLink this 'twitter'}}" target="_blank" id="m-social-share-twitter">
+          <div id="m-share-twitter"></div>
+        
+          <div class="m-j-share-div">Twitter</div>
+        </a>
+      </div>
+      <div class="m-share-content-col" data-service="Google Plus">
+        
+        <a href="https://plus.google.com/share?{{constructProductShareLink this 'google'}}" target="_blank" id="m-social-share-googleplus">
+          <div id="m-share-googleplus"></div>
+        
+          <div class="m-j-share-div">Google+</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  

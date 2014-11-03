@@ -1,0 +1,13 @@
+<div id="b-product-color-name" class="b-pdp-info-section">
+  <span class="b-product-text">Color:</span>
+  {{! the color name itself or a 'Please select' copy in case it's not a master}}
+  <span class="b-j-product-color-name">
+    {{productColorName colors activeColor 'Select a Color'}}
+  </span>
+  {{! on master we display the total number of colors, unless it's just one}}
+  {{#if isMaster}}
+    {{#ifSize colors compare="1" operator=">"}}
+      <span class="b-product-color-count">{{size colors}} Colors</span>
+    {{/ifSize}}
+  {{/if}}
+</div>

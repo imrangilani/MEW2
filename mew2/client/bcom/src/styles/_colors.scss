@@ -1,0 +1,11 @@
+@mixin selected {
+  @include background-image(linear-gradient(#B20000, #EA0017));
+}
+
+@mixin previous {
+  @include background-image(linear-gradient(rgb(94, 94, 94), rgb(138, 138, 138)));
+}
+
+@mixin unselected {
+  @include background-image(linear-gradient(rgb(94, 94, 94), rgb(138, 138, 138)));
+}

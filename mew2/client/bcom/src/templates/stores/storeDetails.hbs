@@ -1,0 +1,103 @@
+<section class="b-store-details {{#if isMyLocalStore}}mb-j-store-local{{/if}}" itemscope itemtype="http://schema.org/LocalBusiness">
+  <div class="b-store-details-label">Store Details</div>
+
+  <div class="b-store-primary-info">
+    <div class="b-store-local-text">My Local Store</div>
+    <div id="mb-store-name" class="b-store-name" itemprop="name">{{name}}</div>
+    <div class="b-store-address">
+      <a target="_blank" href="javascript:pop('http://maps.google.com/?q={{address.line1}} {{#if address.line2}} {{address.line2}} {{/if}} {{address.city}}, {{address.state}} {{address.zipCode}}','Menu','menu,status,scrollbars=no,resizable,width=320')" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <div class="b-store-address-line">{{address.line1}}</div>
+        {{#if address.line2}}
+          <div class="b-store-address-line">{{address.line2}}</div>
+        {{/if}}
+        <div class="b-store-address-line"><span itemprop="addressLocality">{{address.city}}</span>, <span itemprop="addressRegion">{{address.state}}</span> <span itemprop="postalCode">{{address.zipCode}}</span></div>
+        <meta itemprop="streetAddress" content="{{address.line1}} {{address.line2}}" />
+        <meta itemprop="addressCountry" content="{{address.countryCode}}" />
+      </a>
+    </div>
+    <a href="tel:{{phone}}" class="b-j-store-phone-link">
+      <div class="b-store-phone" itemprop="telephone">{{phone}}</div>
+    </a>
+  </div>
+
+  {{#if hours }}
+    <section id="b-stores-hours" class="b-stores-hours b-expandable-closed" data-expandable="container">
+      <div class="b-pdp-info-section" data-expandable="button">
+        <div class="b-stores-label">Store Hours</div>
+        <div class="b-expandable-icon"></div>
+      </div>
+      <div id="b-stores-hours-content">
+        <div>
+          {{#each hours}}
+            {{#if_lt @index compare="3"}}
+              <div class="attribute-value">
+                <span class="key">{{@key}}</span>  :
+                <span class="value">{{this}}</span>
+              </div>
+            {{/if_lt}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="hide" data-expandable="content">
+        <div>
+          {{#each hours}}
+            {{#if_gt @index compare="2"}}
+              <div class="attribute-value">
+                <span class="key">{{@key}}</span>  :
+                <span class="value">{{this}}</span>
+              </div>
+            {{/if_gt}}
+          {{/each}}
+        </div>
+      </div>
+    </section>
+  {{/if}}
+
+  {{#if storeEvents}}
+    <section id="mb-store-events">{{> storeEvents}}</section>
+  {{/if}}
+
+  {{#if services}}
+    <section class="b-store-services">
+      <div class="b-stores-label">Services</div>
+      {{#each services}}
+        <div id="b-store-service-{{@index}}" class="b-service-section">
+          <div class="b-store-service-name">{{checkToHide key}}</div>
+          {{#each values}}
+            {{#isPhoneNumber attributeValue}}
+              <a href="tel:{{attributeValue}}" class="b-j-store-phone-link"><div id="b-store-service-attribute-{{@index}}" class="b-store-phone">{{attributeValue}}</div></a>
+            {{else}}
+              <div id="b-store-service-attribute-{{@index}}" class="attribute-value">{{attributeValue}}</div>
+            {{/isPhoneNumber}}
+          {{/each}}
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
+  
+  {{#if restaurants}}
+    <section class="b-store-restaurants">
+       <div class="b-stores-label">Restaurants</div>
+       {{#each restaurants}}
+        <div id="b-store-restaurant-{{@index}}" class="b-service-section">
+          <div class="b-store-service-name">{{checkToHide key}}</div>
+          {{#each values}}
+            {{#if attributeUrl}}
+              <a href="javascript:pop('{{attributeUrl}}','Menu','menu,status,scrollbars=no,resizable,width=320')">
+                <div id="b-store-restaurant-attribute-{{@index}}" class="attribute-value">{{attributeValue}}</div>
+              </a>
+            {{else}}
+              <div id="b-store-restaurant-attribute-{{@index}}" class="attribute-value">{{attributeValue}}</div>
+            {{/if}}
+          {{/each}}
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
+
+  <div class="b-store-local-buttons">
+    <button class="mb-j-store-set-local">Set as my local store</button>
+    <button class="mb-j-store-unset-local">Remove Local Store</button>
+  </div>
+
+</section>

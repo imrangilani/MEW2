@@ -1,0 +1,54 @@
+
+<div class="b-overlay-header">
+  <div class="mb-j-overlay-close"><span class="b-overlay-close-text">Close</span><a class="icon-close"></a></div>
+</div>
+
+<div class="b-overlay-item-added">
+  {{#if updated}}
+    Your bag has been updated
+  {{else}}
+    {{itemQuantity}} item{{#if_gt itemQuantity compare="1" }}s{{/if_gt}} added to {{#if username}}<span class="b-overlay-item-added-name">{{username}}'s</span>{{else}}your{{/if}} Bag
+  {{/if}}
+</div>
+
+<div class="b-overlay-content">
+  <div class="b-atb-product">
+    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{productPrimaryImage product.images product.activeImageset}}" class="b-overlay-product-image" width="100px" />
+
+    <div class="b-overlay-product-details-set">
+      <span class="b-overlay-product-name truncated">{{product.name}}</span>
+
+      <div class="b-overlay-product-details-section">
+        {{#if product.activeColor}}
+          <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Color:</span> <span class="b-overlay-product-detail-value">{{productColorName product.colors product.activeColor}}</span></div>
+        {{/if}}
+
+        {{#if product.activeSize}}
+          <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Size:</span> <span class="b-overlay-product-detail-value">{{productSizeName product.sizes product.activeSize}}</span></div>
+        {{/if}}
+
+        {{#if product.activeType}}
+          <div class="b-overlay-product-detail"><span class="bb-overlay-product-detail-label">Type:</span> <span class="b-overlay-product-detail-value">{{productTypeName product.types product.activeType}}</span></div>
+        {{/if}}
+      </div>
+
+      <div class="b-overlay-product-details-section">
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Price:</span> <span class="b-overlay-product-detail-value">${{itemPrice}}</span></div>
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Qty:</span> <span class="b-overlay-product-detail-value">{{itemQuantity}}</span></div>
+      </div>
+
+      <div class="b-overlay-product-details-section">
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Total:</span> <span class="b-overlay-product-detail-value">${{totalPrice}}</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-atb-summary">
+    {{bag.totalquantity}} item{{#if_gt bag.totalquantity compare="1"}}s{{/if_gt}} in bag<span class="b-atb-summary-separator">|</span>Subtotal: ${{bagTotal}}
+  </div>
+
+  <div class="b-overlay-buttons" data-horizontal-spacing="15px">
+    <a class="b-atb-checkout-button" href="/bag/index.ognc">Checkout</a>
+    <button class="mb-j-overlay-continue">Continue Shopping</button>
+  </div>
+</div>

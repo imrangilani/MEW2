@@ -1,0 +1,150 @@
+.mb-fixed-modal-wrapper {
+  @include single-transition(-webkit-transform, .5s, ease-in-out);
+  background: #fff;
+  position: fixed;
+  @include translate(100%, 0);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+
+  &.no-transition {
+    transition: none;
+  }
+
+  .mb-modal-content {
+    padding: emCalc(25px) emCalc(10px);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+    width: 100%;
+  }
+}
+
+.mb-modal-header {
+  @include b-header(modal);
+  background-color: #fff;
+}
+
+.mb-modal-wrapper {
+  @include single-transition(-webkit-transform, 0.5s, ease-in-out); 
+
+  @include translate(100%, 0);
+  position: fixed;
+  top: 0px;
+
+  background: #fff;
+  width: 100%;
+  z-index: 100;
+
+  &.no-transition {
+    transition: none;
+  }
+
+  .mb-modal-content {
+    padding: emCalc(45px) emCalc(10px) emCalc(10px);
+    background-color: #fff;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mb-modal-header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 103;
+    
+    .b-header-title {
+      text-transform: uppercase;
+    }
+  }
+
+  .mobile-level-2 .mb-modal-header{
+    z-index: 105;
+  }
+}
+
+.modal-level-1 {
+  z-index: 100;
+}
+
+.modal-level-2 {
+  z-index: 101;
+}
+
+.modal-level-3 {
+  z-index: 102;
+}
+
+
+body.modal-visible {
+
+  #mb-page-wrapper {
+    overflow: hidden;
+  }
+}
+
+.mb-fixed-modal-wrapper.modal-visible {
+  @include translate(0, 0);
+}
+
+.modal-vertical{
+  @include translate(0, 100%);
+}
+
+.mb-modal-wrapper.modal-visible {
+  @include translate(0, 0);
+}
+
+.b-back {
+  $mb-modal-header-content-height: $mb-modal-header-height - emCalc(5px);
+  $arrow-width: emCalc(10px);
+  $background: #000;
+  $button-height: emCalc(30px);
+  $gutters: ($mb-modal-header-content-height - $button-height) / 2;
+
+  background: $background;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  height: $button-height;
+  line-height: $button-height;
+  margin: $gutters 0 $gutters $arrow-width;
+  min-width: 50px;
+  max-width: 50px;
+  padding: 0 emCalc(10px) 0 5px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+
+  &:after {
+    border-bottom: ($button-height / 2) solid transparent;
+    border-right: $arrow-width solid $background;
+    border-top: ($button-height / 2) solid transparent;
+    content: "";
+    height: 0;
+    left: -($arrow-width);
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+
+  // since we are using same heights that were calculated against base font size, need to multiply up
+  // for link with smaller font size
+  $font-base: 13px;
+  $multiplier: $em-base / $font-base;
+  $font-size: emCalc($font-base);
+
+  a, span {
+    color: #fff;
+    display: block;
+    font-size: $font-size;
+    height: $button-height * $multiplier;
+    line-height: $button-height * $multiplier;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+  }
+}

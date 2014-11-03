@@ -1,0 +1,34 @@
+<div id="b-product-reviews-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-header-first">
+        <div class="mb-j-modalHeader-left b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title b-header-title left">
+        Read Reviews
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+  	<section class="b-review-overall-rating">
+  	  Overall Rating: 
+  	  <div class="b-pdp-rating">
+        <div style="width: {{formatRatings rating.avg}}%"></div>
+      </div>
+  	</section>
+    <section id="b-product-reviews-modal-summary">
+    	{{#if rating.values}}
+        {{> productRatingsSliders}}
+      {{else}}
+        {{#if rating.detailedRatings}}
+          {{> productRatingsHistogram}}
+        {{/if}}
+      {{/if}}
+    </section>
+
+    <section id="mb-product-reviews-list">{{> productReviewsList}}</section>
+  </div>
+</div>

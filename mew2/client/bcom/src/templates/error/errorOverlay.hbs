@@ -1,0 +1,16 @@
+<div class="b-overlay-header">
+  <div class="b-error-title">Technical Issue</div>
+  <div class="mb-j-overlay-close"><span class="b-overlay-close-text">Close</span><a class="icon-close"></a></div>
+</div>
+<div class="b-overlay-content">
+  <section id="b-error-view-container">
+    <div class="b-error-description">
+      {{> errorText}}
+    </div>
+    {{#if_neq errorCode compare='globalNavError'}}
+      <button class="b-error-button">
+        <a href="/" class="b-error-button-link">Continue Shopping</a>
+      </button>
+    {{/if_neq}}
+  </div>
+</div>

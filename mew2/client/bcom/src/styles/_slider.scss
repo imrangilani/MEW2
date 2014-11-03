@@ -1,0 +1,81 @@
+.fit-slider-wrapper {
+
+  .fit-slider-row {
+    @include clearfix;
+    min-height: 20px;
+    margin-top: 8px;
+
+    .fit-slider-label {
+      // font-weight: bold;
+    }
+
+    .fit-slider-size-label {
+      width: 45px;
+      height: 100%;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .fit-slider-size-label-small {
+      float: left;
+    }
+    
+    .fit-slider-size-label-large {
+      float: right;
+      text-align: right;
+    }
+    
+    .fit-slider {
+      min-height: 20px;
+      margin: 0 45px;
+
+      input[type=range] {
+        position: relative;
+        top: -2px;
+      }
+    }
+
+  }
+  
+  input[type='range'] {
+    -webkit-appearance: none !important;
+    width: 100%;
+    height: 2px;
+    background: #BDBDBD;
+    border: none;
+    margin: 0;
+    padding: 0 1px;
+    outline: none;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    background: url("../../images/hearts.png") 0 -21px no-repeat;
+    background-size: 16px;
+    -webkit-appearance: none !important;
+  }
+
+  input[type='range']::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: -3px;
+    left: -1px;
+    width: 2px;
+    height: 8px;
+    background-color: #BDBDBD;
+  }
+
+  input[type='range']::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -3px;
+    left: 1px;
+    width: 2px;
+    height: 8px;
+    background-color: #BDBDBD;
+  }
+}

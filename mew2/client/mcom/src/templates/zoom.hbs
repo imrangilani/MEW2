@@ -1,0 +1,48 @@
+<section id="mb-product-zoom">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">
+        ZOOM (<span id="mb-j-image-sequence">{{this.currentImageSequence}}</span> of {{this.images.length}})
+      </div>
+    </div>
+  </div>
+  <div class="mb-modal-content">
+
+
+  <div id="mb-j-zoom-swiper" class="swiper-container">
+    <div class="swiper-wrapper">
+
+      {{#each images }}
+        <div class="swiper-slide">
+          <div id='mb-zoom-img-{{@index}}' class="m-zoom-img" data-img="{{this.image}}">
+            <div class="m-loading spinner white-60">&nbsp;</div>
+          </div>
+        </div>
+      {{/each}}
+
+     </div>
+  </div>
+
+  <div id="m-zoom-controls" class="row">
+    <span class="m-zoom-icon small-3 columns">
+      <span aria-hidden="true" class="m-icon-chevron-sign-left"></span>
+    </span>
+
+    <span class="small-6 columns" style="text-align: center">
+        <span aria-hidden="true"  class="m-zoom-icon m-j-state m-icon-plus-sign"></span>
+
+        <span aria-hidden="true"  class="m-zoom-icon m-j-state m-icon-refresh"></span>
+
+        <span aria-hidden="true"  class="m-zoom-icon m-j-state m-icon-minus-sign"></span>
+    </span>
+    <span class="m-zoom-icon small-3 columns">
+
+        <span aria-hidden="true" class="m-icon-chevron-sign-right"></span>
+    </span>
+  </div>
+  </div>
+
+</section>
+

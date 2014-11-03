@@ -1,0 +1,5 @@
+{{#each members}}
+  {{#ifProductMemberVisible this ../latchkeys ../activeLatchkey @index}}
+    {{> productMemberOfMaster}}
+  {{/ifProductMemberVisible}}
+{{/each}}

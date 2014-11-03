@@ -1,0 +1,22 @@
+<section class="m-product-images">
+  {{#get images index=activeImageset}}
+    {{#get this index=0}}
+      <div class="m-product-image-wrapper">
+
+          {{#if this.image}}
+            <a href="{{../../../productUrl}}" class="m-view-details">
+              <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.image}}" class="m-product-img" alt="{{../../../name}}" itemprop="image"/>
+            </a>
+          {{/if}}
+
+
+          {{#if this.swatch}}
+            {{#ifSize ../../../colors compare="1" operator=">"}}
+              <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}" class="m-product-swatch-img" alt="{{../../../name}}" />
+            {{/ifSize}}
+          {{/if}}
+      </div>
+    {{/get}}
+  {{/get}}
+
+</section>

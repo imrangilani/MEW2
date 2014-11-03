@@ -1,0 +1,29 @@
+{{#if header}}
+<div class="mb-modal-header">
+
+  <div class="row">
+    <div class="small-3 columns b-modalHeader-left">
+        {{#if header.left}}
+        <button class="mb-j-modalHeader-left {{#if facet}} b-back {{/if}}">{{#if facet}} <span>Back</span> {{else}} {{header.left.title}} {{/if}}</button>
+        {{/if}}
+    </div>
+    <div class="small-6 columns b-modalHeader-title truncated">
+      {{#if facets}}
+        {{#if header.title}}
+          Filter Results
+        {{/if}}
+      {{else}}
+        {{#if facet.displayname}}
+          {{facet.displayname}}
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="small-3 columns b-modalHeader-right">
+      {{#if header.right}}
+            <button class="mb-j-modalHeader-right">Apply</button>
+      {{/if}}
+    </div>
+  </div>
+
+</div>
+{{/if}}

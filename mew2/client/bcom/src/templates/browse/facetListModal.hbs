@@ -1,0 +1,59 @@
+{{> modalHeader}}
+
+<div class="mb-modal-content">
+  <div class="facet-button-clear" id="facet-list-button-clear"><button>clear all</button></div>
+
+  <div id="facet-list-items">
+    {{#each facets}}
+    <div class="facet-list-item {{hideIfEmpty this}}" data-facet-name="{{name}}">
+      <div id="m-j-facet-list-{{name}}" class="select truncated"><div class="display">{{displayname}}</div></div>
+
+      {{#ifHasFacetSessionValues ../facetSessionValues name}}
+        {{#displaySortedFacetSessionValues ../../facetSessionValues name}}
+          <ul class="facet-selection-items remove-items small-block-grid-1 facet-{{../name}}">
+            {{#each selected}}
+              <li class="facet-value facet-value-{{stripNonAlpha this}}" data-facet-value="{{this}}">
+                <div class="display">
+                  <span class="facet-value-action-icon"></span>
+                  <div class="display-inner">
+                    <div class="display-name-wrapper">
+                      <div class="display-name">
+                        {{#if_eq ../../name compare='UPC_BOPS_PURCHASABLE'}}
+                          {{bopsFacetStoreName  ../../../name ../../../../../facets this}}
+                        {{else}}
+                          {{normalizeIfPrice ../../../name this}}
+                        {{/if_eq}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {{/each}}
+              {{#if deselected}}
+                {{#each deselected}}
+                  <li class="facet-value facet-value-disabled facet-value-{{stripNonAlpha this}}" data-facet-value="{{this}}">
+                    <div class="display">
+                      <span class="facet-value-action-icon"></span>
+                      <div class="display-inner">
+                        <div class="display-name-wrapper">
+                          <div class="display-name">
+                            {{#if_eq ../../../name compare='UPC_BOPS_PURCHASABLE'}}
+                              {{bopsFacetStoreName  ../../../../name ../../../../../../facets this}}
+                            {{else}}
+                              {{normalizeIfPrice ../../../../name this}}
+                            {{/if_eq}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+              {{/if}}
+        {{/displaySortedFacetSessionValues}}
+      {{/ifHasFacetSessionValues}}
+
+    </div>
+    {{/each}}
+  </div>
+</div>

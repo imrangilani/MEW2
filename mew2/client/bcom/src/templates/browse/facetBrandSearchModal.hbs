@@ -1,0 +1,27 @@
+<div class="mb-modal-header mb-modal-header-title">
+  <div class="row">
+    <div class="small-3 columns b-modalHeader-left">
+    <button class="mb-j-modalHeader-left b-back"><span>Back</span></button>
+    </div>
+    <div class="small-6 columns b-modalHeader-title">
+    {{#if facet.displayname}}
+      {{facet.displayname}}
+    {{/if}}
+    </div>
+    <div class="small-3 columns b-modalHeader-right">
+      <button class="mb-j-modalHeader-right">Apply</button>
+    </div>
+  </div>
+</div>
+
+<div class="mb-modal-header brand-modal-header">
+  <form class="brand-search-form">
+    <span id="mb-search-field-icon" class="icon-search"></span>
+    <input class="brand-search box-search" type="search" value="" autocorrect="off" placeholder="Search Designers">
+  </form>
+  <span class="brand-search-clear icon-searchClear"></span>
+</div>
+<div id="facet-brand-search-modal-list-wrapper">
+  <ul id="facet-brand-search-modal-list" class="facet-selection-items small-block-grid-1 facet-{{facet.name}}"></ul>
+</div>
+

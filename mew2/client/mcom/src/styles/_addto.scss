@@ -1,0 +1,331 @@
+#m-addtobag-overlay, #m-addtoregistry-overlay, #m-addtowishlist-overlay, #m-share-overlay{
+  position: fixed;
+  top: 20px;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  background-color: #fff;
+  border: 1px solid #999;
+  z-index: 210;
+  font-size: 14px;
+
+  .boldtext{
+    font-weight: bold;
+  }
+
+  .m-header{
+    padding: 4% 0px 4% 35px;
+    background-color: #e4e4e4;
+    border: 0px;
+    height: auto;
+    min-height: 34px;
+    line-height: 17px;
+
+    .mb-j-overlay-close, .mb-j-overlay-close:hover{
+      width: 40px;
+      height: 40px;
+      float: right;
+      background-image: url('../../images/icon-close-x.svg');
+      background-size: 15px 15px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      border: 0px;
+      background-color: transparent;
+      box-shadow: none;
+      margin:-13px 0px;
+     }
+  }
+
+  .m-content{
+    padding: 10px;
+    overflow: hidden;
+    clear: both;
+    p{
+      margin-bottom: 0px;
+    }
+  }
+
+  .m-footer{
+    padding: 0;
+    overflow: hidden;
+    clear: both;
+
+    p{
+      margin-bottom: 0px;
+      padding-left: 10px;
+    }
+  }
+
+  .m-bag-buttons{
+    padding: 5px;
+    background-color: #e4e4e4;
+    overflow: hidden;
+
+    button, a{
+      color: #fff;
+      width: 142px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      font-weight: bold;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      background-image: none;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+
+  .m-image-gr{
+    position: relative;
+    overflow: hidden;
+    float: left;
+  }
+
+  .m-upc-img{
+    clear: both;
+    float: left;
+    width: 90px;
+    padding-right: 10px;
+    height: 110px;
+  }
+
+  .m-upc-swatch{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .m-upc-details{
+    float: left;
+    width: 180px;
+
+    h6{
+      font-size: emCalc(15px);
+      margin-bottom: 10px;
+    }
+
+    .m-upc-details-label{
+      display:inline-block;
+      width: 50px;
+      vertical-align: top;
+    }
+
+    .m-upc-details-value{
+      display:inline-block;
+      width: 125px;
+      font-weight: bold;
+    }
+
+    .m-product-price-gr{
+        margin-top: 10px;
+    }
+
+    .m-product-price{
+      font-size: emCalc( 15px);
+      padding-bottom: 5px;
+
+    }
+
+
+    .m-product-price-label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .Sale,
+    .Now,
+    .EverydayValue {
+      color: $primary-color;
+      font-weight: bold;
+
+      a {
+        color: $primary-color;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+
+    .EverydayValue {
+      background: url('../../images/edv.png') 0 top no-repeat;
+      padding-left: 30px;
+
+      .m-product-price-label {
+        display: none;
+      }
+    }
+
+    .m-product-price-amt {
+      font-size: emCalc(18px);
+      margin-bottom: 5px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &.tiered {
+      .m-product-price.EverydayValue {
+        background-position: 0 1px;
+        padding-left: 0;
+
+        .m-product-price-label {
+          display: block;
+          font-size: emCalc(13px);
+          font-weight: normal;
+          line-height: emCalc(22px);
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  .mb-j-overlay-continue{
+    @include m-button(black, true);
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 0px;
+    background-color: #000;
+  }
+}
+
+#m-addtobag-overlay{
+  .m-header{
+    color: #cc0000;
+    background: #e4e4e4 url('../../images/icon-bag.svg') 5px 40% no-repeat;
+    background-size: 25px 25px;
+  }
+
+  .m-footer{
+
+    hr{
+      display: block;
+      height: 1px;
+      border: 0;
+      color: #ccc;
+      background-color: #ccc;
+      margin: 0 10px 10px 10px;
+      padding: 0;
+    }
+  }
+
+  .m-bag-message{
+    padding: 10px;
+    color: #c00;
+  }
+
+  .m-checkout{
+    @include m-button(red, true);
+    float:right;
+    background-color: #cc0000;
+
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    color: #ccc;
+    background-color: #ccc;
+    margin: 0 10px 10px 10px;
+    padding: 0;
+  }
+
+  .m-you-saved{
+    color: #c00;
+  }
+
+  .m-go-bag{
+    color: #c00;
+    text-decoration: none;
+  }
+}
+
+#m-addtoregistry-overlay{
+  .m-header{
+    color: #72a492;
+    background: #e4e4e4 url('../../images/icon-gift-box.svg') 5px 40% no-repeat;
+    background-size: 25px 25px;
+  }
+
+  .m-viewregistry{
+    @include m-button(red, true);
+    float:right;
+    background-color: #72a492;
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .m-content{
+
+
+
+    p{
+      font-size: 14px;
+    }
+
+    .m-text{
+      color: #cc0000;
+      padding-bottom: 10px;
+    }
+
+    .m-question{
+      padding: 20px 0px;
+    }
+
+    .m-access-registry{
+      @include m-button(black, true);
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      font-weight: bold;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      background-image: none;
+    }
+
+    .m-create-registry{
+      @include m-button(red, true);
+      background-color: #72a492;
+      color: #fff;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      font-weight: bold;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      background-image: none;
+    }
+
+  }
+}
+
+#m-addtowishlist-overlay {
+  .m-header {
+    color: #cc0000;
+    padding: 4% 0 4% 15px;
+  }
+
+  .m-wishlist-link {
+    @include m-button(red, true);
+    float:right;
+    background-color: #cc0000;
+
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .m-wishlist-signin {
+    color: #cc0000;
+  }
+}

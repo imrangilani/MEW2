@@ -1,0 +1,40 @@
+{{#if recommendedproducts}}
+  <section id="m-product-recommendations" class="m-rule-bottom">
+    <div id="m-product-recommended-header" class="row">
+      <div id="m-product-recommended-label">{{#if zoneName}} {{zoneName}} {{else}}Recommended{{/if}}</div>
+    </div>
+
+    <div id="m-product-recommended-swiper-wrapper">
+      <div id="m-product-recommended-swiper">
+        <div id="m-product-recommended-products" class="swiper-wrapper">
+          {{#each recommendedproducts}}
+            <div data-product-id="{{productid}}" class="m-product-recommended-product" recommended-prod-seq-id={{math @index '+' 1}} {{#ifFeatureEnabled 'pros_informant_calls'}}data-product-choiceid={{encode choiceid}}{{/ifFeatureEnabled}}>
+              <a href="{{productURL}}">
+                
+                <div class="m-product-recommended-img-outter">
+                  <div class="m-product-recommended-img-wrapper">
+                    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.primaryimage}}" alt="{{name}}" />
+                  </div>
+                </div>
+
+                <div class="m-product-recommended-name">{{name}}</div>
+
+                <div class="m-product-recommended-price m-product-prices">
+                  {{#each productprice}}
+                    <div class="m-product-price {{stripNonAlpha label}}">
+                      {{#if label}}
+                        <span class="m-product-price-label">{{stripNonAlpha label}} </span>
+                      {{/if}}
+                      <span class="m-product-price-amt">{{amt}}</span>
+                    </div>
+                  {{/each}}
+                </div>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{/if}}

@@ -1,0 +1,72 @@
+{{#ifSize this.collection.models compare="0" operator=">"}}
+  <section id="b-product-recently-viewed">
+
+    <div id="b-product-recently-viewed-header" class="b-pdp-info-section">
+      <div class="b-product-recently-viewed-label b-pdp-info-label"> Recently Viewed </div>
+      <div id="b-j-product-recently-viewed-edit" class="b-pdp-info-extra"> EDIT </div>
+    </div>
+
+    <div id="b-product-recently-viewed-swiper-wrapper">
+
+    <div id="b-product-recently-viewed-swiper">
+
+      <div id="b-product-recently-viewed-products" class="swiper-wrapper swiper-no-swiping">
+        {{#each this.collection.models}}
+          {{#with attributes}}
+            {{#if_neq id compare=../../../currentProduct }}
+            <div data-product-id="{{id}}" class="b-product-recently-viewed-product swiper-slide">
+              <a href="{{productUrl}}">
+
+                <div class="b-product-recently-viewed-img-outter">
+                  <div data-product-id="{{id}}" class="b-j-product-recently-viewed-remove">REMOVE</div>
+                  {{#get images index=activeImageset}}
+                    {{#if this.0.image}}
+                      <div class="b-product-recently-viewed-img-wrapper">
+                        <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.0.image}}"/>
+                        <div class="b-product-recently-viewed-img-overlay"></div>
+                      </div>
+                    {{/if}}
+                  {{/get}}
+                </div>
+
+                <div class="b-product-recently-viewed-name truncated">{{name}}</div>
+
+                {{#if rating}}
+                  <div class="b-pdp-rating">
+                    <div style="width: {{formatRatings rating.avg}}%"></div>
+                  </div>
+                  <div class="clearBoth"> </div>
+                {{/if}}
+
+                <div class="b-product-recently-viewed-price">
+                {{#if prices}}
+                  {{>productPriceSingle}}
+                {{/if}}
+                </div>
+
+                {{#if promotions}}
+                  <div class="b-offer-callout">{{whichOffer promotions true}}</div>
+                {{/if}}
+              </a>
+            </div>
+            {{/if_neq}}
+          {{/with}}
+        {{/each}}
+      </div>
+
+    </div>
+
+    <div id="b-product-recently-viewed-arrow-wrapper-left" class="b-product-recently-viewed-arrow-wrapper">
+      <div id="b-product-recently-viewed-arrow-left" class="icon-pdpArrowLeftBlack b-product-recently-viewed-arrow"></div>
+    </div>
+    <div id="b-product-recently-viewed-arrow-wrapper-right" class="b-product-recently-viewed-arrow-wrapper">
+      <div id="b-product-recently-viewed-arrow-right" class="icon-pdpArrowRightBlack b-product-recently-viewed-arrow"></div>
+    </div>
+
+    </div>
+
+  </section>
+
+{{!--   Please, don't add a blank line in the end of this file. The :empty pseudo-class --}}
+{{!--   doesn't works when the element contains any kind of caracteres (e.g.: spaces) --}}
+{{/ifSize}}

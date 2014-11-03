@@ -1,0 +1,21 @@
+<div class="m-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+  <meta itemsprop="ratingValue" content="[star-value]">
+  {{#if cnt}}<meta itemsprop="reviewCount" content="{{cnt}}">{{/if}}
+  <div class="m-rating-stars">
+    <div class="m-rating-stars-inner">
+      {{#if avg}}
+        <div style="width: {{formatRatings avg}}%"></div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="m-rating-count">
+    ({{#if verbose}}
+      based on <span class="cnt">
+    {{/if}}
+    {{#if cnt}} {{cnt}} {{else}} 0 {{/if}}
+    {{#if verbose}}
+      </span> reviews
+    {{/if}})
+  </div>
+  <div class="clearfix"></div>
+</div>

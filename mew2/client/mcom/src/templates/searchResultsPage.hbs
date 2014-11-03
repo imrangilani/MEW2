@@ -1,0 +1,72 @@
+<article id="m-search-container">
+
+  {{#if products}}
+    {{#if messages}}
+      <section id="m-search-messages">
+        {{#ifSize messages compare=1}}
+          {{#get messages index=0}}{{this}}{{/get}}
+        {{else}}
+          <ul>
+            {{#each messages}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        {{/ifSize}}
+      </section>
+    {{/if}}
+  {{/if}}
+
+  {{#if products}}
+    <section class="m-search-nav">
+      <section id="m-search-header">
+        <div class="row">
+          <div id="m-search-header-label" class="small-12 columns nopad m-header-title">
+            <div id="m-search-results-totalproducts">{{totalproducts}} items for "<span id="m-search-searchphrase">{{requestParams.searchphrase}}</span>"</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="m-search-buttons" class="m-product-grid-buttons">
+        <ul>
+          <li><button id="mb-search-buttons-filterby">filter by</button></li>
+          <li>
+            <div id="m-search-buttons-sortby-wrapper" class="m-product-grid-sortby-wrapper">
+              <button id="m-search-buttons-sortby">sort by</button>
+              <select id="mb-search-select-sortby" class="m-product-grid-select-sortby">
+                <option value="">Featured Items</option>
+                <option value="PRICE_ASCENDING" {{#if_eq requestParams.sortorderby compare='PRICE_ASCENDING'}}selected="selected"{{/if_eq}}>Price: Low to High</option>
+                <option value="PRICE_DESCENDING" {{#if_eq requestParams.sortorderby compare='PRICE_DESCENDING'}}selected="selected"{{/if_eq}}>Price: High to Low</option>
+                <option value="CUSTOMER_RATING" {{#if_eq requestParams.sortorderby compare='CUSTOMER_RATING'}}selected="selected"{{/if_eq}}>Customer's Top Rated</option>
+                <option value="BEST_SELLERS" {{#if_eq requestParams.sortorderby compare='BEST_SELLERS'}}selected="selected"{{/if_eq}}>Best Sellers</option>
+                <option value="NEWNESS" {{#if_eq requestParams.sortorderby compare='NEWNESS'}}selected="selected"{{/if_eq}}>New Arrivals</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </section>
+  {{/if}}
+
+  {{#if products}}
+    <section id="m-search-results" class="m-product-grid"></section>
+
+    {{#if pagination}}
+      <section id="m-search-paging" class="m-product-grid-paging"></section>
+    {{/if}}
+  {{else}}
+    <div id="m-search-messages">
+      We couldn't find a match for "<span id="m-search-searchphrase">{{requestParams.searchphrase}}</span>".
+    </div>
+
+    <section id="m-search-no-results">
+      For better results, please try the following:
+      <ul>
+        <li>Check for spelling mistakes or typos</li>
+        <li>Search by Web ID</li>
+        <li>Use generic keywords</li>
+      </ul>
+    </section>
+
+    <section id="m-search-results-categories"></section>
+  {{/if}}
+</article>

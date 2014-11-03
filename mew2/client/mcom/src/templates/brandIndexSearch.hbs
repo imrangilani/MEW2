@@ -1,0 +1,35 @@
+<div class="m-modal-header brand-modal-search-container brand-modal-search-container--inner brand-modal-header">
+  <div class="m-header m-header--brandindex m-brandindex-search--is-hidden">
+    <div class="nopad m-header-title m-browse-header-column">
+        <span class="m-browse-catname">{{category.name}}</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-9 columns">
+      <form class="brand-search-form m-header-container">
+        <input class="brand-search box-search" type="search" value="" autocorrect="off" placeholder="Search Brands">
+        <span class="brand-search-clear icon-search-clear"></span>
+      </form>
+    </div>
+    <div class="small-3 columns">
+      <button class="mb-j-modalHeader-right" id="brand-modal-button-right">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="mb-modal-content mb-modal-content--brandIndex__search">
+  <ul class="facet-selection-items brand-index-items facet-selection-items--brandIndex__search small-block-grid-1" id="brandIndex-search-results"></ul>
+  <ul class="facet-selection-items brand-index-items facet-selection-items--brandIndex__search small-block-grid-1" id="brandIndex-list">
+    {{#each brandIndex}}
+      <li class="facet-value m-bg-arrow">
+        <div class="display">
+          <div class="display-inner">
+            <a class="display-name" href="{{brandURL}}">{{brandName}}</a>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>

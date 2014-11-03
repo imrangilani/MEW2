@@ -1,0 +1,14 @@
+{{#if url }}
+  <a class="m-j-cm-link" href="{{relativeUrl url}}{{useUrlParamConnector url}}cm_sp=mew_us_{{encode cmPageName}}-_-slot{{seqNumber}}-_-{{encode altText}}">
+{{/if}}
+    <img class="m-category-img" src="{{imageFileName}}" alt="{{altText}}"
+      {{#if map}}
+        usemap="#map{{seq}}"
+      {{/if}}
+    />
+    {{#if text}}
+      <div class="m-category-title">{{text}}</div>
+    {{/if}}
+{{#if url}}
+  </a>
+{{/if}}

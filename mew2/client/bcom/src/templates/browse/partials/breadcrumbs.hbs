@@ -1,0 +1,18 @@
+{{#if breadcrumbs}}
+  {{#each breadcrumbs}}
+	{{#each facetValues}}
+	  {{#if this}}
+		<span class="b-breadcrumb" data-facet="{{../../facetName}}" data-breadcrumb-value="{{this}}">
+			<span class="facet-breadcrumb-value">
+	      {{#if_eq ../../facetName compare='UPC_BOPS_PURCHASABLE'}}
+	        {{bopsFacetStoreName  ../../../facetName ../../../../facets this}}
+	      {{else}}
+	        {{normalizeIfPrice ../../../facetName this}}
+	      {{/if_eq}}
+			</span>
+			<span class="facet-value-action-icon"></span>
+		</span>
+	  {{/if}}
+	{{/each}}
+  {{/each}}
+{{/if}}

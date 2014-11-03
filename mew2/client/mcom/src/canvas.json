@@ -1,0 +1,1494 @@
+
+
+{
+
+   "canvases": {
+
+      "canvas": [
+
+         {
+
+            "id": "54321TABLETBROWSESITESIGNEDAUS",
+
+            "rows": [
+
+               {
+
+                  "templateId": 101,
+
+                  "zones": [
+
+                     {
+
+                        "name": "ROW101AD1",
+
+                        "contents": [
+
+                           {
+
+                              "contentId": 20010,
+
+                              "componentID": 20010,
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "Calvin Klien",
+
+                              "description": "brandName",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "TEXT"
+
+                           },
+
+                           {
+
+                              "contentId": 20011,
+
+                              "componentID": 20011,
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "Women's Dresses",
+
+                              "description": "categoryName",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "TEXT"
+
+                           },
+
+                           {
+
+                              "contentId": 20012,
+
+                              "componentID": 20012,
+
+                              "fileName": "BAZVOICE_GRID",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "Bazaar voice",
+
+                              "description": "bazvoice grid",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "BAZ_VOICE_GRID"
+
+                           },
+
+                           {
+
+                              "contentId": 20013,
+
+                              "componentID": 20013,
+
+                              "fileName": "TEXT",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "Bazaar voice",
+
+                              "description": "canvas_multiple_context",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "TEXT"
+
+                           },
+
+                           {
+
+                              "contentId": 20014,
+
+                              "componentID": 20014,
+
+                              "fileName": "text",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "Footer text",
+
+                              "description": "disclaimer",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "TEXT"
+
+                           },
+
+                           {
+
+                              "contentId": 20015,
+
+                              "componentID": 20015,
+
+                              "fileName": "SIZE_CHART_SHEET",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "baby",
+
+                              "description": "size chart",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "SIZE_CHART_TAB",
+
+                              "contentlinks": [
+
+                                 {
+
+                                    "value": "20019",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20020",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "56789",
+
+                                    "type": "SIZE_CHART_DATA",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20021",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20022",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20023",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 }
+
+                              ],
+
+                              "size-chart-data": {
+
+                                 "sizeChartColumns": [
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "XS",
+
+                                          "L",
+
+                                          "M",
+
+                                          "S"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "0",
+
+                                          "2",
+
+                                          "4",
+
+                                          "6"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "UK",
+
+                                       "locale": "UK",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "AU",
+
+                                       "locale": "AU",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26 1/2",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28 3/4",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26 1/2",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34 1/2-36 1/4"
+
+                                       ]
+                                    }
+
+                                 ]
+
+                              }
+
+                           },
+
+                           {
+
+                              "contentId": 20016,
+
+                              "componentID": 20016,
+
+                              "fileName": "SIZE_CHART_SHEET",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "toddlers",
+
+                              "description": "size chart",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "SIZE_CHART_TAB",
+                              "contentlinks": [
+
+                                 {
+
+                                    "value": "20019",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20020",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "56789",
+
+                                    "type": "SIZE_CHART_DATA",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20021",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20022",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20023",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 }
+
+                              ],
+
+                              "size-chart-data": {
+
+                                 "sizeChartColumns": [
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "XS",
+
+                                          "L",
+
+                                          "M",
+
+                                          "S"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "0",
+
+                                          "2",
+
+                                          "4",
+
+                                          "6"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "UK",
+
+                                       "locale": "UK",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "AU",
+
+                                       "locale": "AU",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28 3/4",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26 1/2",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34-36"
+
+                                       ]
+                                    }
+
+                                 ]
+
+                              }
+
+                           },
+
+                           {
+
+                              "contentId": 20017,
+
+                              "componentID": 20017,
+
+                              "fileName": "SIZE_CHART_SHEET",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "little kids",
+
+                              "description": "size chart",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "SIZE_CHART_TAB",
+                              "contentlinks": [
+
+                                 {
+
+                                    "value": "20019",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20020",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "56789",
+
+                                    "type": "SIZE_CHART_DATA",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20021",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20022",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20023",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 }
+
+                              ],
+
+                              "size-chart-data": {
+
+                                 "sizeChartColumns": [
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "XS",
+
+                                          "L",
+
+                                          "M",
+
+                                          "S"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "0",
+
+                                          "2",
+
+                                          "4",
+
+                                          "6"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "UK",
+
+                                       "locale": "UK",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "AU",
+
+                                       "locale": "AU",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28 3/4",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26 1/2",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34-36"
+
+                                       ]
+                                    }
+
+                                 ]
+
+                              }
+
+
+                           },
+
+                           {
+
+                              "contentId": 20018,
+
+                              "componentID": 20018,
+
+                              "fileName": "SIZE_CHART_SHEET",
+
+                              "height": 0,
+
+                              "width": 0,
+
+                              "text": "big kids",
+
+                              "description": "size chart",
+
+                              "contentGroupID": 34321,
+
+                              "contentGroupType": "SIZE_CHART",
+
+                              "contentType": "SIZE_CHART_TAB",
+                              "contentlinks": [
+
+                                 {
+
+                                    "value": "20019",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20020",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "56789",
+
+                                    "type": "SIZE_CHART_DATA",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20021",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20022",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 },
+
+                                 {
+
+                                    "value": "20023",
+
+                                    "type": "MEDIACOMPONENT",
+
+                                    "coordinates": "",
+
+                                    "text": ""
+
+                                 }
+
+                              ],
+
+                              "size-chart-data": {
+
+                                 "sizeChartColumns": [
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "XS",
+
+                                          "L",
+
+                                          "M",
+
+                                          "S"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Size",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "0",
+
+                                          "2",
+
+                                          "4",
+
+                                          "6"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "UK",
+
+                                       "locale": "UK",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "AU",
+
+                                       "locale": "AU",
+
+                                       "unitOfMeasure": "None",
+
+                                       "sizeChartRows": [
+
+                                          "2",
+
+                                          "4",
+
+                                          "6",
+
+                                          "8"
+
+                                       ]
+
+                                    },
+
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Bust",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "CM",
+
+                                       "sizeChartRows": [
+
+                                          "26",
+
+                                          "28 3/4",
+
+                                          "32",
+
+                                          "34"
+
+                                       ]
+
+                                    },
+                                    {
+
+                                       "name": "Waist",
+
+                                       "locale": "None",
+
+                                       "unitOfMeasure": "IN",
+
+                                       "sizeChartRows": [
+
+                                          "26 1/2",
+
+                                          "28",
+
+                                          "32",
+
+                                          "34-36"
+
+                                       ]
+                                    }
+
+                                 ]
+
+                              }
+
+                           }
+
+                        ],
+
+                        "nested-Content": {
+
+                           "entry": [
+
+                              {
+
+                                 "key": "20021",
+
+                                 "value": {
+
+                                    "contents": [
+
+                                       {
+
+                                          "contentId": 20021,
+
+                                          "componentID": 20021,
+
+                                          "fileName": "image",
+
+                                          "height": 0,
+
+                                          "width": 0,
+
+                                          "text": "image",
+
+                                          "description": "image",
+
+                                          "contentGroupType": "AD",
+
+                                          "contentType": "IMAGE",
+
+                                          "attributes": [
+
+                                             {
+
+                                                "name": "PRINT_DOC",
+
+                                                "value": "pdf/kidsShoes.pdf"
+
+                                             },
+
+                                             {
+
+                                                "name": "PRINT_OPTION",
+
+                                                "value": "YES"
+
+                                             }
+
+                                          ]
+
+                                       }
+
+                                    ]
+
+                                 }
+
+                              },
+
+                              {
+
+                                 "key": "20020",
+
+                                 "value": {
+
+                                    "contents": [
+
+                                       {
+
+                                          "contentId": 20020,
+
+                                          "componentID": 20020,
+
+                                          "fileName": "TEXT",
+
+                                          "height": 0,
+
+                                          "width": 0,
+
+                                          "text": "how to measure label",
+
+                                          "description": "howToMeasure",
+
+                                          "contentGroupType": "AD",
+
+                                          "contentType": "TEXT"
+
+                                       }
+
+                                    ]
+
+                                 }
+
+                              },
+
+                              {
+
+                                 "key": "20023",
+
+                                 "value": {
+
+                                    "contents": [
+
+                                       {
+
+                                          "contentId": 20023,
+
+                                          "componentID": 20023,
+
+                                          "fileName": "TEXT",
+
+                                          "height": 0,
+
+                                          "width": 0,
+
+                                          "text": "We carry plus sizes for women 14W - 24W. Petite size fit women 5'4",
+
+                                          "description": "learnMore",
+
+                                          "contentGroupType": "AD",
+
+                                          "contentType": "TEXT"
+
+                                       }
+
+                                    ]
+
+                                 }
+
+                              },
+
+                              {
+
+                                 "key": "20022",
+
+                                 "value": {
+
+                                    "contents": [
+
+                                       {
+
+                                          "contentId": 20022,
+
+                                          "componentID": 20022,
+
+                                          "fileName": "TEXT",
+
+                                          "height": 0,
+
+                                          "width": 0,
+
+                                          "text": "text below table",
+
+                                          "description": "learnMore",
+
+                                          "contentGroupType": "AD",
+
+                                          "contentType": "TEXT"
+
+                                       }
+
+                                    ]
+
+                                 }
+
+                              },
+
+                              {
+
+                                 "key": "20019",
+
+                                 "value": {
+
+                                    "contents": [
+
+                                       {
+
+                                          "contentId": 20019,
+
+                                          "componentID": 20019,
+
+                                          "fileName": "TEXT",
+
+                                          "height": 0,
+
+                                          "width": 0,
+
+                                          "text": "size chart",
+
+                                          "description": "sizeChartTitle",
+
+                                          "contentGroupType": "AD",
+
+                                          "contentType": "TEXT"
+
+                                       }
+
+                                    ]
+
+                                 }
+
+                              }
+
+                           ]
+
+                        }
+
+                     }
+
+                  ],
+
+                  "attributes": [
+
+                     {
+
+                        "name": "SIZE_CHART_LAYOUT",
+
+                        "value": "STANDARD"
+
+                     }
+
+                  ]
+
+               }
+
+            ]
+
+         }
+
+      ]
+
+   }
+
+}
+

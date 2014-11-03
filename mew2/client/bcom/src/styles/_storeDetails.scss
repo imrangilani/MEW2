@@ -1,0 +1,243 @@
+.b-store-details {
+  padding: 10px;
+
+  .b-store-details-label {
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .b-store-primary-info {
+    font-size: 13px;
+    border-bottom: 1px solid #ccc;
+
+    a {
+      color: #000;
+    }
+
+    .b-store-local-text {
+      display: none;
+      float: right;
+      color: #666;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .b-store-name {
+      font-weight: bold;
+      line-height: 20px;
+      font-size: 15px;
+    }
+    .b-store-phone {
+      padding: 10px 0;
+      text-decoration: underline;
+    }
+    .b-store-address {
+      line-height: 15px;
+      text-decoration: underline;
+    }
+  }
+
+  .b-stores-label {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 15px;
+    padding: 5px 0;
+  }
+
+  .b-stores-hours {
+    [data-expandable="button"] {
+      font-weight: bold;
+      cursor: pointer;
+
+      &> .b-expandable-icon {
+        @extend .icon-up-arrow-black;
+        margin-top: 7px;
+      }
+    }
+
+    &.b-expandable-closed {
+      &> [data-expandable="button"] {
+        font-weight: normal;
+
+        &> .b-expandable-icon {
+          @extend .icon-down-arrow-black;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .b-stores-hours {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+
+    .attribute-value {
+      line-height: 25px;
+
+      .value {
+        float: right;
+        padding-right: 20px;
+      }
+    }
+    #b-stores-hours-content {
+      padding-top: 10px;
+      div.attribute-value:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .b-store-services {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .b-store-services,
+  .b-store-restaurants,
+  .b-stores-events-content {
+    font-size: 13px;
+    padding: 15px 0;
+
+    .b-service-section {
+      padding: 10px 0;
+      .b-store-service-name {
+        font-weight: bold;
+        line-height: 17px;
+      }
+      .attribute-value {
+        line-height: 16px;
+      }
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  #mb-store-events {
+    padding-top: 10px;
+
+    .b-stores-events-content {
+      padding: 5px 0 0 0;
+      .b-service-section {
+        border-bottom: 1px solid #ccc;
+      }
+      .icon-right-arrow-black {
+        display: inline-block;
+        float: right;
+        margin-top: 12px;
+      }
+      #mb-j-store-viewall-events {
+        text-transform: uppercase;
+        padding: 15px 0;
+        .icon-right-arrow-black {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .b-store-local-buttons {
+    button {
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .mb-j-store-unset-local {
+      display: none;
+    }
+  }
+
+  &.mb-j-store-local {
+    .b-store-primary-info {
+      .b-store-local-text {
+        display: block;
+      }
+      .b-store-name {
+        margin-right: 115px;
+      }
+    }
+    .b-store-local-buttons {
+      .mb-j-store-set-local {
+        display: none;
+      }
+      .mb-j-store-unset-local {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Events Modal
+
+#b-stores-events-modal {
+  .b-stores-label {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+  }
+  .b-stores-events-content {
+    font-size: 13px;
+    padding: 5px 0 0 0;
+
+    .icon-right-arrow-black {
+      display: inline-block;
+      float: right;
+      margin-top: 12px;
+    }
+
+    .b-service-section {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      .b-store-service-name {
+        font-weight: bold;
+        line-height: 17px;
+        display: inline-block;
+        width: 70%;
+      }
+      .attribute-value {
+        line-height: 16px;
+        display: inline-block;
+        width: 30px;
+        font-weight: bold;
+        color: #666;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+// Event Details Modal
+
+#mb-stores-events-details-modal {
+  .b-store-event-name {
+    line-height: 18px;
+    font-size: 15px;
+    padding: 15px 0 0 0;
+  }
+
+  .attribute-value {
+    line-height: 16px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .b-store-event-desc {
+    line-height: 16px;
+    font-size: 13px;
+    padding: 20px 0;
+  }
+
+  .b-store-save-fav {
+    button{
+      width: 100%;
+      text-transform: uppercase;
+    }
+  }
+
+  .b-add-event-to-calendar-link {
+    color: #fff;
+  }
+}
+

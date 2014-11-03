@@ -1,0 +1,26 @@
+{{#if header}}
+<div class="mb-modal-header">
+  <div class="row">
+
+    <div class="small-1 columns m-header-first">
+      <div id="{{header.id}}-button-left" class="mb-j-modalHeader-left m-back">&nbsp;</div>
+    </div>
+
+    {{! extra columns to keep everything centered}}
+    <div class="small-2 columns">&nbsp;</div>
+
+    <div class="small-6 columns m-header-title">
+      {{#if header.title}}
+      <span>{{header.title}}</span>
+      {{/if}}
+    </div>
+
+    <div class="mb-j-modalHeader-right small-3 columns m-header-last">
+      {{#if header.right}}
+      <button class="mb-modalHeader-right-button" id="{{header.id}}-button-right">{{header.right.title}}</button>
+      {{/if}}
+    </div>
+
+  </div>
+</div>
+{{/if}}

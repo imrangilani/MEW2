@@ -1,0 +1,35 @@
+#m-shop-categories {
+  margin: emCalc(15px);
+}
+
+#m-shop-categories-header{
+  font-size: 1em;
+  height: $m-header-height;
+  line-height: $m-header-height;
+  margin: 0;
+}
+
+#m-shop-categories-container{
+	margin: 20px 0px;
+}
+
+#m-shop-categories-list {
+  text-align: center;
+
+  .m-shop-category{
+  	margin-bottom: 25px;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+  }
+
+  img {
+    width: 75px;
+  }
+
+  .m-shop-category-title{
+  	font-size: 14px;
+  }
+}

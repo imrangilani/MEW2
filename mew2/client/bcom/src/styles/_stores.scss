@@ -1,0 +1,310 @@
+#mb-stores-search {
+  padding: emCalc(10px);
+
+  .b-stores-header {
+    margin: emCalc(8px) 0 emCalc(15px) 0;
+    font-size: emCalc(18px);
+    color: #000;
+    font-weight: bold;
+  }
+
+  .b-error-container {
+    margin-bottom: 10px;
+  }
+
+  #mb-j-stores-form {
+    display: inline-block;
+    width: 70%;
+    .b-form-section {
+      position: relative;
+      font-size: 12px
+    }
+    #b-store-search-field-icon {
+      position: absolute;
+      display: inline-block;
+      left: emCalc(15px);
+      top: emCalc(20px);
+      height: emCalc(20px);
+    }
+    #mb-j-location-input {
+      margin: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      display: inline-block;
+      height: emCalc(58px);
+      padding: 10px 36px 10px 30px;
+      font-size: 1em;
+      color: #333;
+    }
+    .mb-search-clear {
+      visibility: hidden;
+      &.visible {
+        visibility: visible
+      }
+    }
+  }
+  #mb-j-stores-nearme {
+    width: 28%;
+    display: inline-block;
+    height: emCalc(58px);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+
+#b-stores-services-modal {
+  .mb-j-modalHeader-left {
+    background: #999;
+  }
+  .stores-button-clear {
+    margin: 20px 0px 10px 0px;
+    button {
+      width: 100%;
+      padding: 9px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
+
+  .mb-modal-content{
+    .display-name {
+      display: inline;
+    }
+    ul.services-selection-items {
+      margin: 0;
+
+      li.service-value {
+        border-bottom: 2px dotted rgba(204, 204, 204, 0.5);
+        cursor: pointer;
+        height: 3.125em;
+        line-height: 3.125em;
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+
+        &.service-value-selected {
+          &> .display {
+            &> .service-value-action-icon {
+              @extend .faceted-checkmark;
+            }
+          }
+        }
+      }
+    }
+
+    .service-value-action-icon {
+      display: inline-block;
+      box-sizing: content-box;
+      width: 17px;
+      margin: 10px 7px 14px 11px;
+      vertical-align: middle;
+    }
+
+    li.service-value.service-value-selected .service-value-action-icon {
+      height: 17px;
+      background-position: 0 0;
+      background-position: 0 0;
+      -webkit-background-size: 17px auto;
+      -moz-background-size: 17px auto;
+      -o-background-size: 17px auto;
+      background-size: 17px auto;
+    }
+
+  }
+}
+
+/* -------------------------------------- STORE SEARCH RESULTS ------------------------------------------*/
+#mb-j-stores-results.landing {
+  display: none;
+}
+
+.mb-j-store-list-entry {
+  font-size: 12px;
+  padding: 16px 0;
+  display: table;
+  width: 100%;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+.mb-j-store-list-entry:first-child {
+  padding-top: 0px;
+}
+
+#b-j-toggle-view-type {
+  display: table;
+  width: 100%;
+  margin: emCalc(18px) 0;
+}
+
+.b-store-list-my-local-store {
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.b-store-list-other-nearby-stores {
+  color: #666;
+  text-transform: uppercase;
+}
+
+.b-store-list-entry-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.b-store-list-entry-open {
+  text-transform: uppercase;
+}
+
+.b-store-list-entry-distance {
+  color: #999;
+}
+
+.b-store-list-entry-primary-info {
+  display: table-cell;
+  width: 70%;
+  font-size: 12px;
+}
+
+.b-store-list-entry-secondary-info {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.b-store-list-entry-arrow-container {
+  display: table-cell;
+  width: 24px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.b-store-list-entry-arrow-icon {
+  @extend .icon-right-arrow-black;
+  display: inline-block;
+}
+
+.b-store-no-results {
+  margin-top: emCalc(20px);
+  font-size: 14px;
+}
+
+#mb-j-stores-list-view,
+#mb-j-stores-map-view{
+  display: none;
+  &.selectedLatchKey {
+    display: block;
+  }
+}
+
+#b-j-toggle-view {
+  display: table;
+  width: 100%;
+  margin: emCalc(18px) 0;
+
+  $latchkey-border-width: 1px;
+  $latchkey-height-base: 46px;
+  $latchkey-height: emCalc($latchkey-height-base);
+  $latchkey-min-width: emCalc(85px);
+
+  $latchkey-arrow-height: emCalc(15px);
+  $latchkey-arrow-width: emCalc(15px);
+  $latchkey-highlight-color: #999;
+  $latchkey-border: 1px solid #ccc;
+
+  &> .mb-j-stores-latchkey {
+    display: table-cell;
+    margin-bottom: $latchkey-arrow-height;
+    height: $latchkey-height * $multiplier-normal;
+    cursor: pointer;
+    border: {
+      top: $latchkey-border;
+      bottom: $latchkey-border;
+    };
+    font-size: $font-sm-base;
+    line-height: 1.3 * $font-sm-base;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      border-right: $latchkey-border;
+    }
+
+    &.current {
+      background: $latchkey-highlight-color;
+      border-color: $latchkey-highlight-color;
+      color: #fff;
+      position: relative;
+
+      &:after {
+        bottom: -($latchkey-arrow-width);
+        border-left: $latchkey-arrow-width solid transparent;
+        border-right: $latchkey-arrow-width solid transparent;
+        border-top: $latchkey-arrow-height solid $latchkey-highlight-color;
+        content: "";
+        height: 0;
+        left: 50%;
+        margin-left: -($latchkey-arrow-width);
+        position: absolute;
+        width: 0;
+      }
+    }
+  }
+}
+
+/* -------------------------------------- STORE AUTOCOMPLETE ----------------------------------------------*/
+.b-stores-search-form {
+  position: relative;
+}
+
+
+#mb-j-store-autocomplete-container {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+
+  li {
+    font-size: emCalc(13px);
+    .select {
+      padding-right: 25px;
+    }
+  }
+}
+
+/* --------------------------------------- STORE RESULTS MAP VIEW -------------------------------------------*/
+
+#mb-j-stores-map-view {
+  .b-map-info-window {
+    overflow: hidden;
+  }
+  .b-store-name {
+    line-height: 18px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .attribute-name {
+    padding-bottom: 10px;
+  }
+  .gm-style-iw + div {
+    display: none;
+  }
+  .gm-style-iw {
+    width: calc(100% - 23px) !important;
+    min-width: 120px;
+
+    .mb-j-store-list-entry {
+      padding: 3px 2px 2px 3px;
+      box-sizing: border-box;
+
+      .attribute-name {
+        padding-bottom: 4px;
+      }
+    }
+  }
+  .b-store-list-entry-open {
+    float: right;
+  }
+}

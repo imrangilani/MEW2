@@ -1,0 +1,33 @@
+<li data-product_id="{{this.id}}" data-position="{{@index}}">
+  <a class="m-search-product-anchor m-product-grid-anchor" href="{{this.productURL}}">
+  <div class="mb-j-search-image m-product-grid-image">
+    <img src="{{productImageScale this.img width=198}}" alt="{{name}}" />
+    {{#if moreColors}}
+      <div class="m-more-colors">more colors</div>
+    {{/if}}
+  </div>
+  <div class="m-search-details m-product-grid-details">
+    <div class="m-search-name m-product-grid-name truncated">{{#if badges.new}}NEW!{{/if}} {{name}}</div>
+
+    <div class="m-search-prices m-product-grid-prices">
+      <ul>
+        {{#each price}}
+          <li class="m-search-price-{{this.type}} m-product-grid-price-{{this.type}}">
+            {{#if this.label}}
+              <span class="m-search-price-label m-product-grid-price-label m-product-grid-{{this.type}}">{{this.label}}</span>
+            {{/if}}
+            <span>{{this.value}}</span>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    {{#if badges.promotionbadge}}
+      <div class="m-search-promotion m-product-grid-promotion">
+        <span class="m-search-promotion-description m-product-grid-promotion-description">{{badges.promotionbadge.[0]}}</span>
+      </div>
+    {{/if}}
+    {{#if rating}}{{> rating rating}}{{/if}}
+  </div>
+  </a>
+</li>

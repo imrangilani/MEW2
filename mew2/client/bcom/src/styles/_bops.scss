@@ -1,0 +1,215 @@
+/*----------------------------------------- COMMON -----------------------------------------*/
+#mb-facetBopsModal-container {
+  .mb-j-modalHeader-left{
+      background: #999;
+      float: left;
+  }
+}
+
+/*-------------------------------------- SEARCH FORM ---------------------------------------*/
+
+#b-bops-search {
+
+  #b-bops-search-form {
+
+    #bops-errorContainer {
+      display: none;
+      padding: 5px 5px 5px 30px;
+      font-size: 12px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      background: url("../../images/error.png") no-repeat #ED0000;
+      background-position: 10px 3px;
+      margin-bottom: 10px;
+    }
+
+    #bops-search-section {
+      @include clearfix;
+
+      input, select {
+        margin: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      
+      .showError{
+        border: 2px solid #ed0000;
+      }
+      .showErrorLabel{
+        color: #ed0000;
+      }
+
+      label {
+        margin: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-transform: normal;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .b-bops-address-wrapper {
+        position: relative;
+        margin-right: 98px;
+
+        #mb-bops-search-icon {
+          position: absolute;
+          display: inline-block;
+          left: 14px;
+          top: 14px;
+          height: 15.5px;
+        }
+
+        #mb-bops-address {
+          display: inline-block;
+          height: 45px;
+          padding-left: 32px;
+          padding-right: 25px;
+          font-size: 13px;
+        }
+
+        .mb-bops-search-clear {
+          visibility: hidden;
+          position: absolute;
+          height: 29px;
+          top: 8px;
+          right: 0px;
+          -webkit-user-select: none;
+        }
+
+      }
+
+      #mb-bops-nearme {
+        @include b-button(gray, true);
+
+        width: 88px;
+        height: 45px;
+        float: right;
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      #b-bops-distance-wrapper {
+        padding-top: 4px;
+        width: 100%;
+      }
+
+      .b-bops-buttons {
+        padding-top: 20px;
+
+        .b-bops-button:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+
+      #mb-bops-search {
+        @include b-button(black, true);
+        text-transform: uppercase;
+      }
+
+      #mb-bops-cancel {
+        @include b-button(gray, true);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  #b-bops-search-details {
+    display: none;
+    width: 100%;
+
+    .b-bops-search-details-wrapper {
+      @include clearfix;
+      width: 100%;
+      border: solid 1px #CCC;
+      padding: 15px 10px;
+      font-size: 13px;
+    }
+
+    #mb-bops-change {
+      @include b-button(gray, true);
+
+      float: right;
+      width: 115px;
+      height: 30px;
+      font-weight: normal;
+      text-transform: uppercase;
+      padding: 0;
+    }
+
+    #b-bops-search-details-text {
+      display: block;
+      margin-right: 125px;
+    }
+  }
+
+  &.b-bops-details-active {
+    #b-bops-search-form {
+      display: none;
+    }
+
+    #b-bops-search-details {
+      display: inline-block;
+    }
+  }
+}
+
+/*------------------------------------- SEARCH RESULTS -------------------------------------*/
+
+#b-bops-results {
+  font-size: 13px;
+
+  .b-bops-error-unavailable,
+  .b-bops-error-nostores,
+  .b-bops-error-invalid-search {
+    text-align: center;
+    font-size: 13px;
+    line-height: 17px;
+    padding: 20px 10px;
+    border: solid 1px #CCC;
+  }
+
+  #mb-bops-clear {
+    @include b-button(gray, true);
+
+    width: 100%;
+    height: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  .b-bops-results-title {
+    font-weight: bold;
+    padding: 20px 0;
+  }
+
+  .b-bops-result {
+    .facet-value {
+      height: inherit;
+      line-height: inherit;
+      padding: 8px 0;
+
+      &:first-child {
+        border-top: solid 1px #CCC;
+      }
+      border-bottom: solid 1px #CCC;
+
+      &.facet-value-disabled {
+        color: #999;
+      }
+
+      .display {
+        .facet-value-action-icon {
+          position: relative;
+          margin-top: 0;
+          margin-bottom: 0;
+          vertical-align: top;
+          top: 12px;
+        }
+      }
+    }
+  }
+}

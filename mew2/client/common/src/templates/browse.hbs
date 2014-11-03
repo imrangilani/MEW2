@@ -1,0 +1,65 @@
+<div id="m-bcontainer">
+<section id="m-browse-pane" class="m-pane m-center" >
+    <header id="m-browse-header" class="m-browse-header">
+        <h4><span id="m-goback">&lt;&nbsp;&nbsp;</span>{{category.name}} <span class="m-number-products">{{category.totalproducts}}</h4>
+        <section class="m-header-option">
+            <label>Sort By: </label>
+            <select id="m-sort-by">
+                <option value="">Featured Items</option>
+                <option value="price,asc">Price: Low to High</option>
+                <option value="price,desc">Price: High to Low</option>
+                <option value="customerrating, desc">Customer's Top Rated</option>
+                <option value="bestseller">Best Sellers</option>
+                <option value="newarrival">New Arrivals</option>
+            </select>
+        </section>
+        <section class="m-header-option">
+        <button class="m-modal-button">Narrow</button></br>
+       </section>
+    </header>
+    <ul class="m-productlist">
+    {{#each products}}
+        <li class="m-browse-product">
+
+            <div class="mb-j-browse-image" id="m-browse-box_{{this.id}}">
+                {{#if onsale}}
+                <h6>SALE!</h6>
+                {{/if}}
+                <img id = "m-browse-img_{{this.id}}" class = "m-browse-img" src = "{{this.img}}">
+            </div>
+
+
+            <p>{{name}}</p>
+
+            <ul class="m-price">
+            {{#each price}}
+                <li class="m-price-{{this.type}}">
+                    {{#if this.label}}
+                    <span class="m-price-label">{{this.label}}</span>
+                    {{/if}}
+                    <span>${{this.value}}</span>
+                </li>
+            {{/each}}
+            </ul>
+            {{#if totalreviews}}
+	    <span class="m-rating"><span style="width: {{formatRatings this.reviewratings}}%"></span></span>
+            <span class="m-total-ratings">({{this.totalreviews}})</span>
+            {{/if}}
+            {{#if swatches}}
+
+                <div class="m-swatches">
+
+                {{#each swatches}}
+                <img class="m-browse-swatch" src="{{imageurl}}">
+
+                {{/each}}
+                </div>
+
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+    <button id="m-view-more">view more...</button>
+</section>
+<div id="m-product-pane" class="m-pane m-right"></div>
+</div>

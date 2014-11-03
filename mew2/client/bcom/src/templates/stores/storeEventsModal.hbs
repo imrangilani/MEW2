@@ -1,0 +1,32 @@
+<div id="b-stores-events-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-modalHeader-left">
+        <div class="mb-j-events-modal-close b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title truncated">
+        Store Events
+      </div>
+      <div class="small-3 columns"></div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    
+    {{#if storeEvents}}
+      <div class="b-stores-label">{{storeName}}</div>
+      <div class="b-stores-events-content">
+        {{#each storeEvents}}
+          <div class="b-service-section mb-j-store-event-lineitem" data-event="{{eventId}}">
+            <span class="icon-right-arrow-black"></span>
+            <div class="attribute-value">{{formatDateForEvent startDate.date}}</div>
+            <div class="b-store-service-name">{{eventName}}</div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+
+  </div>
+</div>

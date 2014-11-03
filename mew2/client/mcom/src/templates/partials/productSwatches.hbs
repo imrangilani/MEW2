@@ -1,0 +1,66 @@
+<section class="m-product-swatches">
+
+  <div class="m-product-color-name">
+    <div class="row">
+      <div class="small-8 columns">
+        {{#unless members}}
+          <h6>
+            <span class="m-facet-name-reference">Color</span>: <span class="m-selected-color">{{productColorName colors activeColor}}</span>
+          </h6>
+        {{/unless}}
+        {{#if members}}
+          {{#ifSize colors compare="1" operator=">" }}
+            <h6><span class="m-facet-name-reference">Colors in this collection</span>:</h6>
+          {{/ifSize}}
+        {{/if}}
+      </div>
+      {{#unless members}}
+        {{#ifSize colors compare="1" operator=">"}}
+          <div class="small-4 columns m-product-color-amount">{{size colors}} colors</div>
+        {{/ifSize}}
+      {{/unless}}
+    </div>
+  </div>
+
+  {{#if isBeauty}}
+    {{#ifSize colors compare="1" operator=">"}}
+      <div class="m-product-swatch-display button-bar m-button-bar">
+        <ul class="button-group radius">
+          <li><a href="#" class="small button secondary selected" data-display="swatch">swatch</a></li>
+          <li><a href="#" class="small button secondary" data-display="name">name</a></li>
+        </ul>
+      </div>
+
+      <div class="color-wrapper not-visible" data-display="name">
+        <div class="m-select-wrapper" style="margin: 20px 0 22px 0;">
+         <div class="m-select-button" style="margin: 0 auto"><div class="display">Color name</div></div>
+          <select class="m-j-product-color-names m-select">
+            {{#each colors}}
+              <option class="m-j-product-color-name" value="{{id}}" {{#if_eq ../../activeColor compare=id}}selected{{/if_eq}} data-id="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+     </div>
+     {{/ifSize}}
+  {{/if}}
+
+  <div class="color-wrapper" data-display="swatch">
+    {{#if hasSwatches}}
+
+      <div class="m-scrollable horiz">
+        <ul class="m-swatches-scroll m-j-overflows">
+          {{#each colors}}
+            {{#if swatch}}
+               <li class="m-j-product-swatch {{#unless ../../isMaster}}{{#if_eq ../../../activeColor compare=id}}selected{{/if_eq}}{{/unless}} " data-id="{{id}}">
+                  <div class="m-swatch-img {{#ifColorUnavailable ../.. id}}unavailable{{/ifColorUnavailable}}"  style="background:url('{{#displayConfig}}{{paths.product.swatchSprite}}{{/displayConfig}}{{getSwatchSpriteUrl ../../swatchSprites @index}}') {{spriteSwatchPosition @index}}px 0 transparent; " alt="{{this.name}}">&nbsp; </div>
+                </li>
+            {{/if}}
+          {{/each}}
+       </ul>
+     </div>
+    {{/if}}
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+

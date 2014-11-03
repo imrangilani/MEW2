@@ -1,0 +1,142 @@
+<div class="m-size-chart-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Size & Fit</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    {{#with charts}}
+      <div class="m-size-chart-brand">{{brand}}</div>
+      <div class="m-size-chart-title">{{categoryName}}</div>
+
+      {{#ifSize categories compare=1 operator=">"}}
+        {{#with ../../product}}
+        {{> productFitSliderSizeChart}}
+        {{/with}}
+      {{/ifSize}}
+
+      <div class="m-tables-container">
+      {{#each categories}}
+        {{#if chart }}
+        <section class="m-chart-section">
+          {{#ifSize ../../categories compare=1 operator=">"}}
+          <div class="m-chart-section-header">
+            <header class="m-section-category row"> 
+              <div class="small-10 columns">{{title}}</div>
+              <div class="m-expand-sign small-1 columns">&nbsp;</div>
+            </header>
+          </div>
+          {{/ifSize}}  
+          <div class="m-chart-container {{#ifSize ../../categories compare=1 operator=">"}}m-collapsed{{/ifSize}}">
+            <div class="m-chart-container-inner ">
+              <table class="m-size-table ">
+              <thead>
+                <tr>
+                  {{#each chart.header.sizes}}
+
+                    <th style="width:{{calculateColumnWidth ../chart.header.columnsTotal columns}}" class="{{#if_neq locale compare='NONE'}}m-locale-{{locale}}  m-invisible{{/if_neq}}" 
+
+                      {{#if columns}}
+                        colspan={{columns}}
+                      {{/if}}
+                      >{{title}}
+                    </th>
+                  {{/each}}
+                  {{#each chart.header.measurements}}
+                      <th style="width:{{calculateColumnWidth ../chart.header.columnsTotal}}" class="m-measuresystem-{{this.system}} {{#compare this.system ../defaultSystem operator="!="}} m-invisible{{/compare}}">
+                        {{this.name}}
+                        <div>({{this.unit}})</div>
+                      </th>
+
+                  {{/each}}
+                </tr>
+              </thead>
+              <tbody>
+    
+                {{#each chart.row}}
+                  <tr> 
+                    {{#each sizes}}
+                      {{#each value}}                    
+                        <td class="{{#if_eq ../locale compare='NONE'}}m-size-US{{else}}m-locale-{{../../locale}} m-invisible{{/if_eq}} m-size-value">
+                          {{fractionValue this}}
+                        </td>
+                      {{/each}}
+                    {{/each}}
+
+                    {{#each measurements}}
+                      <td class="m-measuresystem-{{this.system}} m-measure-value {{#compare this.system ../../defaultSystem operator="!="}} m-invisible{{/compare}}">
+                        {{{fractionValue this.data}}}
+                      </td>
+                      
+                    {{/each}}
+                  </tr>
+                {{/each}}
+
+              </tbody>
+              </table>
+              
+            </div>
+
+            <div class="row m-actions" >
+                <div class="small-{{#ifSize systems compare=1 operator=">"}}6{{else}}9{{/ifSize}} columns">
+                  <div class="m-select-wrapper" >
+                    {{#ifSize countries compare=1 operator=">"}}
+                      <div class="m-select-button"><div class="display">U.S. Sizes</div></div>
+                      <select name="distance" class="m-select m-select-locale">
+                        {{#each countries}}
+                          {{#if_eq this compare='NONE'}}
+                            <option value="{{this}}">U.S. Sizes</option>
+                          {{else}}
+                            <option value="{{this}}">{{this}} Sizes</option>
+                          {{/if_eq}}
+                        {{/each}}
+                      </select>
+                    {{/ifSize}}
+                  </div>
+                </div>
+                <div class="small-{{#ifSize countries compare=1 operator=">"}}6{{else}}9{{/ifSize}} columns">
+                  {{#ifSize systems compare=1 operator=">"}}
+                  <div class="m-button-bar">
+                    <ul class="m-measure-system button-group radius">
+                      {{#each systems}}
+        
+                        <li><a href="#" class="tiny button secondary {{#compare this.system ../defaultSystem operator="=="}}selected{{/compare}}" data-display="{{this.system}}">{{this.system}}</a></li>
+                      {{/each}}
+                    </ul>
+                  </div>
+                  {{/ifSize}}
+                </div>
+              </div>
+          </div>
+        </section>
+        {{else}}
+          {{#if mobileText}}
+            <div class="m-sizechart-message">{{{mobileText}}}</div>
+          {{/if}}
+        {{/if}}
+      {{/each}}
+    </div>
+      
+    {{#ifSize categories compare=1}}
+      {{#with ../../product}}
+        {{> productFitSliderSizeChart}}
+      {{/with}}
+    {{/ifSize}}
+
+    </div>
+    {{/with}}
+
+    {{#unless charts.categories}} 
+      <p class="m-sizechart-message">Sorry, we cannot access this product's chart data at the moment.</p>
+    {{/unless}}
+  </div>
+</div>
+
+
+
+
+
+
+

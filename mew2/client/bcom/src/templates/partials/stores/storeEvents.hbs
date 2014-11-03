@@ -1,0 +1,20 @@
+{{#if storeEvents}}
+  <div class="b-stores-label">Events</div>
+  <div class="b-stores-events-content">
+    {{#each_upto storeEvents 3}}
+      <div class="b-service-section mb-j-store-event-lineitem" data-event="{{eventId}}" itemprop="event" itemscope itemtype="http://schema.org/Event">
+        <span class="icon-right-arrow-black"></span>
+        <div class="b-store-service-name" itemprop="name">{{eventName}}</div>
+        <div class="attribute-value">{{eventDateTime startDate finishDate}}</div>
+        <meta itemprop="startDate" content="{{formatDateISO startDate.datetime startDate.time 'MM/DD/YYYY hh:mma'}}" />
+        <meta itemprop="endDate" content="{{formatDateISO finishDate.datetime startDate.time 'MM/DD/YYYY hh:mma'}}" />
+      </div>
+    {{/each_upto}}
+
+    <section class="b-service-section" id="mb-j-store-viewall-events">
+      <span class="icon-right-arrow-black"></span>
+      <div class="attribute-value">View All Events</div>
+    </section>
+
+  </div>
+{{/if}}

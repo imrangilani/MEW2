@@ -1,0 +1,41 @@
+<li data-product_id="{{this.id}}" data-position="{{@index}}">
+  <a class="m-browse-product-anchor m-product-grid-anchor" href="{{this.productURL}}">
+  <div class="mb-j-browse-image m-product-grid-image">
+    <img src="{{productImageScale this.img width=198}}" alt="{{name}}" />
+    {{#if moreColors}}
+      <div class="m-more-colors">more colors</div>
+    {{/if}}
+  </div>
+  <div class="m-browse-details m-product-grid-details">
+    <div class="m-browse-name m-product-grid-name truncated">{{#if badges.new}}<strong>NEW!</strong>{{/if}} {{name}}</div>
+
+    {{#if price}}
+      <div class="m-browse-prices m-product-grid-prices">
+        <ul>
+          {{#each price}}
+            <li class="m-browse-price-{{this.type}} m-product-grid-price-{{this.type}}">
+              {{#if this.label}}
+                <span class="m-browse-price-label m-product-grid-price-label">{{this.label}}</span>
+              {{/if}}
+              <span>{{this.value}}</span>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
+    {{#if badges.promotionbadge}}
+      <div class="m-browse-promotion m-product-grid-promotion">
+        <div class="m-browse-promotion-description m-product-grid-promotion-description">{{badges.promotionbadge.[0]}}</div>
+      </div>
+    {{/if}}
+
+    {{#if badges.Rebate}}
+      <div class="m-browse-rebate m-product-grid-rebate">Qualifies for rebate</div>
+    {{/if}}
+
+    {{#if rating}}{{> rating rating}}{{/if}}
+
+  </div>
+  </a>
+</li>

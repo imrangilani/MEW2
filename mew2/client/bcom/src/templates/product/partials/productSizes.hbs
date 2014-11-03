@@ -1,0 +1,26 @@
+<section class="b-pdp-info-section-container b-product-sizes temp-wrapper">
+  <div id="b-product-size-name" class="b-pdp-info-section">
+      <div class="b-product-size-name-wrapper">
+        <span class="b-product-text">Size:</span> <span id="b-j-product-size-name">{{productSizeName sizes activeSize 'Select a Size'}}</span>
+      </div>
+      {{#if canvasId}}
+        <a href="javascript:void(0);" id="b-j-size-chart-modal-link-{{canvasId}}" class="b-j-product-size-chart-link b-info-right-link">Size chart</a>
+      {{/if}}
+  </div>
+  <div id="b-product-size-values">
+    {{#ifSizeColorAssociationGtOne sizes}}
+      {{#each sizes}}
+        <div class="b-j-product-size
+              {{#if_eq ../activeSize compare=id}}selected{{/if_eq}}
+              {{#ifSizeUnavailable .. id}}unavailable{{/ifSizeUnavailable}}
+              {{#unless colorIds}}hide{{/unless}}"
+              data-id="{{id}}">
+          <div class="b-j-product-size-wrapper">
+            <div class="b-j-product-size-value">{{name}}</div>
+          </div>
+        </div>
+      {{/each}}
+      <div class="clearboth"></div>
+    {{/ifSizeColorAssociationGtOne}}
+  </div>
+</section>

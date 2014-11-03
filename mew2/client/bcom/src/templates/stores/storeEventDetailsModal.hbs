@@ -1,0 +1,29 @@
+<div id="mb-stores-events-details-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-modalHeader-left">
+        <div class="mb-j-event-details-modal-close b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title truncated">
+        Event Details
+      </div>
+      <div class="small-3 columns"></div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <div>
+      <div class="b-store-event-name">{{eventName}}</div>
+      <div class="attribute-value">{{eventDateTime startDate finishDate}}</div>
+      <div class="b-store-event-desc">{{{shortDesc}}}</div>
+    </div>
+    <div class="b-store-save-fav">
+      <button class="b-j-add-event-to-calendar">
+        <a href="{{addToCalendarLink}}" class="b-add-event-to-calendar-link">Add to my calendar</a>
+      </button>
+    </div>
+  </div>
+
+</div>

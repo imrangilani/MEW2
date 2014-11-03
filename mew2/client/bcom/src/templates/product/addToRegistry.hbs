@@ -1,0 +1,47 @@
+<div class="b-overlay-header">
+  <div class="b-atr-title"><div class="icon-registry-title"></div></div>
+  <div class="mb-j-overlay-close"><span class="b-overlay-close-text">Close</span><a class="icon-close"></a></div>
+</div>
+
+<div class="b-overlay-item-added">
+  {{itemQuantity}} item{{#if_gt itemQuantity compare="1" }}s{{/if_gt}} has been added to your registry
+</div>
+
+<div class="b-overlay-content">
+  <div class="b-atr-product">
+    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{productPrimaryImage product.images product.activeImageset}}" class="b-overlay-product-image" width="100px" />
+
+    <div class="b-overlay-product-details-set">
+      <span class="b-overlay-product-name">{{product.name}}</span>
+
+      <div class="b-overlay-product-details-section">
+        {{#if product.activeColor}}
+          <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Color:</span> <span class="b-overlay-product-detail-value">{{productColorName product.colors product.activeColor}}</span></div>
+        {{/if}}
+
+        {{#if product.activeSize}}
+          <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Size:</span> <span class="b-overlay-product-detail-value">{{productSizeName product.sizes product.activeSize}}</span></div>
+        {{/if}}
+
+        {{#if product.activeType}}
+          <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Type:</span> <span class="b-overlay-product-detail-value">{{productTypeName product.types product.activeType}}</span></div>
+        {{/if}}
+      </div>
+
+      <div class="b-overlay-product-details-section">
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Price:</span> <span class="b-overlay-product-detail-value">${{itemPrice}}</span></div>
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Qty:</span> <span class="b-overlay-product-detail-value">{{itemQuantity}}</span></div>
+      </div>
+
+      <div class="b-overlay-product-details-section">
+        <div class="b-overlay-product-detail"><span class="b-overlay-product-detail-label">Total:</span> <span class="b-overlay-product-detail-value">${{totalPrice}}</span></div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="b-overlay-buttons" data-horizontal-spacing="20px">
+    <a class="b-atr-view-button" href="/registry/wedding/registrant">View Registry</a>
+    <button class="mb-j-overlay-continue">Continue Shopping</button>
+  </div>
+</div>

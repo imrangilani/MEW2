@@ -1,0 +1,29 @@
+<div class="b-product-reviews-sliders">
+{{#if rating.values}}
+  <div class="b-product-reviews-sliders-bottom">
+    <div class="b-product-reviews-experience">
+
+      <div class="b-product-reviews-slider-rows">
+        {{#each rating.values}}
+          <div class="b-product-reviews-slider-row row">
+          <div class="b-product-reviews-slider-external-id small-3 columns">{{externalId}}:</div>
+            <div class="b-product-reviews-slider-label1 small-2 columns">{{label1}}</div>
+            <div class="b-product-reviews-slider-wrapper small-5 columns">
+              <div class="b-product-reviews-slider">
+                <div class="slider-bg-wrapper">
+                	<div class="slider-bg">
+                		<div class="slider-heart" style="left: {{percentage}}%"></div>
+                	</div>
+                </div>
+              </div>
+            </div>
+            <div class="b-product-reviews-slider-label2 small-2 columns">{{label2}}</div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+{{/if}}
+</div>

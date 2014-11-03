@@ -1,0 +1,40 @@
+.mb-j-error-overlay{
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	z-index: 230;
+	background-color: #fff;
+
+	.m-header{
+	    padding: 4% 0px 4% 35px;
+	    background-color: #e4e4e4;
+	    color: #c00;
+	    border: 0px;
+	    height: auto;
+	    min-height: 34px;
+	    line-height: 17px;
+
+	    .mb-j-overlay-close, .mb-j-overlay-close:hover{
+	      width: 40px;
+	      height: 40px;
+	      float: right;
+	      background-image: url('../../images/icon-close-x.svg');
+	      background-size: 15px 15px;
+	      background-position: 50% 50%;
+	      background-repeat: no-repeat;
+	      border: 0px;
+	      background-color: transparent;
+	      box-shadow: none;
+	      margin: -13px 0px;
+	    }
+	}
+
+	.m-global-nav-error {
+
+		.mb-overlay-tryagain {
+			font-size: 1em;
+		}
+	}
+}

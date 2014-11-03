@@ -1,0 +1,86 @@
+{{#each reviews}}
+  <article class="m-j-product-review" data-id="{{id}}">
+    <div class="m-product-review-rating">
+      <span class="m-product-review-label">Overall Rating:</span> {{>rating rating}}
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="m-product-review-title">{{title}}</div>
+
+    <div class="m-product-review-date">{{date}}</div>
+
+    <div class="m-product-review-desc">{{desc}}</div>
+
+    {{#if recommended}}
+      <div class="m-product-review-recommend">
+        <div class="m-rating">
+          <div class="m-rating-stars">
+            <div class="m-rating-stars-inner">
+              <div style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="yes">Yes! I recommend this product!</div>
+        <div class="clearfix"></div>
+      </div>
+    {{/if}}
+
+    <section class="m-product-review-details">
+
+      {{#if user}}
+        <div class="m-product-review-details-user">
+          {{#if_or user.name user.location}}
+            <div class="m-product-review-user-name-loc">
+              {{#if user.name}}<span class="name">{{user.name}} </span>{{/if}}{{#if user.location}}from <span class="location">{{user.location}}</span>{{/if}}
+            </div>
+          {{/if_or}}
+
+          {{#if user.age}}
+            <div class="m-product-review-user-age"><span class="m-product-review-label">Age:</span> <span class="age">{{user.age}}</span></div>
+          {{/if}}
+
+          {{#if user.gender}}
+            <div class="m-product-review-user-gender"><span class="m-product-review-label">Gender:</span> <span class="gender">{{user.gender}}</span></div>
+          {{/if}}
+        </div>
+      {{/if}}
+
+      {{#if shopAtMacys}}
+        <div class="m-product-review-shop-macys"><span class="m-product-review-label">{{shopAtMacys.q}}:</span> {{shopAtMacys.a}}</div>
+      {{/if}}
+
+      {{#if questions}}
+        <div class="m-j-product-review-details-questions">
+          {{#each questions}}
+            <div class="m-product-review-question"><span class="m-product-review-label">{{q}}:</span> {{a}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </section>
+
+    {{#ifProductReviewsFeedback}}
+      <section class="m-product-review-feedback">
+        <div class="m-product-review-tagline">
+          Was this helpful?
+        </div>
+        <div class="m-product-review-thumbs">
+          <div class="m-j-product-review-thumb up">{{thumbsUp}}</div>
+          <div class="m-j-product-review-thumb down">{{thumbsDown}}</div>
+        </div>
+
+        <div class="m-j-product-review-report">
+          <a href="#">report<img src="/mew20/images/arrow-down.png" alt="arrow-down" class="m-sm-arrow-down"></a>
+        </div>
+
+        <form class="m-j-product-review-report-form" action="" method="">
+          <label for="feedbackValue">Describe the issue with this review:</label>
+          <textarea name="feedbackValue"></textarea>
+          <button class="m-button">submit</button>
+        </form>
+
+        <div class="clearfix"></div>
+      </section>
+    {{/ifProductReviewsFeedback}}
+
+  </article>
+{{/each}}

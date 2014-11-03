@@ -1,0 +1,15 @@
+<section id="b-product-members">
+
+  {{#ifSize latchkeys compare="1" operator=">"}}{{> productLatchkeys}}{{/ifSize}}
+
+  <section id="b-product-members-of-master">
+    {{#each members}}
+      {{#ifProductMemberVisible this ../latchkeys ../activeLatchkey @index}}
+        {{> productMemberOfMaster}}
+      {{/ifProductMemberVisible}}
+    {{/each}}
+  </section>
+
+  {{#unless latchkeys}}{{productViewMoreMembers members}}{{/unless}}
+
+</section>

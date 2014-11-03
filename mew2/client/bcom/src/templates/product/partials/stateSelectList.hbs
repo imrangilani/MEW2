@@ -1,0 +1,10 @@
+<div class="b-select-wrapper">
+  <select id="bops-state" name="state" class="b-select">
+  	<option value="">Select</option>
+  	{{#displayConfig}}
+  	{{#each states}}
+		  {{#key_value this}} <option value="{{key}}">{{value}}</option> {{/key_value}}
+		{{/each}}
+  	{{/displayConfig}}
+  </select>
+</div>

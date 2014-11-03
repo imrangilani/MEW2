@@ -1,0 +1,108 @@
+<div id="b-signin-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-modalHeader-left">
+        <div class="mb-j-modalHeader-left b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title truncated">
+        Sign In
+      </div>
+      <div class="small-3 columns"></div>
+    </div>
+  </div>
+  <div class="mb-modal-content">
+    <form id="mb-signin-form">
+      <section id="b-signin-section" class="form-section">
+        <div id="b-signin-general-error" class="b-error-container b-form-general-error">
+          <div class="b-error-text"></div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-label">Email Address</div>
+          <input id='mb-j-signup-email' type="email" name="email" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}" autocomplete="off" />
+          <div id="b-signin-error-invalid-email" class="b-input-field-error b-inline">
+            <div class="b-input-field-error-text">
+              Your email address must be entered in this format: jane@company.com
+            </div>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-label">Password</div>
+          <div class="form-label-right">Passwords are case sensitive</div>
+          <div class="clearfix"></div>
+          <input id='mb-j-signup-password' type="password" name="password" required>
+          <div id="b-signin-error-invalid-email" class="b-input-field-error b-inline">
+            <div class="b-input-field-error-text">
+              Your password must be between 5–16 alphanumeric characters, and cannot include spaces. Example: jane47. Please try again.
+            </div>
+          </div>
+        </div>
+
+        <div id="b-rememberme-section" class="form-item">
+          <div class="b-checkbox">
+            <input id="mb-j-signup-rememberme" type="checkbox" name="rememberMe" value="1" /><span class="b-checkbox-placeholder"></span>
+            <label for="remember-me-checkbox">Remember me</label>
+          </div>
+        </div>
+
+        <div id="b-sigin-buttons">
+          <button id="mb-j-signin-button" type="button">Sign In</button>
+        </div>
+      </section>
+
+      <section id="b-forgot-password-section" class="form-section">
+        <div id="form-collapsible-forgot-password" class="form-item b-expandable b-expandable-closed" data-expandable="container">
+          <div class="form-label b-expandable-title" data-expandable="button">Forgot Password<div class="b-expandable-icon"></div></div>
+          <div id="mb-j-forgot-password-container" class="form-collapsible-content b-expandable-content hide" data-expandable="content"></div>
+        </div>
+      </section>
+
+      <section id="b-signup-section" class="form-section">
+        <div class="form-item">
+          <div id="b-singup-title">Don't have an account yet?</div>
+          <div id="b-singup-description">Sign up with bloomingdales.com to use our convenient site features and expedited check out.</div>
+        </div>
+
+        <a href="{{secureUrl '/account/profile'}}" target="_blank">
+          <button id="mb-j-signup-button" type="button">Sign Up</button>
+        </a>
+      </section>
+
+      <section id="b-account-benefits-section" class="form-section">
+        <a href="https://customerservice.bloomingdales.com/app/answers/detail/a_id/402/c/30" target="_blank">
+          <div class="form-item b-external-link">
+            <div class="b-external-link-label">Learn the benefits of an online account</div>
+            <div class="b-external-link-icon"></div>
+          </div>
+        </a>
+      </section>
+
+      <section id="b-privacy-practices-section" class="form-section">
+        <a href="https://customerservice.bloomingdales.com/app/answers/detail/a_id/769" target="_blank">
+          <div class="form-item b-external-link">
+            <div class="b-external-link-label">Privacy Practices</div>
+            <div class="b-external-link-icon"></div>
+          </div>
+        </a>
+      </section>
+
+      <section id="b-stay-safe-section" class="form-section">
+        <div id="b-stay-safe-title">Stay safe online</div>
+        <div id="b-stay-safe-rules-pre">Remember basic password rules:</div>
+        <div id="b-stay-safe-rules">
+          <ul id="b-stay-safe-rules-bullets">
+            <li>Change your password periodically</li>
+            <li>Avoid re-using passwords for multiple sites</li>
+            <li>Use uppercase and numbers</li>
+          </ul>
+        </div>
+        <div id="b-stay-safe-rules-post">
+          Remember, Bloomingdale's will never ask you to disclose your password by email or phone.
+        </div>
+      </section>
+    </form>
+  </div>
+</div>

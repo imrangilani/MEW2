@@ -1,0 +1,36 @@
+.m-gift-cards {
+  margin-bottom: 30px;
+  
+  .gift-header {
+    padding-left: emCalc(10px);
+  }
+  .m-gift-card {
+    padding: emCalc(10px) emCalc(20px) 0 emCalc(20px);
+    img {
+      max-width: 156px;
+      max-height: 325px;
+    }
+  }
+  .m-e-gift-card {
+    padding: emCalc(30px) emCalc(30px) emCalc(10px) emCalc(30px);
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+  .m-e-gift-card-text, .m-gift-card-text {
+    padding: 0 emCalc(30px) emCalc(30px) emCalc(30px);
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+  }
+  .m-gift-balance {
+    text-align: left;
+    width: 93%;
+    margin: emCalc(10px);
+    padding: emCalc(10px);
+    border-bottom: 3px solid #e5e5e5;
+  }
+}

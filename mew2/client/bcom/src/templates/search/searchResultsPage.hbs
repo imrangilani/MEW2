@@ -1,0 +1,66 @@
+<article id="b-search-container">
+
+  {{#if products}}
+    <header id="b-browse-header" class="b-browse-header">
+    	<section class="b-search-secton">
+        <span>search results for</span>
+        <span class="b-search-keyword">{{requestParams.searchphrase}}</span>
+      </section>
+      <section class="b-narrow-container {{#if facets.length }}b-narrow-container-has-filter{{/if}}">
+        <h4>
+          <span class="b-number-products">{{totalproducts}}</span>
+          {{#if_eq totalproducts compare=1}}
+            <span class="b-category-name"> item found </span>
+          {{else}}
+            <span class="b-category-name"> items found </span>
+          {{/if_eq}}
+        </h4>
+        {{#if facets.length }}
+          <span id="mb-search-buttons-filterby" class="b-filter-container">
+            <button class="b-j-filter-results">Filter results</button>
+          </span>
+        {{/if}}
+      </section>
+
+      {{#if facets.length }}
+        <section class="b-breadcrumbs">
+          {{> breadcrumbs}}
+        </section>
+      {{/if}}
+
+      <section class="b-header-option">
+        {{> searchSortby}}
+      </section>
+    </header>
+  {{/if}}
+
+  {{#if messages}}
+    <div id="b-search-messages">
+      {{#ifSize messages compare=1}}
+        {{#get messages index=0}}{{{this}}}{{/get}}
+      {{else}}
+        <ul>
+          {{#each messages}}
+            <li>{{{this}}}</li>
+          {{/each}}
+        </ul>
+      {{/ifSize}}
+    </div>
+  {{/if}}
+
+  {{#if products}}
+    <section id="b-search-results"></section>
+
+    {{#if pagination}}
+      <section id="b-search-paging"></section>
+    {{/if}}
+
+    <div id="b-back-to-top" class="b-back-to-top">
+      <span class="back-to-top"> back to top </span>
+    </div>
+  {{else}}
+  	{{#unless messages}}
+	    {{> zeroResultsPage}}
+    {{/unless}}
+  {{/if}}
+</article>

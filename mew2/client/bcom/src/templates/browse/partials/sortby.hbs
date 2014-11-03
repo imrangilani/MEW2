@@ -1,0 +1,8 @@
+<ul class="mobileSortButtons">
+  <li class="mobileSortButton {{#unless requestParams.sortby}} selected {{/unless}}" id="original"><a>FEATURED</a><span class="pointer"></span></li>
+  <li class="mobileSortButton {{#if_eq requestParams.sortby compare='newarrival'}} selected {{/if_eq}}" id="newarrival"><a>NEWEST</a><span class="pointer"></span></li>
+  <li class="mobileSortButton {{#if_eq requestParams.sortby compare='bestseller'}} selected {{/if_eq}}" id="bestseller"><a>BEST SELLERS</a><span class="pointer"></span></li>
+  <li class="mobileSortButton {{#if_eq requestParams.sortby compare='price'}} selected {{/if_eq}}" id="{{#if_eq requestParams.sortorder compare='desc'}}price-high-low{{else}}price-low-high{{/if_eq}}">
+    <a>PRICE</a><span class="priceArrow"></span><span class="pointer"></span>
+  </li>
+</ul>

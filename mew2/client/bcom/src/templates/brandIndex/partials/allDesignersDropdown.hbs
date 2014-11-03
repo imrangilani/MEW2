@@ -1,0 +1,15 @@
+
+<div class="b-designers-label">Designers</div>
+<div class="b-select-wrapper">
+  <select name="designer" class="b-select" id="b-designers-fob-list">
+    <option value="/shop/all-designers?id=1001351" {{#unless categoryName}} selected {{/unless}}>All Designers</option>
+    <option value="/shop/all-designers/womens-apparel?id=1001337" {{#if_eq categoryName compare='WOMEN'}} selected {{/if_eq}}>Women</option>
+    <option value="/shop/all-designers/mens-apparel?id=1001338" {{#if_eq categoryName compare='MEN'}} selected {{/if_eq}}>Men</option>
+    <option value="/shop/all-designers/shoes?id=1001339" {{#if_eq categoryName compare='SHOES'}} selected {{/if_eq}}>Shoes</option>
+    <option value="/shop/all-designers/handbags?id=1001340" {{#if_eq categoryName compare='HANDBAGS'}} selected {{/if_eq}}>Handbags</option>
+    <option value="/shop/all-designers/beauty?id=1001341" {{#if_eq categoryName compare='BEAUTY'}} selected {{/if_eq}}>Beauty</option>
+    <option value="/shop/all-designers/jewelry-accessories?id=1001342" {{#if_eq categoryName compare='JEWELRY & ACCESSORIES'}} selected {{/if_eq}}>Jewelry &amp; Accessories</option>
+    <option value="/shop/all-designers/kids?id=1001343" {{#if_eq categoryName compare='KIDS'}} selected {{/if_eq}}>Kids</option>
+    <option value="/shop/all-designers/home?id=1001344" {{#if_eq categoryName compare='HOME'}} selected {{/if_eq}}>Home</option>
+ </select>
+</div>

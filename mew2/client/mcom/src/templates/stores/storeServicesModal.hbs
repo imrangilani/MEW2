@@ -1,0 +1,29 @@
+<div id="m-store-services-modal">
+  {{> modalHeader}}
+
+  <div class="mb-modal-content {{#ifSize selectedValues operator=">" compare="0"}}facetValueSelected{{/ifSize}}">
+    <div class="facet-button-clear">
+      <button id="stores-list-button-clear" class="m-button">clear selection</button>
+    </div>
+
+    {{!-- <div class="stores-button-clear" id="stores-list-button-clear"><button>clear all</button></div> --}}
+    <ul class="facet-selection-items small-block-grid-1">
+
+      {{#displayConfig}}
+      {{#each stores.services}}
+        {{#key_value this}}
+          <li class="facet-value service-value facet-value-stores {{#ifSelectedRangeOrValue ../../.. range key}}facet-value-selected service-value-selected{{/ifSelectedRangeOrValue}}" data-service-value="{{key}}">
+            <div class="display">
+              <div class="display-inner">
+                <div class="display-name">{{value}}</div>
+              </div>
+            </div>
+          </li>
+        {{/key_value}}
+      {{/each}}
+      {{/displayConfig}}
+
+    </ul>
+
+  </div>
+</div>

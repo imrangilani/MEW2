@@ -1,0 +1,170 @@
+<article id="m-product-container" data-id="{{id}}" class="m-product-transition m-product-wrapper {{#if isMaster}}m-product-master{{/if}}">
+  <div id="m-product-header" class="m-header">
+    <div class="row">
+      <div class="small-1 columns m-header-first">&nbsp;</div>
+      <div class="small-10 columns m-header-title nopad left">
+        WEB ID: {{id}}
+      </div>
+    </div>
+  </div>
+  {{#if badges.marketingbadge}}
+    <div class="row">
+      <div class="small-12 columns text-center m-product-marketing-banner">
+        <strong>{{badges.marketingbadge.[0]}}</strong>
+      </div>
+    </div>
+  {{/if}}
+  <div itemscope itemtype="http://schema.org/Product">
+    <div class="row">
+      <div class="small-12 columns">
+        {{> productTitle}}
+
+        {{#if badges.OnlineExclusive}}<div class="m-product-online-exclusive">ONLINE EXCLUSIVE</div>{{/if}}
+
+        {{#if_or badges.OnlyatMacys rating}}
+          <div class="m-product-rating-row row">
+            {{#if badges.OnlyatMacys}}
+              <div class="small-5 columns">
+                <div class="m-product-only-at-macys"></div>
+              </div>
+            {{/if}}
+            {{#if rating}}
+              <div class="{{#if badges.OnlyatMacys}}small-7 right{{else}}small-12{{/if}} columns">
+                <div id="m-product-rating-top" class="m-product-rating m-j-launch-reviews-modal">
+                  {{> rating rating}}
+                </div>
+              </div>
+            {{/if}}
+
+            <div class="clearfix"></div>
+          </div>
+        {{/if_or}}
+
+        {{#unless isMaster}}{{#if prices}}{{> productPriceSingle this}}{{/if}}{{/unless}}
+
+        {{#if closeoutText}}<span class="m-closeout">{{closeoutText}}</span>{{/if}}
+      </div>
+    </div>
+
+    {{#if promotions}}{{#if badges.promotionbadge}}{{> productPromotion}}{{/if}}{{/if}}
+    {{#if badges.Rebate}}{{> productRebate}}{{/if}}
+    {{#if videoId }}
+      <div id="m-watch-video">
+        <div id="m-video-label">Watch Video</div>
+        <div id="m-product-video">
+        </div>
+      </div>
+    {{/if}}
+    {{#if images}}{{> productImages}}{{/if}}
+
+    <div class="row">
+      <div class="small-12 columns">
+
+        {{#if colors}}{{> productSwatches}}{{/if}}
+
+        {{#if isMaster}}{{#if_or details longDescription}}{{> productDetails}}{{/if_or}}{{/if}}
+
+        {{#unless isMaster}}
+
+          {{#if sizes}}{{> productSizes}}{{/if}}
+
+          {{#if types}}{{> productTypes}}{{/if}}
+
+          {{#unless isEGC}}
+            {{> productQuantity}}
+          {{/unless}}
+
+          {{#if isEGC}}
+            {{> productEGiftCardsFields}}
+          {{/if}}
+
+          {{> productButtons}}
+
+          {{#if prices}}{{> productPriceDetails this}}{{/if}}
+
+          {{#unless isEGC}}
+            <div id="m-j-product-availability-container"></div>
+          {{/unless}}
+
+          {{#unless isMaster}}{{#if_or details longDescription}}{{> productDetails}}{{/if_or}}{{/unless}}
+
+        {{/unless}}
+
+        {{#ifSize latchkeys compare="1" operator=">"}}{{> productLatchkeys}}{{/ifSize}}
+
+        {{#if members}}
+          <div class="m-rule-bottom" style="padding-bottom: 10px">{{> productMembers}}</div>
+        {{/if}}
+
+        {{#unless isEGC}}
+           <section id="m-product-reviews-summary" class="columns">
+
+            <div id="m-product-reviews-header" {{#if rating}}class="m-j-launch-reviews-modal"{{/if}}>
+              <div class="small-4 columns nopad">
+                <strong>Reviews:</strong>
+              </div>
+              <div class="small-8 columns nopad">
+                <div id="m-product-rating-bottom" class="m-product-rating">
+                  {{#if rating}}
+                    {{> rating rating}}
+                  {{else}}
+                    {{> rating}}
+                  {{/if}}
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+            {{#if rating}}
+              <div class="row m-j-launch-reviews-modal">
+                <div class="small-12 columns">{{> productReviews}}</div>
+              </div>
+            {{/if}}
+
+            <div class="small-12 columns nopad">
+              {{#unless rating}}
+                <div id="m-product-no-reviews">Be the first to write a review for this product.</div>
+              {{/unless}}
+
+              <button class="m-j-product-launch-write-reviews-modal m-button black">write a review</button>
+            </div>
+
+          </section>
+        {{/unless}}
+
+      </div>
+    </div>
+  </div>
+
+  <div id="m-clickable-container">
+    {{#if_or sizeCharts canvasId}}
+      <div id="m-j-product-size-chart-clickable" class="m-clickable">
+        <div class="m-bg-arrow">Size Chart</div>
+      </div>
+    {{/if_or}}
+
+    {{#if badges.promotionbadge}}
+      <div id="m-j-product-special-offers" class="m-clickable">
+        <div class="m-bg-arrow">Special Offers</div>
+      </div>
+    {{/if}}
+
+    <div id="m-j-product-shipping-returns" class="m-clickable">
+      <div class="m-bg-arrow">Shipping &amp; Returns</div>
+    </div>
+  </div>
+
+  <!--{{> productShareEmail this}}-->
+
+  <div class="row">
+    <div class="small-12 columns">
+      <section id="product-share" class="m-rule-bottom">
+        <span id="product-share-link" style="">share</span>
+      </section>
+    </div>
+  </div>
+
+
+  <div id="mb-j-product-recommendations-container"></div>
+  <div id="mb-product-recently-viewed"></div>
+</article>

@@ -1,0 +1,12 @@
+{{#eachAvailableValue currentValues}}
+  <li class="facet-value {{#ifSelectedValue .. name}}facet-value-selected{{/ifSelectedValue}} facet-value-{{stripNonAlpha name}}" data-facet-value="{{name}}">
+    <div class="display">
+      <div class="display-inner">
+        <div class="display-name">{{name}}</div>
+      </div>
+    </div>
+  </li>
+{{/eachAvailableValue}}
+{{#times pageRows}}
+  <li class="facet-value facet-value-empty"></li>
+{{/times}}

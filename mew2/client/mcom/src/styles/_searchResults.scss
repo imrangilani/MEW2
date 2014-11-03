@@ -1,0 +1,51 @@
+$m-search-item-max-width: emCalc(164px);
+
+#m-search-header {
+  @include grid-row(nest-collapse);
+  @include m-header(page, 0);
+  border-top: 1px solid #000;
+
+  .row {
+    & > .columns {
+      height: $m-header-height;
+      overflow: hidden;
+
+      &#m-search-header-label {
+        #m-search-results-totalproducts {
+          font-weight: normal;
+        }
+
+        #m-search-searchphrase {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+#m-search-messages {
+  line-height: emCalc(20px);
+  margin: emCalc(10px) emCalc(15px);
+
+  ul {
+    margin: 0;
+    padding-left: emCalc(20px);
+  }
+
+  #m-search-searchphrase {
+    word-wrap: break-word;
+  }
+}
+
+#m-search-results-categories h4{
+  margin-left: 15px;
+}
+
+#m-search-no-results {
+  margin: emCalc(15px);
+
+  ul {
+    margin: emCalc(10px) 0 0 0;
+    padding-left: emCalc(30px);
+  }
+}

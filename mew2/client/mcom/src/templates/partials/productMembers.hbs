@@ -1,0 +1,10 @@
+<section id="m-product-members">
+  <section id="m-product-members-of-master">
+    {{> productMembersOfMaster}}
+  </section>
+
+  {{#unless latchkeys}}
+    {{#if showMoreMembersButton}}{{> productViewMoreMembers}}{{/if}}
+  {{/unless}}
+
+</section>

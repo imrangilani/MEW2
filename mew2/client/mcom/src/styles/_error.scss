@@ -1,0 +1,16 @@
+.m-error {
+	margin: 30px auto;
+}
+
+.m-error-center {
+  text-align: center;
+}
+
+.m-error-button {
+  margin-bottom: 30px;
+}
+
+#continue-shopping{
+	@include m-button(red, true, $button-lrg);
+}
+

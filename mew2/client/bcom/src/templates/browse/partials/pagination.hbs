@@ -1,0 +1,12 @@
+<div id="b-browse-paging" class="b-pagination">
+  <a class="b-pageBtn left" {{#if pagination.previousPage}}href="{{formatPageUrl pagination.previousPage}}"{{/if}}><span></span></a>
+  <a class="b-pageBtn selector" href="javascript:void(0);">
+    {{pagination.currentPage}} OF {{pagination.totalPages.length}}
+    <select id="b-browse-pagination">
+      {{#each pagination.totalPages}}
+        <option value="{{number}}" {{#if_eq ../pagination.currentPage compare=number}}selected{{/if_eq}}>{{number}}</option>
+      {{/each}}
+    </select>
+  </a>
+  <a class="b-pageBtn right" {{#if pagination.nextPage}}href="{{formatPageUrl pagination.nextPage}}"{{/if}}><span></span></a>
+</div>

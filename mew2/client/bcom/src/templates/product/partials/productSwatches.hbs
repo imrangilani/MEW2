@@ -1,0 +1,55 @@
+<section class="b-pdp-info-section-container b-product-swatches {{#ifSize colors compare="1" operator=">"}}b-pdp-color-multi{{else}}b-pdp-color-single{{/ifSize}}">
+  {{#unless isBeauty}}
+    {{! For non-beauty products, we use a textual header, like: COLOR: Select a Color}}
+    {{! This header should be suppressed if an attribute to suppress swatches is set on Stella}}
+    {{#ifSize colors compare="1" operator=">"}}
+      {{> productSwatchesHeader}}
+    {{else}}
+      {{#if activeColor}}
+        {{> productSwatchesHeader}}
+      {{/if}}
+    {{/ifSize}}
+
+  {{else}}
+    {{! For Beauty products, we display a select box with the color names - as the shoppers are used to color names}}
+    {{#ifSize colors compare="1" operator=">"}}
+      <div class="color-wrapper not-visible" data-display="name">
+        <div class="b-select-wrapper">
+          <select class="b-j-product-color-names b-select">
+          	<option class="mb-j-product-color-name" value="Select a Color" selected data-id="Select a Color">Select a Color</option>
+            {{#eachSortedBy colors key="name"}}
+              <option class="mb-j-product-color-name" value="{{id}}" {{#if_eq ../../activeColor compare=id}}selected{{/if_eq}} data-id="{{id}}">{{name}}</option>
+            {{/eachSortedBy}}
+          </select>
+        </div>
+     </div>
+     {{else}}
+      {{#if activeColor}}
+        {{> productSwatchesHeader}}
+      {{/if}}
+     {{/ifSize}}
+  {{/unless}}
+
+  {{#ifSize colors compare="1" operator=">"}}
+    {{#unless isMaster}}
+      <div class="b-j-product-show-hide-link hide">Hide Colors</div>
+    {{/unless}}
+    {{#if hasSwatches}}
+      <div class="b-j-product-color-wrapper {{#if isMaster}}b-truncated{{/if}}">
+        <ul class="b-swatches-list">
+        {{#each colors}}
+          {{#if swatch}}
+            <li class="b-j-product-swatch {{#if_eq ../../../activeColor compare=id}}selected{{/if_eq}} {{#ifColorUnavailable ../.. id}}unavailable{{/ifColorUnavailable}}" data-id="{{id}}">
+              <div class="b-swatch-img" style="background: url('{{#displayConfig}}{{paths.product.swatchSprite}}{{/displayConfig}}{{getSwatchSpriteUrl ../../swatchSprites @index}}') {{spriteSwatchPosition @index}}px 0 transparent;" alt="{{this.name}}">&nbsp; </div>
+            </li>
+          {{/if}}
+        {{/each}}
+        </ul>
+      </div>
+      <div class="clearboth"></div>
+    {{/if}}
+    {{#if isMaster}}
+      <div id="b-j-product-collection-colors-toggler">More Colors</div>
+    {{/if}}
+  {{/ifSize}}
+</section>

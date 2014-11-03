@@ -1,0 +1,35 @@
+<section id="m-product-images" class="m-product-images">
+
+  <a id="m-j-invis-prev"></a>
+  <a id="m-j-invis-next"></a>
+
+  <div id="m-j-images-swiper" class="swiper-container">
+    <div class="swiper-wrapper">
+
+    {{#get images index=activeImageset}}
+      {{#each this}}
+        <div class="swiper-slide" id="product-image-{{@index}}">
+          <span aria-hidden="true" class="m-zoom-icon m-zoom-in m-icon-plus-sign"></span>
+          {{#if this.image}}
+            <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.image}}" alt="{{../../../name}}" class="m-product-img" itemprop="image"/>
+          {{/if}}
+          {{#if ../../isMaster}}
+            {{#if ../../../showSwatches}}
+              {{#if this.swatch}}
+                <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}" class="m-product-swatch-img" />
+              {{/if}}
+            {{/if}}
+          {{else}}
+            {{#if this.swatch}}
+              <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.swatch}}" class="m-product-swatch-img" />
+            {{/if}}
+          {{/if}}
+        </div>
+      {{/each}}
+    {{/get}}
+
+
+    </div>
+  </div>
+</section>
+

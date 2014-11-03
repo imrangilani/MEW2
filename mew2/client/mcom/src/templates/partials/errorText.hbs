@@ -1,0 +1,26 @@
+  {{#if_eq errorCode compare='unexpectedError'}}
+  <p>Hmm...looks like we're having some technical issues.</p>
+  <p>Please try again.</p>
+  <p>If you continue to have this problem, please contact Customer Service at <br><a href="tel:+1-800-289-6229">1-800-BUY-MACYS</a> (1-800-289-6229)</p>
+  {{/if_eq}}
+  {{#if_eq errorCode compare='notFound'}}
+    <div class="m-error-center">
+      <p>Sorry, this page is no longer available.</p>
+    </div>
+  {{/if_eq}}
+  {{#if_eq errorCode compare='productNotFound'}}
+    <div class="m-error-center">
+      <p>Sorry, this product is no longer available for purchase</p>
+    </div>
+  {{/if_eq}}
+  {{#if_eq errorCode compare='notSupported'}}
+    <div class="m-error-center">
+      <p>This feature is not supported.</p>
+      <p><a class="m-link full" href="{{{fullDesktopLink}}}" target="_blank">Go to Full HTML Version</a></p>
+    </div>
+  {{/if_eq}}
+  {{#if_eq errorCode compare='globalNavError'}}
+    <div class="m-error-center m-global-nav-error">
+      <p>Sorry, our menu has timed out. Please <a class='m-link mb-overlay-tryagain'>try again</a> or use search.</p>
+    </div>
+  {{/if_eq}}

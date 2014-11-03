@@ -1,0 +1,22 @@
+<section class="m-product-sizes temp-wrapper">
+  <div id="m-product-size-name">
+    <div class="row">
+      <div class="small-8 columns">
+        <strong><span class="m-facet-name-reference">Size</span>: <span class="m-selected-size-name">{{productSizeName sizes activeSize}}</span></strong>
+      </div>
+      {{#if_or sizeCharts canvasId}}
+        <div id="m-j-upper-size-chart-link-{{id}}" class="small-4 columns m-j-product-size-chart-link m-link">size chart</div>
+      {{/if_or}}
+    </div>
+  </div>
+
+  <div class="m-scrollable horiz">
+    <ul class="m-sizes-scroll  m-j-overflows">
+    {{#each sizes}}
+      <li class="m-j-product-size {{#if_eq ../activeSize compare=id}}selected{{/if_eq}} {{#ifSizeUnavailable .. id}}unavailable{{/ifSizeUnavailable}}" data-id="{{id}}">
+        <div class="m-size">{{name}}</div>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+</section>

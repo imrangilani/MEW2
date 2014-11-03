@@ -1,0 +1,28 @@
+#m-ad-container {
+  .swiper-wrapper {
+    margin: emCalc(10px) 0;
+  }
+
+  .swiper-container {
+    height: auto;
+  }
+
+  .swiper-slide {
+    height: 0px;
+  }
+
+  #m-recovery-banner {
+    display: block;
+    text-align: center;
+    margin: emCalc(20px) auto;
+    width: 100%;
+  }
+}
+
+#m-ad-stacked-container {
+  .m-ad-stacked {
+    margin: emCalc(20px) 0;
+    padding: 0 emCalc(20px);
+    width: 100%;
+  }
+}

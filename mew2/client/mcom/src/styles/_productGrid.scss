@@ -1,0 +1,214 @@
+.m-product-grid-anchor {
+  text-decoration: none;
+}
+
+.m-product-grid-buttons {
+  background: #999;
+  z-index: 2;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+
+  ul {
+    @include block-grid(2);
+    padding: emCalc(10px) emCalc(5px);
+    text-align: center;
+
+    li {
+      padding: 0 emCalc(5px);
+
+      button {
+        @include m-button;
+        height: emCalc(45px);
+      }
+
+      .m-product-grid-sortby-wrapper {
+        position: relative;
+
+        .m-product-grid-select-sortby {
+          cursor: pointer;
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          -webkit-appearance: button;
+        }
+      }
+    }
+  }
+}
+
+.m-product-grid {
+  margin: emCalc(10px) emCalc(5px) 0; // 17.5 + 5 = 22.5
+
+  ul.m-product-grid-results-list {
+    padding: 0;
+
+    li {
+      padding: 0 emCalc(5px) emCalc(20px);
+
+      ul li { padding: 0 };
+
+      .m-product-grid-image {
+        border: 1px solid #999999;
+        cursor: pointer;
+        margin: 0 0 emCalc(10px);
+        overflow: visible;
+        position: relative;
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        .m-more-colors {
+          border-top: 1px solid #999999;
+          font-size: $font-sm;
+          height: emCalc(20px) * $multiplier-sm;
+          line-height: emCalc(20px) * $multiplier-sm;
+          text-align: center;
+        }
+      }
+
+      .m-product-grid-details {
+        margin: 0 auto 0 auto;
+
+        .m-product-grid-name {
+          font-size: $font-sm;
+          line-height: emCalc(20px) * $multiplier-sm;
+          margin: emCalc(10px) auto;
+        }
+
+        .truncated {
+          @include m-truncate(4);
+        }
+
+        .m-product-grid-prices {
+          font-size: $font-sm;
+          line-height: emCalc(17px) * $multiplier-sm;
+
+          ul {
+            @extend .no-bullet, .no-margin;
+
+            li {
+              line-height: emCalc(17px) * $multiplier-sm;
+            }
+          }
+
+          .m-product-grid-price-sale,
+          .m-product-grid-price-current,
+          .m-product-grid-price-everydayvalue,
+          .m-product-grid-price-only,
+          .m-product-grid-price-yourchoice {
+            color: $primary-color;
+            font-size: 1em * $multiplier-sm;
+            font-weight: bold;
+            line-height: emCalc(18px);
+          }
+
+          .m-product-grid-only {
+            color: $primary-color;
+            font-weight: normal;
+          }
+
+          .m-product-grid-price-everydayvalue {
+            span {
+              display: block;
+
+              &.m-product-grid-price-label {
+                background: url('../../images/edv.png') 0 0 no-repeat;
+                font-size: emCalc(12px);
+                font-weight: normal;
+                padding-left: 25px;
+              }
+            }
+          }
+        }
+
+        .m-product-grid-promotion-description {
+          color: $primary-color;
+          font-size: emCalc(11px);
+          line-height: emCalc(15px) * $multiplier-sm;
+          margin-top: emCalc(3px);
+        }
+
+        .m-product-grid-rebate {
+          font-size: emCalc(10px);
+          font-weight: bold;
+          line-height: emCalc(15px) * $multiplier-sm;
+          margin: (emCalc(10px) * $multiplier-sm) 0;
+          text-transform: uppercase;
+          color: #cc0000;
+        }
+
+        .m-rating {
+          margin-top: emCalc(10px);
+        }
+      }
+    }
+  }
+}
+
+.m-product-grid-paging {
+  text-align: justify;
+  margin: 0;
+  padding: 10px 5px 0px 5px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+  &:after {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+  }
+
+  & > a,
+  span {
+    display:inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .m-current-page{
+    color: red;
+  }
+
+  #m-prev-page,
+  #m-next-page {
+      @include m-button;
+      height: emCalc(40px);
+      width: emCalc(75px);
+      padding: emCalc(10px);
+      font-size: 14px;
+
+  }
+
+  .m-invisible{
+    visibility: hidden;
+  }
+}
+
+div.arrow-next{
+    margin-left: 3px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+
+	border-left: 8px solid black;
+}
+
+div.arrow-prev{
+    margin-right: 3px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+
+	border-right: 8px solid black;
+}
+
+a.pagination-icons{
+	vertical-align: middle;
+}
+
+a.pagination-icons div{
+	float: left;
+}

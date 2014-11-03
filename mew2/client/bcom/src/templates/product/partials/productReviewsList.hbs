@@ -1,0 +1,67 @@
+{{#each reviews}}
+  <article class="b-product-review">
+    <div class="b-product-review-header-title row">
+      <div class="b-product-review-title small-6 columns">{{title}}</div>
+      <div class="b-pdp-rating b-product-review-rating small-6 columns">
+        <div style="width: {{formatRatings rating.avg}}%"></div>
+      </div>
+    </div>
+    <div class="b-product b-review-header-date row">
+      <div class="b-product-review-date small-6 columns">{{formatDate date 'MM/DD/YY'}}</div>
+      {{#if user.name }}
+        <div class="b-product-review-user-name small-6 columns">
+          <span class="b-product-review-label">By:</span> <span class="name">{{user.name}} </span>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="b-product-review-desc">{{desc}}</div>
+
+    {{#if recommended}}
+      <div class="b-product-review-recommend">
+        <div class="b-rating">
+          <div class="b-rating-stars">
+            <div class="b-rating-stars-inner">
+              <div style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="yes"><span class="b-product-review-recommended">Yes,</span> I would recommend this product!</div>
+        <div class="clearfix"></div>
+      </div>
+    {{/if}}
+
+    {{#if user}}
+      <section class="b-product-review-details">
+
+          <div class="b-product-review-details-user">
+            {{#if user.location}}
+              <div class="b-product-review-location">
+                <span class="b-product-review-label">From:</span> <span class="location">{{user.location}}</span>
+              </div>
+            {{/if}}
+
+            {{#if user.age}}
+              <div class="b-product-review-user-age">
+                <span class="b-product-review-label">Age:</span> <span class="age">{{user.age}}</span>
+              </div>
+            {{/if}}
+
+            {{#if user.gender}}
+              <div class="b-product-review-user-gender">
+                <span class="b-product-review-label">Gender:</span> <span class="gender">{{user.gender}}</span>
+              </div>
+            {{/if}}
+
+            {{#each user.fobQuestions}}
+              <div class="b-product-review-user-style">
+                <span class="b-product-review-label">{{q}}:</span> <span class="style">{{a}}</span>
+              </div>
+            {{/each}}
+
+          </div>
+      </section>
+    {{/if}}
+
+  </article>
+{{/each}}

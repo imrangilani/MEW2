@@ -1,0 +1,98 @@
+.b-footer-container {
+	div.clearboth {
+		clear: both;
+	}
+	
+	#b-footer-links {
+		padding: 20px 0px 0px 0px;
+		text-transform: uppercase;
+		font-size: 12px;
+		
+		#b-footer-sign-in-out {
+			padding: 6.5px 4% 6.5px 3%;
+			float: left;
+			background-color: #EBEBEB;
+			width: 28%;
+			text-align: center;
+			
+			a {
+				color: black;
+			}
+		}
+		#b-footer-sign-up {
+			padding: 6.5px 0 6.5px 0;
+			float: right;
+			background-color: #EBEBEB;
+			margin-left: 3px;
+			width: 71.0%;
+			text-align: center;
+			a {
+				color: black;
+			}
+		}
+	}
+	
+	#b-footer-social-links {
+		padding: 10px 0 2px 0;
+		border-bottom: 1px dotted #CCCCCC;
+		text-align: center;
+		
+    span {
+      padding: 0 22px;
+    }
+		.icon-facebook{
+			display: inline-block;
+			height: 17px;
+		}
+		.icon-twitter{
+			display: inline-block;
+			height: 16px;
+		}
+		.icon-pin{
+			display: inline-block;
+			height: 17px;
+		}
+		.icon-instagram{
+      display: inline-block;
+      height: 17px;
+    }
+		.icon-phone{
+			display: inline-block;
+			font-size: 9px;
+			font-weight: bold;
+			padding-left: 6px;
+			width: 165px;
+			vertical-align: middle;
+			color: #000000;
+			padding-top: 5px;
+			margin-bottom: 8px;
+			height: 19px;
+		}
+		.b-footer-app-link {
+		  padding-top: 10px;
+		}
+	}
+	
+	#b-footer-bottom-links {
+		padding: 10px 0px 10px 0px;
+		font-size: 10px;
+		text-align: center;
+		line-height: 15px;
+		span a{
+			color: #999999;
+			text-decoration: none;
+		}
+		span {
+      padding: 0 10px;
+    }
+	}
+	
+	#b-footer-copy-right{
+		text-align: center;
+		font-size: 8px;
+		font-weight: bold;
+		color: #999999;
+		padding-bottom: 20px;
+	}
+	
+}

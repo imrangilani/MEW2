@@ -1,0 +1,48 @@
+#m-catlist {
+  overflow: hidden;
+
+  .m-cat-border {
+    @include background-image(linear-gradient(#999, #fff));
+    height: 5px;
+  }
+
+  #m-cat-container{
+      margin: 10px 0px 10px 0px;
+
+      img {
+        width: 75px;
+        height: 92px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+    /* --------------------------------------
+      Styles for the swiper specific for HP categories pool
+    -----------------------------------------*/
+
+    .swiper-container {
+      margin: emCalc(10px) 0px;
+
+    }
+
+    .swiper-wrapper{
+      position: relative;
+    }
+
+    .swiper-slide {
+      width: 75px;
+
+      div.m-category-title {
+        font-size: 10pt;
+        color: #000000;
+        font-family: arial;
+        font-weight: normal;
+        word-break: break-word;
+      }
+    }
+
+  }
+}
+

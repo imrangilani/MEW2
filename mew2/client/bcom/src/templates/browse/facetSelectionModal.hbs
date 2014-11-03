@@ -1,0 +1,29 @@
+{{> modalHeader}}
+
+<div class="mb-modal-content {{#if_eq facet.name compare='BRAND'}} b-brand-search-header{{/if_eq}}">
+  {{#if_eq facet.name compare='BRAND'}}
+    <span id="mb-search-field-icon" class="icon-search"></span>
+    <input class="mb-j-brand-search box-search" type="search" placeholder="Search Designers" readonly="true">
+  {{/if_eq}}
+
+  <div class="facet-button-clear" id="facet-selection-button-clear"><button>clear {{facet.displayname}}</button></div>
+
+  <ul class="facet-selection-items small-block-grid-1 facet-{{facet.name}} {{#isSingleSelectionFacet facet.name}}facet-single{{/isSingleSelectionFacet}}">
+
+    {{#each facet.value}}
+      <li class="facet-value {{#unless this.productcount}}facet-value-none{{/unless}} {{#ifSelectedRangeOrValue .. range name}}facet-value-selected{{/ifSelectedRangeOrValue}} facet-value-{{stripNonAlpha name}}" data-index="{{@index}}" data-facet-value="{{name}}" {{#if range}}data-facet-range-from="{{displayRangeFrom range}}" data-facet-range-to="{{displayRangeTo range}}"{{/if}}>
+        <div class="display">
+          <span class="facet-value-action-icon"></span>
+          <div class="display-inner">
+            <div class="display-name-wrapper">
+              <div class="display-name">{{normalizeIfPrice ../facet.name name}}</div>
+              <div class="count-display-name">[{{productcount}}]</div>
+            </div>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+
+  </ul>
+</div>
+

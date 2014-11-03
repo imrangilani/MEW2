@@ -1,0 +1,56 @@
+
+<article id="b-sp-product-pool-container">
+  <section id="b-sp-product-pool-header">
+    <div id="b-sp-browse-header-label" class="b-sp-product-pool-header-column">{{poolname}} </div>
+  </section>
+
+  <section id="b-sp-product-pool-results">
+    <ul id="b-productlist" class="small-block-grid-2 large-block-grid-3">
+      {{#each products}}
+        <li data-product_id="{{this.id}}" class="b-browse-product">
+          <div class="mb-j-browse-image" id="b-browse-box_{{this.id}}">
+            <a href="{{this.productURL}}">
+              <img class = "b-browse-img" src="{{this.img}}" />
+              <div class="b-browse-details">
+                {{#if swatches}}
+                    <div class="b-more-colors">more colors</div>
+                {{/if}}
+
+                <div class="b-browse-productname" class="truncated"> {{name}} </div>
+
+                {{#if rating}}
+                  <span class="b-rating"><span style="width: {{formatRatings rating.avg}}%"></span></span>
+                {{/if}}
+
+                <ul class="b-price">
+                  {{#each price}}
+                    <li class="b-price-{{this.type}}">
+                      {{#if this.label}}
+                        <span class="b-price-label">{{removeDot this.label}}</span>
+                      {{/if}}
+                      <span>{{this.value}}</span>
+                    </li>
+                  {{/each}}
+                </ul>
+                <div class="b-offer-callout">{{#if badges.promotionbadge}}{{badges.promotionbadge}}{{/if}}</div>
+              </div>
+            </a>
+          </div>
+
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+
+  {{#if shopall}}
+    <section id="b-sp-product-pool-footer">
+      <a href="{{shopall}}" data-cm-link-click="{{parentCategory}}-_-product_pool_link-_-{{shopAllText}}">
+      	<span class="icon-right-arrow-black"></span>
+      	<div id="b-sp-product-pool-footer-label" class="b-sp-product-pool-footer-column">
+        	{{shopAllText}}
+      	</div>
+      </a>
+    </section>
+  {{/if}}
+
+</article>

@@ -1,0 +1,16 @@
+{{#if items}}
+  <a id="m-j-invis-cat-prev"></a>
+  <a id="m-j-invis-cat-next"></a>
+  <div class="m-cat-border"></div>
+  <div id="m-cat-container" class="swiper-container">
+      <div class="swiper-wrapper ">
+          {{#each items}}
+            
+              <div class="swiper-slide">
+                  {{> catListSlide}}
+              </div>
+            
+          {{/each}}
+      </div>
+  </div>
+{{/if}}

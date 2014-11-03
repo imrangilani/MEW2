@@ -1,0 +1,56 @@
+{{#ifSize this.collection.models compare="0" operator=">"}}
+  <section id="m-product-recently-viewed" class="m-rule-bottom">
+    <div id="m-product-recently-viewed-header" class="row">
+      <div id="m-product-recently-viewed-label"> Recently Viewed </div>
+      <div id="m-j-product-recently-viewed-edit" class="button">edit</div>
+    </div>
+
+    <div id="m-product-recently-viewed-swiper-wrapper">
+    <div id="m-product-recently-viewed-swiper">
+
+      <div id="m-product-recently-viewed-products" class="swiper-wrapper">
+        {{#each this.collection.models}}
+          {{#with attributes}}
+            {{#if_neq id compare=../../../currentProduct }}
+              {{#if productUrl}}
+                <div data-product-id="{{id}}" class="m-product-recently-viewed-product">
+                  <a href="{{productUrl}}">
+
+                    <div class="b-product-recently-viewed-img-outter">
+                      <div data-product-id="{{id}}" class="m-j-product-recently-viewed-remove button">remove</div>
+                        {{#get images index=activeImageset}}
+                          {{#if this.0.image}}
+                            <div class="b-product-recently-viewed-img-wrapper">
+                              <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{this.0.image}}" alt="{{../../name}}" />
+                            </div>
+                          {{/if}}
+                        {{/get}}
+                    </div>
+
+                      <div class="m-product-recently-viewed-name">{{name}}</div>
+                      <div class="m-product-recently-viewed-price">
+
+                      <section class="m-product-prices tiered">
+                        {{#each prices}}
+                          <div class="m-product-price {{stripNonAlpha label}}">
+                            {{#if label}}
+                              <span class="m-product-price-label">{{label}} </span>
+                            {{/if}}
+                            <span class="m-product-price-amt">{{amt}}</span>
+                          </div>
+                        {{/each}}
+                      </section>
+
+                    </div>
+                  </a>
+                </div>
+              {{/if}}
+            {{/if_neq}}
+          {{/with}}
+        {{/each}}
+      </div>
+
+    </div>
+    </div>
+  </section>
+{{/ifSize}}

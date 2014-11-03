@@ -1,0 +1,67 @@
+<article id="b-product-container" data-id="{{id}}" class="b-product-transition b-product-wrapper {{productTypeClass . }}"{{#unless isMaster}} itemscope itemtype="http://schema.org/Product"{{/unless}}>
+
+  {{> productUpperContent}}
+
+  {{#if images}}
+    {{> productImages}}
+    <div class="b-j-pdp-img-pagination"></div>
+  {{/if}}
+
+  <div class="b-product-inner">
+
+    {{!PDP master pages display a summarized section with the details, such as collors and description, then the list of members}}
+    {{#if isMaster}}
+
+      {{> productCollectionColors}}
+
+      {{#if members}}{{> productMembers}}{{/if}}
+
+    {{!PDP member pages display the following sections}}
+    {{else}}
+
+      {{#unless isEGC}}
+          {{#if colors}}{{> productSwatches}}{{/if}}
+
+          {{#if sizes}}{{> productSizes}}{{/if}}
+
+          {{! we only display quantity selection if user is able to purchase this product}}
+          {{#if isCheckoutEnabled}}{{> productQuantity}}{{/if}}
+
+          {{> productButtons}}
+
+          {{#if prices}}{{> productPrice}}{{/if}}
+
+          <div id="b-j-product-availability-container" class="b-pdp-info-section-container"></div>
+
+      {{else}}
+        {{! this produt is a EGC/VGC (electronic/virtual gift card) }}
+        {{> productEGiftCardsFields}}
+        {{> productButtons}}
+      {{/unless}}
+
+      {{> productDetails}}
+
+      {{! if this product is part of a collection, masterCollection will be set and we must display a section with this info }}
+      {{#if masterCollection}}{{> productMasterCollection masterCollection}}{{/if}}
+
+    {{/if}}
+
+    {{! Shipping and Recently Viewed should be presented in both PDPmas and PDPmem pages, but not on e-gift cards}}
+
+    {{> productReviews}}
+
+    {{#unless isEGC}}
+
+      {{#if isMaster}} {{> productCollectionFeatures}} {{/if}}
+
+      {{> productShipping}}
+
+      {{#if promotions}} {{> offersLink}} {{/if}}
+    {{/unless}}
+
+    <section id="mb-j-product-recommendations-container" class="b-pdp-info-section-container"></section>
+
+    <section id="mb-product-recently-viewed" class="b-pdp-info-section-container"></section>
+
+  </div>
+</article>

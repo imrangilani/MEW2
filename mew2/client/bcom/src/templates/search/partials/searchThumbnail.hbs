@@ -1,0 +1,37 @@
+<li data-product_id="{{this.id}}" class="b-browse-product" data-position="{{@index}}">
+
+  <div class="mb-j-browse-image" id="b-browse-box_{{this.id}}">
+    <a href="{{this.productURL}}" class="b-browse-img-link">
+      <img class="b-browse-img" src="{{searchAndBrowseProductImageOptimize this.img}}" />
+      <div class="b-browse-details">
+        {{#if moreColors}}
+            <div class="b-more-colors">more colors</div>
+        {{/if}}
+
+        <div class="b-browse-productname"> {{name}} </div>
+
+        {{#if reviewratings}}
+          <span class="b-rating"><span style="width: {{formatRatings this.reviewratings}}%"></span></span>
+        {{/if}}
+
+        <ul class="b-price">
+          {{#ifNotGiftCard .}}
+            {{#each price}}
+              <li class="b-price-{{this.type}}">
+                {{#if this.label}}
+                  <span class="b-price-label">{{removeDot this.label}}</span>
+                {{/if}}
+                <span>{{displayPrice this.value ../master}}</span>
+              </li>
+            {{/each}}
+          {{/ifNotGiftCard}}
+        </ul>
+
+        {{#if badges.promotionbadge}}
+          <span class="b-offer-callout">{{badges.promotionbadge.[0]}}</span>
+        {{/if}}
+      </div>
+    </a>
+  </div>
+
+</li>

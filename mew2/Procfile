@@ -1,0 +1,14 @@
+# Builds app locally and launches server
+dev: grunt build
+
+# Starts server without re-building client
+server: grunt concurrent:dev
+
+# Used on heroku to start node server once built
+web: node index.js
+
+# Builds dist version locally
+dist: grunt build --env=dist --open
+
+# Runs tests locally
+test: grunt test

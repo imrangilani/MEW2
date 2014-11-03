@@ -1,0 +1,362 @@
+//
+// BCOM Library of variables and mixins
+//
+
+/*************** BEGIN brand-specific (custom) variables ***************/
+// @see foundation-vars.scss to ensure there isn't a foundation variable that should be used
+
+$navWidth: 160px;
+$headerHeight: 90px;
+$image-spacing: 8px;
+$b-page-header-height: emCalc(45px);
+$mb-modal-header-height: emCalc(45px);
+$b-title-line-height: $base-font-size;
+
+// ----------------------- Fonts -----------------------
+$font-xsm-base: 11px;
+$font-xsm: emCalc($font-xsm-base);
+$multiplier-xsm: $em-base / $font-xsm-base;
+
+$font-sm-base: 12px;
+$font-sm: emCalc($font-sm-base);
+$multiplier-sm: $em-base / $font-sm-base;
+
+$font-med-base: 14px;
+$font-med: emCalc($font-med-base);
+$multiplier-med: $em-base / $font-med-base;
+
+// ----------------------- Colors -----------------------
+$copy-color: #000;
+
+// hot-pink
+$accent-color: #d90eac;
+
+// light gray
+$background-color: gainsboro;
+
+// text light gray
+$text-gray-color: #999;
+
+// text dark gray
+$text-dark-gray-color: #666;
+
+// Error colors
+$error-color: #ed0000;
+
+/*************** END brand-specific (custom) variables ***************/
+
+/*************** BEGIN library of brand-specific style mixins ***************/
+
+@mixin nav-border() {
+  border-width: 2px;
+  box-shadow: inset 0px 0px 10px black;
+}
+
+@mixin view-border($direction) {
+  border-#{$direction}: 5px solid #000000;
+}
+
+@mixin content-section-border($direction) {
+  border-#{$direction}: 1px solid #cccccc;
+}
+
+@mixin overlay-shadow() {
+  box-shadow: 0px 0px 4px hsla(0, 0%, 0%, .4);
+}
+
+@mixin image-shadow() {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+}
+
+@mixin b-truncate($lines: 3, $line-height: $b-title-line-height) {
+  line-height: $b-title-line-height;
+  max-height: ($lines * $b-title-line-height);
+}
+
+
+@mixin b-separator($direction: bottom, $border-color: $section-border-color, $border-width: $section-border-size) {
+  border-#{$direction}: $border-width $section-border-style $border-color;
+}
+
+@mixin b-gradient-separator() {
+  overflow: visible;
+  position: relative;
+
+  &:after {
+    content: "";
+    bottom: -5px;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@mixin b-header($type: page, $padding: ($column-gutter / 2)) {
+  $height: auto;
+
+  @if $type == modal {
+    $height: $mb-modal-header-height;
+    @include b-gradient-separator;
+
+    font-weight: bold;
+    text-align: center;
+  } @else {
+    // Default to page header
+    $height: $b-page-header-height;
+    @include background-image(linear-gradient(#fff, #aaa));
+    @include b-separator(bottom, #727272, 2px);
+  }
+
+}
+
+@mixin b-button($type: white, $full-width: true, $padding: $button-med) {
+  @include button-base;
+  @include button-size($padding, $full-width);
+  border: none;
+  box-shadow: none;
+
+  $bg-color: gray;
+
+  @if $type == gray {
+    $bg-color: #999;
+  } @else if $type == black {
+    $bg-color: #000;
+  }
+
+  background: $bg-color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    background: $bg-color;
+  }
+}
+
+@mixin b-right-arrow() {
+  @include background(url('../../images/right-arrow-black.png'));
+  background-position: 98% center;
+  background-repeat: no-repeat;
+  background-size: 9px 11px;
+}
+
+/*************** END library of brand-specific style mixins ***************/
+
+/*************** BEGIN library of brand-specific UI components ***************/
+
+body {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a, a:hover {
+  color: $copy-color;
+}
+
+button {
+  @include b-button(gray, false, $button-sml);
+}
+
+.clearboth {
+  @include clearfix;
+  clear: both;
+}
+
+@mixin unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div[data-expandable="button"] {
+  div:not(.b-expandable-icon) {
+    float: left;
+  }
+  @include clearfix();
+}
+
+.b-expandable-icon {
+  float: right;
+}
+
+.b-j-invisible {
+  visibility: hidden;
+}
+
+.b-offer-callout {
+  color: #F00;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  line-height: 13px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="url"] {
+  height: 45px;
+}
+
+select {
+  height: 45px;
+  font-size: 15px;
+
+  background: white;
+  border: 1px solid #9D9D9D;
+  outline: 0;
+  margin: 0px;
+
+  @include border-radius(0px);
+
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  cursor:pointer;
+  padding-left: 15px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.selected {
+  @include selected();
+}
+
+.previous {
+  @include previous();
+}
+
+/*************** END library of brand-specific UI components ***************/
+
+/*************** BEGIN override of general styles ***************/
+
+.b-select-wrapper {
+  position: relative;
+}
+
+.b-select-wrapper:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 45px;
+  margin-top: -45px;
+  right: 0;
+  background: url("../../images/selectarrow.png") center center no-repeat;
+  pointer-events: none;
+  background-size: 47px;
+}
+
+.b-padding-bottom-ten {
+  padding-bottom: 10px;
+}
+
+// ----------------------- Errors -----------------------
+
+.b-error-container {
+  padding: 10px;
+  background-color: $error-color;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+
+  &:not(.b-inline):before {
+    content: '';
+    float: left;
+    @extend .icon-error;
+  }
+
+  &:after {
+    clear: left;
+  }
+
+  &:not(.b-inline) {
+    .b-error-text {
+      padding-left: 19px;
+    }
+  }
+
+  .b-error-text {
+    line-height: 16px;
+  }
+
+  &.b-inline {
+    padding: 1px 0 10px 0;
+    background-color: #fff;
+    color: $error-color;
+
+    &:before {
+      @extend .icon-error-inline;
+    }
+  }
+}
+
+// ----------------------- General -----------------------
+
+#mb-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.5;
+  display: none;
+  line-height: 0px;
+  background-image: url(../../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: 50% (150px + $headerHeight);
+  z-index: 98;
+}
+
+body.nav-toggle #mb-loading {
+  left: $navWidth;
+}
+
+body.modal-visible #mb-loading {
+  top: 45px;
+  z-index: 102;
+}
+
+.layout-landscape {
+  #mb-loading {
+    background-position: 50% (70px + $headerHeight);
+  }
+}
+
+#mb-nav-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.5;
+  display: none;
+  line-height: 0px;
+  background-image: url(../../images/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 130px;
+  z-index: 101;
+}
+
+#mb-private-browsing-container {
+  padding: 10px;
+  font-size: 13px;
+  line-height: 16px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: none;
+
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+}

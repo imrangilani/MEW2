@@ -1,0 +1,53 @@
+<div id="m-rebates-modal">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Rebate Details</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+
+      <div class="small-18 small-centered columns">
+
+        <section class="m-rebates-modal-content">
+          <header>
+            <p>{{rebate.qualifyText}}</p>
+            {{!-- <p>This item qualifies for a mail-in rebate!</p> --}}
+          </header>
+          <article>
+            <p>
+              {{!-- To get your rebate just download and fill out the form below and mail it along with a copy of the receipt with qualifying purchase(s) circled, plus the Original UPC code(s) from the package(s). --}}
+              {{rebate.rebateInfoText}}
+            </p>
+            <div class="m-button-center">
+              {{!-- <a id="get-rebate" href="https://www.macysrebates.com/static/quicktrack/macys/Current-dotcom-Rebate-Form.pdf">get rebate</a> --}}
+              <a id="get-rebate" href="{{rebate.rebateformLink}}">get rebate</a>
+            </div>
+            <div class="row">
+              <div class="rebate-address">
+                <div class="small-1 columns">&nbsp;</div>
+                <div class="small-10 columns">
+                  <ul>
+                    {{!-- <li>MACY'S</li> --}}
+                    <li>{{rebate.mailAddress.[0]}}</li>
+                    {{!-- <li>OFFER #___________</li> --}}
+                    <li class="m-shift">{{rebate.mailAddress.[1]}}</li>
+                    {{!-- <li>P.O.Box 540006</li> --}}
+                    <li class="m-shift">{{rebate.mailAddress.[2]}}</li>
+                    {{!-- <li>EL PASO, TX 88554-0006</li> --}}
+                    <li class="m-shift">{{rebate.mailAddress.[3]}}</li>
+                  </ul>
+                </div>
+                <div class="small-1 columns">&nbsp;</div>
+              </div>
+            </div>
+            
+          </article>
+          {{!-- <footer>All submissions must be mailed and postmarked no later than 30 days from purchase</footer> --}}
+          <footer>{{rebate.rebatefooter}}</footer>
+        </section>
+      </div>
+  </div>
+</div>

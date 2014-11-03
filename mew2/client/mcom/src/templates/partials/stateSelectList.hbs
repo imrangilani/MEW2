@@ -1,0 +1,11 @@
+<div class="m-select-wrapper">
+  <div class="m-select-button"><div class="display">Select state</div></div>
+  <select name="state" class="m-select">
+    <option value="">Select state</option>
+    {{#displayConfig}}
+  	{{#each states}}
+		  {{#key_value this}} <option value="{{key}}">{{value}}</option> {{/key_value}}
+		{{/each}}
+  	{{/displayConfig}}
+  </select>
+</div>

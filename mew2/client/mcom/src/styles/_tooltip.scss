@@ -1,0 +1,53 @@
+.error-tooltip {
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+    z-index: 11 ;
+}
+
+.tt-content-container {
+    background-color: #c00;
+    padding: 2px;
+}
+
+.tt-content {
+    background-color: #fff;
+    color: #c00;
+    font-weight: normal;
+    font-size: 10pt;
+    height: 100%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.tt-arrow {
+    position: relative;
+    padding: 0 10px;
+    margin-right: 20px;
+
+    & .outer-arrow {
+        position: absolute;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #c00;
+    }
+
+    & .inner-arrow {
+        position: absolute;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        top: -2px;
+        margin-left: 1px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #fff;
+    }
+}
+
+.m-facet-name-reference.m-is-erroneous {
+    color: #c00 !important;
+}

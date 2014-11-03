@@ -1,0 +1,38 @@
+<article id="m-browse-container">
+  <section class="m-browse-nav m-header-container">
+    <section id="m-browse-header">
+      <div class="row">
+        <div id="m-browse-header-label" class="small-12 columns m-header-title m-browse-header-column">
+          <span id="m-browse-totalproducts"></span> <h1 class="m-browse-catname">{{category.name}}</h1>
+        </div>
+      </div>
+    </section>
+    <section id="m-browse-buttons" class="m-product-grid-buttons">
+      <ul>
+        {{#if facets.length}}
+          <li><button id="m-browse-buttons-filterby">filter by</button></li>
+        {{/if}}
+        <li {{#unless facets.length}}class="full"{{/unless}}>
+          <div id="m-browse-buttons-sortby-wrapper" class="m-product-grid-sortby-wrapper">
+            <button id="m-browse-buttons-sortby">sort by</button>
+            <select id="m-browse-select-sortby" class="m-product-grid-select-sortby">
+              <option value="">Featured Items</option>
+
+              {{#unless category.isEGC}}
+                <option value="price,asc" {{#if_eq requestParams.sortby compare='price'}}{{#if_eq requestParams.sortorder compare='asc'}}selected="selected"{{/if_eq}}{{/if_eq}}>Price: Low to High</option>
+                <option value="price,desc" {{#if_eq requestParams.sortby compare='price'}}{{#if_eq requestParams.sortorder compare='desc'}}selected="selected"{{/if_eq}}{{/if_eq}}>Price: High to Low</option>
+                <option value="customerrating,desc" {{#if_eq requestParams.sortby compare='customerrating'}}{{#if_eq requestParams.sortorder compare='desc'}}selected="selected"{{/if_eq}}{{/if_eq}}>Customer's Top Rated</option>
+              {{/unless}}
+
+              <option value="bestseller" {{#if_eq requestParams.sortby compare='bestseller'}}selected="selected"{{/if_eq}}>Best Sellers</option>
+              <option value="newarrival" {{#if_eq requestParams.sortby compare='newarrival'}}selected="selected"{{/if_eq}}>New Arrivals</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section class="m-nav-placeholder"></section>
+  <section id="m-browse-results" class="m-product-grid"></section>
+  <section id="m-browse-paging" class="m-product-grid-paging"></section>
+</article>

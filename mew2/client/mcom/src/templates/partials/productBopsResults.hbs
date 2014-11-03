@@ -1,0 +1,61 @@
+{{#ifNoStores}}
+  <section id="m-bops-no-stores">
+    There are no stores within {{requestParams.distance}} miles of where you live. You can always have your item(s) shipped or choose a store outside of your area.
+  </section>
+{{else}}
+
+  {{#ifAllUnavailable}}
+    <section id="m-bops-all-unavailable">
+      Sorry, this item is unavailable at stores within your search area.
+    </section>
+  {{else}}
+
+
+    {{#if stores.bops}}
+      <section id="m-bops-available">
+        <h2>Order online & pick up at {{stores.bops.length}} store{{#ifSize stores.bops compare=1 operator=">"}}s{{/ifSize}}:</h2>
+        {{#each stores.bops}}
+          <article class="bops-result" data-location="{{locationNumber}}">
+            {{> productBopsResultSelect}}
+          </article>
+        {{/each}}
+      </section>
+    {{else}}
+      <section id="m-bops-no-bops">
+        Pick up in-store is not available in your search area.
+      </section>
+    {{/if}}
+
+    {{#if_or stores.pickup stores.unavailable}}
+      <div class="m-separator"></div>
+    {{/if_or}}
+
+    {{#if stores.pickup}}
+      <section id="m-bops-pickup">
+        <h2>Visit the following store(s) to purchase:</h2>
+        {{#each stores.pickup}}
+          <article class="bops-result" data-location="{{locationNumber}}">
+            {{> productBopsResult}}
+          </article>
+        {{/each}}
+      </section>
+
+      {{#if stores.unavailable}}
+        <div class="m-separator"></div>
+      {{/if}}
+    {{/if}}
+
+    {{#if stores.unavailable}}
+      <section id="m-bops-unavailable">
+        <h2>Not available at the following store(s):</h2>
+        <ul class="bops-unavailable">
+        {{#each stores.unavailable}}
+          <li>{{name}}</li>
+        {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
+  {{/ifAllUnavailable}}
+
+{{/ifNoStores}}

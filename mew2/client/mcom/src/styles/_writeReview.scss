@@ -1,0 +1,192 @@
+#mb-write-review-form {
+  position: relative;
+
+  input {
+    color: #000;
+    @include m-placeholder;
+  }
+
+  textarea {
+    height: emCalc(120px);
+    color: #000;
+  }
+
+  .form-item {
+    .mb-j-write-review-error-msg {
+      color: $primary-color;
+      font-size: $font-sm;
+      font-weight: bold;
+      margin-top: emCalc(10px);
+    }
+  }
+
+  .form-collapsible-content.spinner {
+    height: 100px;
+  }
+
+  #form-collapsible-tips {
+    .form-collapsible-content {
+      font-size: $font-sm;
+    }
+  }
+
+  #recommend-form-item {
+    .form-label {
+      font-size: $font-med;
+      line-height: emCalc(30px) * $multiplier-med;
+      margin: 0;
+    }
+  }
+
+  #form-collapsible-fit-rating .fit-slider-wrapper {
+    font-size: emCalc(11px);
+
+    .fit-slider-label {
+      margin-bottom: emCalc(10px);
+    }
+
+    .fit-slider-value-display {
+      margin-top: 2px;
+      padding-left: emCalc(8px);
+      padding-right: 0;
+
+      &.not-selected {
+        color: #000;
+        font-style: italic;
+      }
+    }
+  }
+
+  #rate-macys-form-item {
+    #low-recommend,
+    #high-recommend {
+      font-size: emCalc(10px);
+      line-height: emCalc(16px);
+      margin-top: 23px;
+    }
+
+    #low-recommend {
+      text-align: right;
+    }
+
+    #mb-rate-macys-slider-text {
+      font-size: $font-sm;
+      position: relative;
+
+      .left {
+        padding-left: 8px;
+      }
+
+      .right {
+        padding-right: 5px;
+      }
+
+      .current {
+        color: $primary-color;
+      }
+
+      #mb-j-rate-macys-current {
+        left: 50%;
+        margin-left: -10px;
+        position: absolute;
+        text-align: center;
+        width: 20px;
+      }
+    }
+  }
+
+  #rant-rave-win {
+    font-size: emCalc(14px);
+    margin: emCalc(30px) 0;
+
+    #macys-cc {
+      padding-left: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    #rant-rave-win-text {
+      padding-right: 0;
+
+      .top {
+        color: $primary-color;
+        font-weight: bold;
+        margin-bottom: emCalc(10px);
+      }
+    }
+  }
+
+  #buttons-form-item {
+    @include clearfix;
+    margin: emCalc(30px) 0;
+
+    #write-review-cancel {
+      float: left;
+      padding-right: emCalc(5px);
+      width: 50%;
+    }
+
+    #write-review-submit {
+      float: right;
+      padding-left: emCalc(5px);
+      width: 50%;
+    }
+  }
+
+  #m-terms-wrapper {
+    font-size: $font-med;
+    margin-bottom: emCalc(10px) * $multiplier-med;
+  }
+}
+
+.mb-modal-content {
+  .m-wr-lists {
+    margin: 0px 20px 15px 30px;
+  }
+
+  .m-wr-modals {
+    font-size: 9pt;
+    line-height: 1.2em;
+  }
+
+  .m-rules {
+    h1 {
+      font-size: 30pt;
+      color: $primary-color;
+      font-weight: normal;
+    }
+    h2 {
+      font-size: 11pt;
+      font-weight: normal;
+      span {
+        color: $primary-color;
+      }
+    }
+    .m-heres {
+      background-color: #efefef;
+      padding: emCalc(10px);
+      margin: 20px 0 20px 0;
+    }
+    h3 {
+      font-weight: normal;
+    }
+    ol {
+      list-style: none;
+      margin: 0;
+      li {
+        line-height: 1.6em;
+        font-size: 10pt;
+      }
+      span {
+        font-size: 13pt;
+        font-weight: 600;
+        color: $primary-color;
+      }
+    }
+    h4 {
+      font-size: 10pt;
+    }
+  }
+}

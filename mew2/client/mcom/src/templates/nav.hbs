@@ -1,0 +1,38 @@
+{{#if isNewNavMenu}}
+  {{#each newMenuItems}}
+    <li id="{{this.id}}" class="{{this.classes}}">
+    <a class="{{#if this.cm}}m-j-cm-element{{else}}m-j-cm-link{{/if}}" {{#if this.cm}}data-cm-element="{{this.cm}}"{{/if}} href=
+      {{#if this.secure}}
+        "{{secureUrl this.url}}">
+      {{else}}
+        {{# if this.viewless}}
+          "{{viewlessUrl this.url}}">
+        {{else}}
+          "{{absoluteUrl this.url}}{{#if this.cmTopCategory}}{{useUrlParamConnector this.url}}cm_sp=mew_navigation_shop-_-{{prepareSitePromoString this.cmTopCategory this.id this.name}}{{/if}}">
+        {{/if}}
+      {{/if}}
+      {{{this.name}}}
+      </a>
+    </li>
+  {{/each}}
+{{else}}
+  {{#each newMenuItems}}
+    {{! Header rows don't animation into position }}
+    {{#unless this.headerRow}}
+      <li id="{{this.id}}" class="{{this.classes}}mb-j-hidden-list-item ">
+        <a class="{{#if this.cm}}m-j-cm-element{{else}}m-j-cm-link{{/if}}" {{#if this.cm}}data-cm-element="{{this.cm}}"{{/if}} href=
+          {{#if this.secure}}
+            "{{secureUrl this.url}}">
+              {{else}}
+                {{# if this.viewless}}
+              "{{viewlessUrl this.url}}">
+            {{else}}
+              "{{absoluteUrl this.url}}{{#if this.cmTopCategory}}{{useUrlParamConnector this.url}}cm_sp=mew_navigation_shop-_-{{prepareSitePromoString this.cmTopCategory this.id this.name}}{{/if}}">
+            {{/if}}
+          {{/if}}
+          {{{this.name}}}
+        </a>
+      </li>
+    {{/unless}}
+  {{/each}}
+{{/if}}

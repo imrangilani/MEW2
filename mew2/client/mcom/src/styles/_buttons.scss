@@ -1,0 +1,37 @@
+button.primary {
+  border-color: #cf1f1e #7f0000 #591a1a #cf1f1e;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 1px 1px 1px #b3b3b3;
+  color: white;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  overflow: visible;
+  padding: 9px 16px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #a00000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a00000), color-stop(48%, #ac0000), color-stop(50%, #790000), color-stop(100%, #8c0000));
+}
+
+.m-modal-button {
+  border: none;
+  box-shadow: $box-shadow;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(100%, #cecece));;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+.info-button {
+  background-color: blue;
+  color: white;
+}

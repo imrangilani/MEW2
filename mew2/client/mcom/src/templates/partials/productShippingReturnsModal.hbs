@@ -1,0 +1,64 @@
+<div id="m-shipping-returns-modal">
+  <div class="mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Shipping &amp; Returns</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <ul>
+      {{#if_neq typeName compare='FURNITURE'}}
+        {{#if_eq shipping.freeShipping compare=99}}
+          <li class="m-modal-free-shipping">{{#if isMaster}}These items qualify{{else}}This item qualifies{{/if}} for FREE shipping with $99 purchase. <a id="m-j-product-shipping-freeship" href="#">details</a></li>
+        {{/if_eq}}
+      {{/if_neq}}
+      
+      {{#if_eq shipping.freeShipping compare=50}}
+        <li class="m-modal-free-shipping">{{#if isMaster}}These items qualify{{else}}This item qualifies{{/if}} for FREE shipping with $50 purchase. <a id="m-j-product-shipping-freeship" href="#">details</a></li>
+      {{/if_eq}}
+
+      {{#if shipping.surcharge}}
+        <li>{{#if isMaster}}These items are{{else}}This item is{{/if}} assigned a shipping surcharge fee of ${{formatNumber shipping.surcharge}} based on size/weight and/or special shipping requirements</li>
+      {{/if}}
+
+      {{#if shipping.methods}}
+        <li>{{#if isMaster}}These items{{else}}This item{{/if}} may only be shipped using {{#get shipping.methods index=0}}{{this}}{{/get}}{{#ifSize shipping.methods compare=2}} or {{#get shipping.methods index=1}}{{this}}{{/get}}{{/ifSize}}.</li>
+      {{/if}}
+
+      {{#if_neq shipping.specialGiftWrap compare=0}}
+        <li>Special Gift Box charge of ${{formatNumber shipping.specialGiftWrap}} will be added to {{#if isMaster}}these items{{else}}this item{{/if}}.</li>
+      {{/if_neq}}
+
+      {{#unless shipping.giftWrappable}}
+        <li>Our Normal Gift Boxing is not available for {{#if isMaster}}these items{{else}}this item{{/if}}.</li>
+      {{/unless}}
+
+      {{#if shipping.stateRestrictions}}
+        <li>{{#if isMaster}}These items{{else}}This item{{/if}} may not be shipped to {{prettyList shipping.stateRestrictions}}.</li>
+      {{/if}}
+
+      {{#each shipping.notes}}
+        <li>{{this}}</li>
+      {{/each}}
+
+      <li>For complete details, read our <a id="m-shipping-policy-link" href="https://customerservice.macys.com/app/answers/detail/a_id/260/theme/popup" target="_blank">Shipping</a> and <a id="m-return-policy-link" href="https://customerservice.macys.com/app/answers/detail/a_id/140/theme/popup" target="_blank">Return</a> policies.</li>
+
+      {{#if shipping.returnConstraint}}
+        {{#if_eq shipping.returnConstraint compare='NV'}}
+          <li>Must be returned directly to vendor.</li>
+        {{/if_eq}}
+
+        {{#if_eq shipping.returnConstraint compare='NX'}}
+          <li>Please call customer service for returns.</li>
+        {{/if_eq}}
+
+        {{#if_eq shipping.returnConstraint compare='SX'}}
+          <li>Please call customer service for returns.</li>
+        {{/if_eq}}
+      {{/if}}
+
+    </ul>
+  </div>
+</div>

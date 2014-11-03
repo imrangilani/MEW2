@@ -1,0 +1,54 @@
+{{> modalHeader}}
+
+<div class="mb-modal-content">
+  <div class="facet-button-clear" id="facet-selection-button-clear"><button>clear selection</button></div>
+
+  {{#if_eq facet.name compare='BRAND'}}
+    <input class="mb-j-brand-search box-search" type="search" placeholder="Search brands" readonly="true">
+  {{else}}
+    <div class="facet-label facet-selection-header">{{facet.displayname}}</div>
+  {{/if_eq}}
+  <ul class="facet-selection-items small-block-grid-1 facet-{{facet.name}} {{#isSingleSelectionFacet facet.name}}facet-single{{/isSingleSelectionFacet}}">
+    {{#eachAvailableValue facet.value}}
+      <li class="facet-value {{#unless this.productcount}}facet-value-none{{/unless}} facet-value-{{stripNonAlpha name}}
+
+            {{#ifIsCustratingDisplayFacet ../facet.name this }}
+              {{#ifSelectedValue ../.. display}}facet-value-selected{{/ifSelectedValue}}
+            {{else}}
+              {{#ifSelectedRangeOrValue ../.. ../range ../name}}facet-value-selected{{/ifSelectedRangeOrValue}}
+            {{/ifIsCustratingDisplayFacet}}"
+
+            {{#ifIsCustratingDisplayFacet ../facet.name this }}
+              data-facet-value="{{display}}"
+            {{else}}
+              data-facet-value="{{name}}" {{#if ../range}}data-facet-range-from="{{displayRangeFrom ../range}}" data-facet-range-to="{{displayRangeTo ../range}}"{{/if}}
+            {{/ifIsCustratingDisplayFacet}} >
+
+        <div class="display">
+          <div class="display-inner">
+            <div class="display-name">{{normalizeIfPrice ../facet.name name 'mcom'}}</div>
+          </div>
+        </div>
+      </li>
+    {{/eachAvailableValue}}
+    {{#ifSpecialFacetBlock this.facet.name}}
+    {{#ifUnavailableValues this}}
+      </ul>
+      <div class="m-unavailable-values">
+        <p class="m-unavailable-values-label">Based on your selections, these options are no longer available.</p>
+      </div>
+    <ul class="facet-selection-items facet-disabled-items small-block-grid-1 facet-{{../facet.name}}">
+    {{#eachUnavailableValue facet.value}}
+        <li class="facet-value facet-value-disabled {{#ifDisabledValue .. this.values}}facet-value-selected{{/ifDisabledValue}} facet-value-{{stripNonAlpha this.values}}" data-facet-value="{{this.values}}" {{#if range}}data-facet-range-from="{{displayRangeFrom range}}" data-facet-range-to="{{displayRangeTo range}}"{{/if}}>
+          <div class="display">
+            <div class="display-inner">
+            <div class="display-name">{{this.values}}</div>
+            </div>
+          </div>
+        </li>
+    {{/eachUnavailableValue}}
+    </ul>
+    {{/ifUnavailableValues}}
+    {{/ifSpecialFacetBlock}}
+  </ul>
+</div>

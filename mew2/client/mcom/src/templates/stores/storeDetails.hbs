@@ -1,0 +1,103 @@
+<div id="m-store-details">
+
+  <div id="m-store-details-header" class="m-header">
+    <div class="row">
+      <div class="small-1 columns m-header-first">
+        <div class="mb-j-back m-back">&nbsp;</div>
+      </div>
+      <div class="small-10 columns m-header-title nopad left">Store Details</div>
+    </div>
+  </div>
+
+  <div id="m-store-details-content" class="m-store-details m-page-content {{#if isInFavorites}}m-favorite-store{{/if}}">
+
+    <h1 id="mb-store-name" class="m-store-name">{{name}}</h1>
+
+    <section class="m-store-in-favorites">
+      <div class="m-store-in-favorites-text">In My Favorites</div>
+      <div class="m-j-store-in-favorites-remove m-link med normal" data-location="{{locationNumber}}">Remove</div>
+      <div class="clearfix"></div>
+    </section>
+
+    <section class="m-store-address">
+      <a target="_blank" href="http://maps.google.com/?q={{address.line1}} {{#if address.line2}} {{address.line2}} {{/if}} {{address.city}}, {{address.state}} {{address.zipCode}}">
+        <div class="m-store-address-line">{{address.line1}}</div>
+        {{#if address.line2}}
+          <div class="m-store-address-line">{{address.line2}}</div>
+        {{/if}}
+        <div class="m-store-address-line">{{address.city}}, {{address.state}} {{address.zipCode}}</div>
+        <div class="m-store-directions-text">Directions</div>
+      </a>
+    </section>
+
+    <section class="m-store-phone">
+      <a href="tel:{{phone}}" class="m-j-store-phone-link">{{phone}}</a>
+    </section>
+
+    {{#ifSize hours compare="0" operator=">"}}
+      <section id="m-store-hours" class="m-store-hours">
+        {{#key_value hours}}
+          <div class="attribute-value row">
+            <div class="small-4 columns nopad">{{key}}:</div>
+            <div class="small-8 columns nopad">
+              {{#if_eq key compare='Today'}}
+                <span class="m-store-list-entry-open {{#if ../../isOpenNow}}open{{else}}closed{{/if}}">{{#if ../../isOpenNow}}open{{else}}closed{{/if}}</span>
+              {{/if_eq}}
+              <span>{{value}}</span>
+            </div>
+          </div>
+        {{/key_value}}
+      </section>
+    {{/ifSize}}
+
+    {{#if storeEvents}}
+      <section id="mb-store-details-events">
+        <h2>Events</h2>
+
+        <div class="m-store-events-content">
+          {{#each_upto storeEvents 4}}
+            {{> storeEvent}}
+          {{/each_upto}}
+        </div>
+
+        <section id="mb-j-store-viewall-events">
+          <a class="m-link med normal">View All Events</a>
+        </section>
+
+      </section>
+    {{/if}}
+
+    {{#if services}}
+      <section id="m-store-services">
+        <h2>Services</h2>
+
+        <div class="m-store-services-content row">
+
+          {{#slice services start="0" end="half"}}
+            <div class="small-7 columns">
+              {{#each this}}
+                <div>{{this}}</div>
+              {{/each}}
+            </div>
+          {{/slice}}
+
+          {{#slice services start="half"}}
+            <div class="small-5 columns nopad">
+              {{#each this}}
+                <div>{{this}}</div>
+              {{/each}}
+            </div>
+          {{/slice}}
+
+          <div class="clearfix"></div>
+
+        </div>
+      </section>
+    {{/if}}
+
+    <div class="m-j-store-save-fav" data-location="{{locationNumber}}">
+      <button class="m-button">add to my favorite stores</button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{
+  "name": "jquery-maskmoney",
+  "homepage": "https://github.com/lscoder/jquery-maskmoney",
+  "_release": "bf6e2bdd17",
+  "_resolution": {
+    "type": "commit",
+    "commit": "bf6e2bdd1791ff82e66af5a402435eb4204485a9"
+  },
+  "_source": "git://github.com/lscoder/jquery-maskmoney.git",
+  "_target": "bf6e2bdd1791ff82e66af5a402435eb4204485a9",
+  "_originalSource": "git://github.com/lscoder/jquery-maskmoney.git"
+}

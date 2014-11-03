@@ -1,0 +1,72 @@
+//
+// BCOM forms styles
+//
+
+.form-section {
+  border-bottom: 1px solid #ccc;
+
+  a {
+    color: $copy-color;
+  }
+}
+
+.form-item {
+  margin-bottom: emCalc(20px);
+  padding-top: emCalc(20px);
+
+  &.error {
+    input, textarea, select {
+      background-color: #fff;
+      border-color: $error-color;
+      margin-bottom: 1em;
+    }
+
+    .form-label {
+      color: $error-color;
+    }
+  }
+
+  .form-error {
+    color: $error-color;
+    font-size: $font-sm;
+    margin-top: emCalc(10px);
+  }
+}
+
+.form-label {
+  @include form-label();
+  color: $copy-color;
+  margin-bottom: emCalc(10px);
+}
+
+.form-label-right {
+  float: right;
+  font-size: $font-xsm;
+  font-style: italic;
+  color: $text-gray-color;
+  margin-top: -($font-xsm * $multiplier-xsm) + -($form-label-bottom-margin * $multiplier-xsm) - emCalc(8px);
+}
+
+.form-label-optional {
+  display: inline-block;
+  color: $text-dark-gray-color;
+}
+
+.form-description {
+  font-size: $font-xsm;
+  font-style: italic;
+  color: $text-gray-color;
+  margin-top: -0.4em;
+  display: block;
+}
+
+.form-bullets {
+  line-height: 19px;
+  margin: 0;
+  padding-right: 20px;
+  list-style-position: inside;
+
+  li {
+    overflow-wrap: break-word;
+  }
+}

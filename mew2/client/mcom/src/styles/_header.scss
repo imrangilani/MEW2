@@ -1,0 +1,78 @@
+$header-margin: 4px;
+
+body.nav-toggle {
+  #mb-j-nav-button {}
+}
+
+#mb-j-header-container {
+  @include grid-row(nest-collapse);
+  padding: 0;
+  height: emCalc(45px);
+
+
+  & > .m-header-side {
+    @include grid-column(2);
+
+    #mb-j-nav-button {
+      cursor: pointer;
+      margin-top: $header-margin * 3;
+      height: 22px;
+      width: 30px;
+    }
+
+    .icon-selectedMenuButton {
+      //background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjQsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNjBweCIgaGVpZ2h0PSI0NHB4IiB2aWV3Qm94PSIwIDAgNjAgNDQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYwIDQ0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiM2NjY2NjYiIGQ9Ik0wLDBoNjB2OEgwVjB6IE0wLDAiLz4NCgk8cGF0aCBmaWxsPSIjNjY2NjY2IiBkPSJNMCwxOGg2MHY4SDBWMTh6IE0wLDE4Ii8+DQoJPHBhdGggZmlsbD0iIzY2NjY2NiIgZD0iTTAsMzZoNjB2OEgwVjM2eiBNMCwzNiIvPg0KPC9nPg0KPC9zdmc+');
+      background-image: url('../../images/icon-menu_active.svg');
+      background-size: 30px 22px;
+    }
+
+    .icon-unselectedMenuButton{
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjQsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNjBweCIgaGVpZ2h0PSI0NHB4IiB2aWV3Qm94PSIwIDAgNjAgNDQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYwIDQ0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik0wLDBoNjB2OEgwVjB6IE0wLDAiLz4NCgk8cGF0aCBkPSJNMCwxOGg2MHY4SDBWMTh6IE0wLDE4Ii8+DQoJPHBhdGggZD0iTTAsMzZoNjB2OEgwVjM2eiBNMCwzNiIvPg0KPC9nPg0KPC9zdmc+DQo=');
+      background-size: 30px 22px;
+    }
+
+    #mb-bag-count-container{
+      position: relative;
+    }
+
+    a {
+        display: block;
+        height: 36px;
+        width: 30px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 100;
+    }
+
+    #m-shopping-bag-image {
+      @include single-transition(opacity, .5s);
+      float: right;
+      height: 36px;
+      width: 30px;
+      overflow: hidden;
+      margin-top: $header-margin;
+
+    }
+
+    #m-bag-count{
+      position: absolute;
+      top: 5px;
+      right: 22px;
+      z-index: 99;
+      float: right;
+
+    }
+  }
+
+  & > .m-header-mid {
+    margin-top: $header-margin;
+    @include grid-column(8);
+    text-align: center;
+
+    #mb-j-header-image {
+      display:block;
+      height: 38px;
+    }
+  }
+}

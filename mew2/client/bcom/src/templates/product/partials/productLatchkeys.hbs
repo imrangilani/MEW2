@@ -1,0 +1,7 @@
+<div id="b-product-latchkeys" class="b-{{latchkeys.length}}-columns">
+
+  {{#each latchkeys}}
+    <span class="b-j-product-latchkey {{#if_eq ../activeLatchkey compare=@index}}selected{{/if_eq}}" data-id="{{@index}}">{{latchkeyDisplayName this}}</span>
+  {{/each}}
+
+</div>

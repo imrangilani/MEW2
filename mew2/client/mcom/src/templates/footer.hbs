@@ -1,0 +1,99 @@
+<section id="m-footer-container" {{#if simple}}class="simple"{{/if}}>
+  {{#if simple}}
+    <div id="m-footer-simple">
+      <ul id="m-footer-links-simple">
+        <li>
+          {{#if signedIn}}
+            <a id="m-footer-link-simple-signout" class="m-j-cm-link" href="{{secureUrl '/signin/signout.ognc?cm_sp=mew_navigation-_-bottom_nav-_-sign_in'}}">Sign Out</a>
+          {{else}}
+            <a id="m-footer-link-simple-signin" class="m-j-cm-link" href="{{mSecureUrl 'signIn'}}">Sign In</a>
+          {{/if}}
+        </li>
+        <li><a id="m-footer-link-simple-contact" class="m-j-cm-link" href="https://customerservice.macys.com/app/contact?cm_sp=mew_navigation-_-bottom_nav-_-contact_us">Contact Us</a></li>
+        <li><a id="m-footer-link-simple-desktop" class="m-j-cm-link" href="http://www.macys.com/index.ognc?stop_mobi=yes&cm_sp=mew_navigation-_-bottom_nav-_-full_site">Desktop Version</a></li>
+      </ul>
+    </div>
+  {{else}}
+    <div id="m-footer-buttons-wrapper">
+      <ul id="m-footer-buttons">
+        <li>
+          <a class="m-footer-button m-j-cm-link" id="m-footer-button-find-store" href="/shop/store/search?cm_sp=mew_navigation-_-homepage-_-find_a_store"></a>
+        </li>
+        <li>
+          <a class="m-footer-button m-j-cm-link" id="m-footer-button-deals" href="/shop/coupons-deals?cm_sp=mew_navigation-_-homepage-_-deals_and_promotions"></a>
+        </li>
+     </ul>
+   </div>
+
+    <div id="m-footer-links">
+      <div class="m-footer-panel" id="m-footer-left">
+        <div class="m-footer-section-wrapper">
+
+          <div id="m-section-get-app" class="m-section">
+            <div class="m-section-left">
+              <div class="m-footer-img" id="m-footer-img-iphone"></div>
+            </div>
+
+            <div class="m-section-right">
+              <h5>Get Our App</h5>
+              <ul>
+                <li><a id="m-footer-link-iphone" href="http://itunes.apple.com/us/app/macys-ishop/id341036067?mt=8" target="_blank">iPhone</a></li>
+                <li><a id="m-footer-link-android" href="http://play.google.com/store/apps/details?id=com.macys.android" target="_blank">Android</a></li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+          <div id="m-section-stay-connected" class="m-section">
+            <div class="m-section-left">
+              <div class="m-footer-img " id="m-footer-img-email">
+                <a id="m-footer-link-img-email" class="m-j-cm-link" href="{{secureUrl '/account/preferences?cm_sp=mew_navigation-_-bottom_nav-_-email_notifications'}}"></a>
+              </div>
+              <div class="m-footer-img" id="m-footer-img-sms">
+                <a id="m-footer-link-img-sms"  class="m-j-cm-link" href="{{secureUrl '/account/preferences?cm_sp=mew_navigation-_-bottom_nav-_-text_notifications'}}"></a>
+              </div>
+            </div>
+
+            <div class="m-section-right">
+              <h5>Stay Connected</h5>
+              <ul>
+                <li>
+                  Sign up for<br />
+                  <a id="m-footer-link-email"  class="m-j-cm-link" href="{{secureUrl '/account/preferences?cm_sp=mew_navigation-_-bottom_nav-_-email_notifications'}}">email<a/> &
+                  <a id="m-footer-link-sms"  class="m-j-cm-link" href="{{secureUrl '/account/preferences?cm_sp=mew_navigation-_-bottom_nav-_-text_notifications'}}">texts</a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-footer-panel" id="m-footer-right">
+        <div class="m-footer-section-wrapper">
+          <div id="m-section-contact" class="m-section">
+            <h5>My Macy's</h5>
+            <ul>
+              <li>
+                {{#if signedIn}}
+                  <a id="m-footer-link-signout"  class="m-j-cm-link"  href="/signin/signout.ognc?cm_sp=mew_navigation-_-bottom_nav-_-sign_in">Sign Out</a>
+                {{else}}
+                  <a id="m-footer-link-signin"  class="m-j-cm-link" href="{{mSecureUrl 'signIn'}}">Sign In</a>
+                {{/if}}
+              </li>
+              <li><a id="m-footer-link-contact"  class="m-j-cm-link" href="https://customerservice.macys.com/app/contact?cm_sp=mew_navigation-_-bottom_nav-_-contact_us">Contact Us</a></li>
+            </ul>
+          </div>
+          <div id="m-section-helpful-links" class="m-section last">
+            <h5>Helpful Links</h5>
+            <ul>
+              <li><a id="m-footer-link-desktop"  class="m-j-cm-link" href="http://www.macys.com/index.ognc?stop_mobi=yes&cm_sp=mew_navigation-_-bottom_nav-_-full_site">Desktop Version</a></li>
+              <li><a id="m-footer-link-privacy"  class="m-j-cm-link" href="https://customerservice.macys.com/app/answers/detail/a_id/40/?cm_sp=mew_navigation-_-bottom_nav-_-privacy" target="_blank">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  <div id="m-footer-copy">&copy; 2014 macys.com is a registered trademark. All rights reserved.</div>
+</section>

@@ -1,0 +1,27 @@
+{{!-- modalHeader.hbs --}}
+<div class="mb-modal-header">
+  <div class="row">
+    <div class="small-3 columns b-modalHeader-left">
+      <div class="mb-j-modalHeader-left b-back">
+        <span>Back</span>
+      </div>
+    </div>
+    <div class="small-6 columns b-modalHeader-title truncated">
+      Technical Issue
+    </div>
+    <div class="small-3 columns b-modalHeader-right">
+      <!-- Empty -->
+    </div>
+  </div>
+</div>
+
+<div class="mb-modal-content">
+  <section id="b-error-view-container">
+    <div class="b-error-description">
+      {{> errorText}}
+    </div>
+    <button class="b-error-button">
+      <a href="/" class="b-error-button-link">Continue Shopping</a>
+    </button>
+  </section>
+</div>

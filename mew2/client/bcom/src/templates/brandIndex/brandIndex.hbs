@@ -1,0 +1,20 @@
+<div id="b-designer-index">
+  <section id="b-designer-index-dropdown"> </section>
+  {{#each designerIndex}}
+    <div class="b-designers-section">
+      <h4>{{@key}}</h4>
+      <ul class="designers-list">
+        {{#each this}}
+          <li>
+            <a class="b-j-designer-link" href="{{this.brandURL}}">
+              <div class="select">{{this.brandName}}</div>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      <div class="b-back-to-top">
+        <span class="back-to-top"> back to top </span>
+      </div>
+    </div>
+  {{/each}}
+</div>

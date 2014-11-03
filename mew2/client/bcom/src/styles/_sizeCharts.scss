@@ -1,0 +1,99 @@
+//
+// Size charts styles
+//
+
+#b-size-chart-modal {
+	.b-size-chart-title {
+		text-align: center;
+		margin: 20px auto;
+		font-size: emCalc(18px);
+		font-weight: bold;
+	}
+
+	.b-size-chart-step-title {
+		margin-bottom: 20px;
+	}
+
+	.b-expandable {
+		border-top: 1px solid $black;
+	}
+
+	.b-expandable-title {
+		font-size: emCalc(15px);
+		margin: 15px 0;
+		text-transform: uppercase;
+	}
+
+	.b-table>tbody>tr>td {
+		text-align: center;
+	}
+
+	.b-size-chart-sizing-table, .b-size-chart-conversion-table {
+		margin-bottom: 20px;
+	}
+
+	.b-size-chart-measure {
+
+		&>h4 {
+			margin-bottom: 20px;
+			font-size: emCalc(15px);
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		&>p {
+			text-indent: 0 !important;
+			margin-bottom: 20px;
+			font-size: emCalc(13px);
+		}
+	}
+
+	.b-size-chart-measure-switcher-wrapper {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+
+		.b-size-chart-measure-switcher {
+			display: inline-block;
+			width: 100%;
+
+			.b-radio.b-size-chart-measure-radio {
+			  color: #000;
+			  font-size: 15px;
+			  overflow: hidden;
+			  background-color: #FFF;
+			  border-top: solid 1px #CCC;
+			  border-bottom: solid 1px #CCC;
+			  border-left: solid 1px #CCC;
+			  border-right: none;
+			  text-transform: uppercase;
+			}
+
+			.b-radio.b-size-chart-measure-radio:last-child {
+			  border-right: solid 1px #CCC;
+			}
+
+			.b-radio.b-size-chart-measure-radio.active {
+			  color: #FFF;
+			  background-color: #999;
+			}
+		}
+	}
+
+	.b-size-chart-additional-countries {
+		margin-bottom: 20px;
+	}
+
+	.mb-fraction-num {
+	    font-size: 0.6em;
+	    vertical-align: super;
+	    margin-left: -2px;
+	}
+	.mb-fraction-denom {
+	    font-size: 0.6em;
+	}
+	.mb-fraction-denom:before {
+	    content: '\2044';
+	    font-size: 1.5em;
+	}
+}

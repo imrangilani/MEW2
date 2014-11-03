@@ -1,0 +1,183 @@
+<div id="b-size-chart-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns" style="text-align: left">
+        <div class="mb-j-modalHeader-left b-back"><span>Back</span></div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title">
+        Size Guide
+      </div>
+      <div class="small-3 columns">
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+
+    {{#with charts}}
+      <div class="b-size-chart-title">{{ categoryName }}</div>
+
+      {{#each categories}}
+
+        <!-- Check if we have a 'steps' layout -->
+        {{#if stepTitle}}
+          <div class="b-size-chart-step-title">{{ stepTitle }}</div>
+        {{else}}
+
+          <!-- Use the expandable only if we have more than one category -->
+          {{#ifSize ../../categories compare=1 operator=">"}}
+            <div class="b-expandable {{#if_gt @index compare="0"}}b-expandable-closed{{/if_gt}}" data-expandable="container">
+              <div class="b-expandable-title" data-expandable="button" data-size-chart-category-title="{{this.title}}">
+                {{ this.title}} <div class="b-expandable-icon"></div>
+              </div>
+              <div class="b-expandable-content {{#if_gt @index compare="0"}}hide{{/if_gt}}" data-expandable="content">
+          {{/ifSize}}
+
+        <!-- End of steps layout -->
+        {{/if}}
+
+        <!-- Start chart container -->
+        <section class="b-size-chart-container" data-size-chart-title="{{ this.title }}">
+
+          <!-- Start of Sizing Table -->
+          <div class="b-size-chart-sizing-table b-table-responsive">
+              <table class="b-table b-table-striped">
+                <thead>
+                  <tr>
+
+                    {{#each chart.header.sizes}}
+                      {{#if_eq locale compare='NONE'}}
+                        <th {{#if ../columns}}colspan={{../columns}}{{/if}}>{{{title}}}</th>
+                      {{/if_eq}}
+                    {{/each}}
+
+                    {{#each chart.header.measurements}}
+                      <th class="b-measuresystem-{{this.system}}{{#if_neq this.system compare='English'}} hide{{/if_neq}}">
+                        {{{this.name}}}
+                        {{#if this.unit}}
+                          <br/>({{this.unit}})
+                        {{/if}}
+                      </th>
+                    {{/each}}
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {{#each chart.row}}
+                    <tr>
+                      {{#each sizes}}
+                        {{#each value}}
+                          {{#if_eq ../locale compare='NONE'}}
+                            <td class="b-size-US b-size-value">{{{fractionValue this}}}</td>
+                          {{/if_eq}}
+                        {{/each}}
+                      {{/each}}
+
+                      {{#each measurements}}
+                        <td class="b-measuresystem-{{this.system}} b-measure-value{{#if_neq this.system compare='English'}} hide{{/if_neq}}">{{{fractionValue this.data}}}</td>
+                      {{/each}}
+                  </tr>
+                {{/each}}
+
+                </tbody>
+              </table>
+          </div>
+          <!-- End of Sizing Table -->
+
+          <!-- Start of Metric System Toggler -->
+          {{#ifSize systems compare=1 operator=">"}}
+            <div class="b-size-chart-measure-switcher-wrapper">
+              <div class="b-radio-group b-size-chart-measure-switcher" data-toggle="buttons">
+
+                {{#each systems}}
+                  <label class="b-radio b-size-chart-measure-radio small-6 {{#if_eq this.system compare='English'}}active{{/if_eq}}">
+                    <input type="radio" name="options" data-display="{{this.system}}" {{#if_eq this.system compare='English'}}checked{{/if_eq}}> {{displayBcomMeasurementSystem this.system}}
+                  </label>
+                {{/each}}
+
+              </div>
+            </div>
+          {{/ifSize}}
+          <!-- End of Metric System Toggler -->
+
+          <!-- Start of Additional Countries dropdown -->
+          {{#ifSize countries compare=1 operator=">"}}
+            <div class="b-size-chart-additional-countries b-select-wrapper">
+              <select class="b-j-select-locale" class="b-select">
+
+                {{#each countries}}
+                  {{#if_eq this compare='NONE'}}
+                    <option value="NONE" selected>INTERNATIONAL SIZES</option>
+                  {{else}}
+                    <option value="{{this}}">{{getCountryName this}}</option>
+                  {{/if_eq}}
+                {{/each}}
+              </select>
+            </div>
+          {{/ifSize}}
+          <!-- End of Additional Countries dropdown -->
+
+          <!-- Start of conversion table -->
+          <table class="b-size-chart-conversion-table b-table b-table-striped hide">
+            <thead>
+              <tr>
+
+                {{#each chart.header.sizes}}
+                  <th class="{{#if_neq locale compare='NONE'}}b-locale-{{locale}} hide{{/if_neq}}"
+                    {{#if columns}}
+                      colspan={{columns}}
+                    {{/if}}
+                    >{{{title}}}
+                  </th>
+                {{/each}}
+              </tr>
+            </thead>
+            <tbody>
+
+              {{#each chart.row}}
+                <tr>
+                  {{#each sizes}}
+                    {{#each value}}
+                      <td class="{{#if_eq ../locale compare='NONE'}}b-size-US{{else}}b-locale-{{../../locale}} hide{{/if_eq}} b-size-value">
+                        {{{fractionValue this}}}
+                      </td>
+                    {{/each}}
+                  {{/each}}
+              </tr>
+            {{/each}}
+
+            </tbody>
+          </table>
+          <!-- End of conversion table -->
+
+          <!-- Start How to Measure Section -->
+          {{#if mobileText}}
+            <div class="b-size-chart-measure">
+              {{{mobileText}}}
+            </div>
+          {{else}}
+            <div class="b-size-chart-measure">
+              {{#if learnMore}}{{{learnMore}}}{{/if}}
+            </div>
+          {{/if}}
+          <!-- End How to Measure Section -->
+
+        </section>
+        <!-- End of chart container -->
+
+        <!-- Close the expandable if we have more than one category and it's not step layout-->
+        {{#unless stepTitle}}
+          {{#ifSize ../../categories compare=1 operator=">"}}
+              </div>
+            </div>
+          {{/ifSize}}
+        {{/unless}}
+
+      <!-- End categories loop -->
+      {{/each}}
+
+    {{/with}}
+
+  </div>
+</div>

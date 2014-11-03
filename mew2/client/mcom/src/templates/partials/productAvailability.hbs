@@ -1,0 +1,75 @@
+<div class="m-product-availability m-rule-bottom">
+  <strong>Item Availability:</strong>
+
+  <div class="content">
+  {{#unless activeUpcData}}
+    {{! No UPC selected - print default messaging}}
+    <span id="m-availability-default-msg-{{product.id}}">Select a {{#upcUnselectedMessage product}}{{/upcUnselectedMessage}} above in order to view availability.</span>
+  {{else}}
+    {{! UPC is selected - print item ship messaging and bops messaging }}
+    {{! Display shipping message}}
+    {{#if activeUpcData.availMsg}}
+      <strong>Ship: </strong> <span id="m-product-availability-msg-{{product.id}}">{{activeUpcData.availMsg}}</span>
+    {{/if}}
+
+    {{#ifFeatureEnabled 'bops_pdp'}}
+      {{#if product.isFIIS}}
+        <hr>
+        <strong>Find in-store: </strong>
+        <a id="m-j-bops-fiis-{{product.id}}" class="m-link bops-find-in-store bops-store-lookup" href="#">Find in Store</a>
+      {{else}}
+
+        {{! If a location is set, display the bops message}}
+        {{#if locationNumber}}
+
+          {{! Display the bops message}}
+          {{#unless suppressBopsMessaging}}
+            <hr>
+            <strong>Pick Up in Store: </strong>
+
+            {{#if activeAvailability.bopsEligible}}
+              {{#if activeAvailability.bopsAvailable}}
+                <span class="bops-msg-available">Available for pick up at:</span>
+                <div class="bops-store-name">{{ bops.store.name }} <span>(<a id="m-j-bops-lookup-0-{{product.id}}" class="m-link bops-store-lookup change" href="#">change</a>)</span></div>
+              {{else}}
+                <span class="bops-msg-not-available">Not available for pick up at</span> <span class="bops-store-name"><strong>{{ bops.store.name }}</strong></span>
+                <br />
+                <a id="m-j-bops-lookup-1-{{product.id}}" class="m-link bops-store-lookup" href="#">Select another store</a>
+              {{/if}}
+            {{else}}
+              <br>
+              <a id="m-j-bops-lookup-2-{{product.id}}" class="m-link bops-store-lookup" href="#">Check availability in stores</a>
+            {{/if}}
+
+            {{! what's this link with collapsible copy }}
+            {{#if activeAvailability.bopsEligible}}
+              <div class="bops-whats-this">
+                <a class="bops-whats-this-link" href="#">What's this?</a>
+                <div class="bops-whats-this-content" style="display: none;">
+                  Need it fast? Now you can buy online and pick up at select Macy's stores!
+                </div>
+              </div>
+            {{/if}}
+          {{/unless}}
+
+        {{else}}
+
+          {{#unless suppressBopsMessaging}}
+            {{! Display the bops message}}
+
+            {{! Display "pick up:" as separate section, only if ship: also displays}}
+            <hr>
+            <strong>Pick Up in Store: </strong><span class="bops-msg-check-available">Want it now? Check availability in your area.</span>
+            <br />
+
+            {{! Display link for store lookup }}
+            <a id="m-j-bops-store-lookup-2-{{product.id}}" class="m-link bops-store-lookup" href="#">Select a store</a>
+          {{/unless}}
+
+        {{/if}}
+
+      {{/if}}
+    {{/ifFeatureEnabled}}
+  {{/unless}}
+  </div>
+</div>

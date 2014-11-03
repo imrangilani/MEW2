@@ -1,0 +1,76 @@
+.image-prop{
+  width: 60px;
+  height: 60px;
+  background-position: center top;
+  background-size: 60px 60px;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+
+#m-share-email{
+  background-image: url("../../images/share/icon_mail_red.svg");
+  @extend .image-prop;
+}
+
+#m-share-pinterest{
+  background-image: url("../../images/share/icon_social_pn.svg");
+  @extend .image-prop;
+}
+
+#m-share-facebook{
+  background-image: url("../../images/share/icon_social_fb.svg");
+  @extend .image-prop;
+}
+
+#m-share-twitter{
+  background-image: url("../../images/share/spinner_white_30@2x.svg");
+  @extend .image-prop;
+}
+
+#m-share-googleplus{
+  background-image: url("../../images/share/icon_social_gp.svg");
+  @extend .image-prop;
+}
+
+
+.m-share-content-row{
+  display: table;
+  clear: both;
+  margin: auto;
+  .m-share-content-col{
+    display: inline-block;
+    padding: 20px 10px 20px 10px;
+    margin: auto;
+    div{
+      margin: auto;
+    }
+  }
+  .m-j-share-div{
+    text-align: center;
+    padding-top: 20px;
+    color: #000000;
+    font-size: 14pt;
+    font-style: arial regular;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+#m-share-overlay{
+  width: 100%;
+  margin-left: -50%;
+}
+
+@media only screen and (orientation: landscape) {
+
+  .m-share-content{
+    margin: auto;
+    display: table;
+  }
+  .m-share-content-row{
+    display: inline;
+    clear: none;
+  }
+}

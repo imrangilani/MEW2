@@ -1,0 +1,41 @@
+{{#ifNoStores}}
+  <section id="m-fiis-no-stores">
+    We're sorry; there are no Macy's Furniture Galleries within {{requestParams.distance}} miles of where you live.
+  </section>
+{{else}}
+
+  {{#ifAllUnavailable}}
+    <section id="m-bops-all-unavailable">
+      Sorry, this item is unavailable at stores within your search area.
+    </section>
+  {{else}}
+
+    {{#if stores.pickup}}
+      <section id="m-bops-pickup">
+        <h2>Sample on display at {{stores.pickup.length}} store(s):</h2>
+        {{#each stores.pickup}}
+          <article class="bops-result" data-location="{{locationNumber}}">
+            {{> productBopsResult}}
+          </article>
+        {{/each}}
+      </section>
+
+      {{#if stores.unavailable}}
+        <div class="m-separator"></div>
+      {{/if}}
+    {{/if}}
+
+    {{#if stores.unavailable}}
+      <section id="m-bops-unavailable">
+        <h2>Not available at the following store(s):</h2>
+        <ul class="bops-unavailable">
+        {{#each stores.unavailable}}
+          <li>{{name}}</li>
+        {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
+  {{/ifAllUnavailable}}
+
+{{/ifNoStores}}

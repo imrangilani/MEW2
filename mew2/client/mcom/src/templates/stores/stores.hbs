@@ -1,0 +1,60 @@
+<section id="mb-stores-search">
+
+  <div id="m-stores-header" class="m-header">
+    <div class="row">
+      <div class="small-1 columns m-header-first">
+        {{#if_or nearby location reference}}
+          <div class="mb-j-back m-back">&nbsp;</div>
+        {{/if_or}}
+      &nbsp;
+      </div>
+      <h1 class="small-10 columns m-header-title nopad left">Find a Store</h1>
+    </div>
+  </div>
+
+  <div id="m-stores-content" class="m-page-content">
+    {{#unless nearby}}{{#unless location}}{{#unless reference}}
+      <section class="intro-text">Enter your zip code or city/state to find a Macy's near you!</section>
+    {{/unless}}{{/unless}}{{/unless}}
+
+    <section class="m-stores-search-form">
+      <form id="mb-j-stores-form" method="get" action="/shop/stores/search">
+
+        <div class="row">
+          <div class="m-address small-11 columns nopad">
+            <input id="mb-j-location-input" name="location" type="search" class="box-search" placeholder="Zip code or city/state" value="{{location}}" autocomplete="off">
+            <div id="mb-j-stores-search-clear" class="icon-searchClear icon-search-clear {{#if location}}visible{{/if}}"></div>
+          </div>
+          <div id="mb-j-stores-nearme" class="m-nearme small-1 columns nopad"></div>
+        </div>
+
+        <div id="mb-j-store-autocomplete-container" class="mb-autocomplete-outer-container">
+          {{! the store Autocomplete template goes here }}
+        </div>
+
+      </form>
+    </section>
+
+    <div id="m-stores-list" {{#if isLandingPage}}class="landing"{{/if}}>
+      <section id="mb-j-stores-favorites">
+        {{! the storeFavorites template goes here }}
+      </section>
+
+      <section id="mb-j-stores-results">
+        <span id="mb-filter-container" class="m-filter-container {{#if filtered}}filtered{{/if}}">
+          <a class="mb-j-filter-results m-link med normal">Filter Stores by Services</a>
+        </span>
+
+        <div id="m-j-toggle-view" class="mb-j-stores-latchkeys"></div>
+
+        <div id="mb-j-stores-list-view" class="stores-latchkey selectedLatchKey">
+          {{> storeResultsList}}
+        </div>
+
+        <div id="mb-j-stores-map-view" class="stores-latchkey">
+          <div id="mb-j-map" style="width: 100%; height: 400px"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

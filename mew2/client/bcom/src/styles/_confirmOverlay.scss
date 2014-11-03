@@ -1,0 +1,62 @@
+.b-confirm-overlay {
+  position: fixed;
+  top: 50%;  /* We try to center vertically, but as we don't know the height, we use an aproximate value */
+  margin-top: -80px;
+  left: 0px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid $lightGrey;
+  border-top: 2px solid $lightGrey;
+  z-index: 210;
+
+  .b-header {
+    @include clearfix;
+
+    border-bottom: 2px solid $lightGrey;
+    padding: 5px 0;
+
+    .mb-j-overlay-close, .mb-j-overlay-close:hover {
+      width: 50%;
+      float: right;
+      height: 100%;
+      font-size: 11px;
+      font-weight: bold;
+      text-align: right;
+      background-color: transparent;
+      box-shadow: none;
+      text-transform: uppercase;
+    }
+
+    .b-overlay-close-text {
+      position: relative;
+      padding-right: 5px;
+      top: 2px;
+    }
+
+    .icon-close {
+      display: inline-block;
+      height: 22px;
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+  }
+
+  .b-overlay-content {
+    font-size: emCalc(13px);
+    line-height: emCalc(24px);
+    text-align: center;
+    margin: 30px 0;
+    padding: 0 15px 20px 15px;
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 0px;
+  }
+
+  .b-overlay-content a {
+    text-decoration: underline;
+  }
+
+  .b-footer {
+
+  }
+}

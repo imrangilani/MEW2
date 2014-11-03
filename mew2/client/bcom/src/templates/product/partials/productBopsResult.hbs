@@ -1,0 +1,34 @@
+<div class="b-bops-store-details">
+	<div class="bops-result-name">{{name}}</div>
+	<div class="bops-result-address">
+		<div class="bops-result-mapping"><a id="b-j-bops-result-map-link-{{locationNumber}}" class="bops-result-map-link b-link">{{> storeAddress address}}</a></div>
+		<div class="bops-result-distance">
+	    <div >{{distance}} {{units}}</div>
+	  </div>
+	</div>
+
+	<div class="bops-result-phone">
+		<a href="tel:{{phone}}">{{phone}}</a>
+		<div class="clearboth"> </div>
+	</div>
+
+	<div class="clearboth"> </div>
+
+	{{#if hours}}
+	  <div class="bops-result-hours">
+	    {{#if hours.today}}
+	    	<div class="bops-hours-today">
+		      <div class="bops-result-hours-lable">Today Hours:</div>
+		      <div class="bops-result-hours-value"> {{hours.today}}</div>
+	      </div>
+	    {{/if}}
+
+	    {{#if hours.tomorrow}}
+	    	<div class="bops-hours-tomorrow">
+		      <div class="bops-result-hours-lable">Tomorrow Hours: </div>
+		      <div class="bops-result-hours-value"> {{hours.tomorrow}}</div>
+	      </div>
+	    {{/if}}
+	  </div>
+	{{/if}}
+</div>

@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+PRODID:-//{{productId}}
+VERSION:1.0
+BEGIN:VEVENT
+DTSTART:{{#formatDateForCalendar startDateTime format="MM/DD/YYYY hh:mmA"}}{{/formatDateForCalendar}}
+DTEND:{{#formatDateForCalendar endDateTime format="MM/DD/YYYY hh:mmA"}}{{/formatDateForCalendar}}
+UID:{{uniqueId}}
+SUMMARY:{{{eventName}}}
+DESCRIPTION:{{{shortDesc}}}
+LOCATION:{{{location}}}
+END:VEVENT
+END:VCALENDAR

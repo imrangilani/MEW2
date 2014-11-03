@@ -1,0 +1,21 @@
+<ul id="m-shop-categories-list" class="small-block-grid-3 large-block-grid-4">
+  {{#each items}}
+    {{#if this.imageFileName}}
+      <li>
+        <div class="m-shop-category">
+            {{#if url}}
+              <a href="{{url}}">
+            {{/if}}
+            <img class="m-shop-category-img" src="{{imageFileName}}" alt="{{altText}}" />
+
+            {{#if text}}
+              <div class="m-shop-category-title">{{text}}</div>
+            {{/if}}
+            {{#if url}}
+              </a>
+            {{/if}}
+        </div>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

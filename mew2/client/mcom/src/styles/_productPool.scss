@@ -1,0 +1,16 @@
+#m-product-pool-container {
+
+  #m-product-pool-header {
+    margin: 0 emCalc(10px);
+
+    .m-product-pool-header-column {
+      font-size: emCalc(15px);
+      margin: emCalc(20px) 0;
+      text-overflow: ellipsis;
+    }
+  }
+
+  #m-product-pool-footer {
+    margin-bottom: emCalc(20px);
+  }
+}

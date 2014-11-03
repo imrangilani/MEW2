@@ -1,0 +1,11 @@
+<ul class="mb-store-list">
+  {{#if newStoreList}}
+    {{#each newStoreList}}
+      {{> storeFilteredResults}}
+    {{/each}}
+  {{else}}
+    {{#each stores}}
+      {{> storeFilteredResults}}
+    {{/each}}
+  {{/if}}
+</ul>

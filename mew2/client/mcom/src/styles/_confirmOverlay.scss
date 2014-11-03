@@ -1,0 +1,60 @@
+.m-confirm-overlay {
+  border: 1px solid #999;
+  font-size: $font-med;
+  left: 50%;
+  margin-left: emCalc(-145px) * $multiplier-med;
+  position: fixed;
+  top: 100px;
+  width: emCalc(290px) * $multiplier-med;
+  z-index: 12;
+
+  .m-header {
+    $header-height: emCalc(40px) * $multiplier-med;
+
+    background-color: #e4e4e4;
+    color: #cc0000;
+    font-weight: bold;
+    height: $header-height;
+    line-height: $header-height;
+    padding: 0 (emCalc(10px) * $multiplier-med);
+
+    .mb-j-close {
+      background: url("../../images/clear.png") right center no-repeat;
+      height: $header-height;
+      width: 13px;
+    }
+  }
+
+  .m-content {
+    background-color: #fff;
+    line-height: emCalc(20px);
+    padding-bottom: emCalc(20px) * $multiplier-med;
+    padding-left: emCalc(10px) * $multiplier-med;
+    padding-right: emCalc(10px) * $multiplier-med;
+    padding-top: emCalc(10px) * $multiplier-med;
+  }
+
+  .m-footer {
+    background-color: #ccc;
+    padding: emCalc(5px) * $multiplier-med;
+
+    .m-overlay-buttons {
+      @include clearfix();
+
+      .m-button {
+        width: 49%;
+      }
+    }
+  }
+}
+
+#mb-j-mask {
+  background-color: #000;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+}

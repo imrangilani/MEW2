@@ -1,0 +1,19 @@
+{{#eachAvailableValue currentValues}}
+  <li class="facet-value {{#unless this.productcount}}facet-value-none{{/unless}} {{#ifSelectedValue .. name}}facet-value-selected{{/ifSelectedValue}} facet-value-{{stripNonAlpha name}}" data-facet-value="{{name}}">
+    <div class="display">
+      <span class="facet-value-action-icon"></span>
+      <div class="display-inner">
+        <div class="display-name-wrapper">
+          <div class="display-name">
+  					{{#if displayname}}
+          		{{{displayname}}}
+          	{{else}}
+          		{{name}}
+  					{{/if}}
+          	</div>
+          <div class="count-display-name">[{{productcount}}]</div>
+        </div>
+      </div>
+    </div>
+  </li>
+{{/eachAvailableValue}}

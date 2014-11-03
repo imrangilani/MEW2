@@ -1,0 +1,14 @@
+$box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+@import "retina-sprites";
+
+$icon2x: sprite-map("icon2x/*.png");
+@include generate-sprite-map($icon2x, $icon2x);
+@include retina-sprite-classes($icon2x, $icon2x, $prefix: 'icon-');
+
+$faceted2x: sprite-map("faceted2x/*.png");
+@include generate-sprite-map($faceted2x, $faceted2x);
+@include retina-sprite-classes($faceted2x, $faceted2x, $prefix: 'faceted-');
+
+$zoom2x: sprite-map("zoom2x/*.png");
+@include generate-sprite-map($zoom2x, $zoom2x);
+@include retina-sprite-classes($zoom2x, $zoom2x, $prefix: 'zoom-');

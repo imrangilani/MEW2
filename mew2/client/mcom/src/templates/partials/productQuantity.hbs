@@ -1,0 +1,15 @@
+<div class="m-product-qty">
+  <div class="row">
+    <div class="small-6 columns m-product-qty-label"><strong>Quantity:</strong></div>
+    <div class="small-6 columns m-product-qty-select">
+      <div class="m-product-qty-wrapper">
+        <button class="m-product-qty-button">{{#if_gt activeQty compare="0"}}{{activeQty}}{{else}}1{{/if_gt}}</button>
+        <select class="m-j-product-qty-values">
+          {{#times maxQty}}
+            <option value="{{@current}}" {{#if_eq activeQty compare=@current}}selected="selected"{{/if_eq}}>{{@current}}</option>
+          {{/times}}
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

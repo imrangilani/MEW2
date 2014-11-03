@@ -1,0 +1,45 @@
+<section id="mb-stores-search">
+
+  <h1 class="b-stores-header">Find a store</h1>
+
+  <div id="mb-j-stores-error-container" class="b-error-container " style="display: none">
+    <div id="mb-j-stores-error-message" class="b-error-text">{{! error message comes here}}</div>
+  </div>
+
+  <div id="b-stores-content" class="b-page-content">
+    <div class="b-stores-search-form">
+      <form id="mb-j-stores-form" method="get" action="/shop/stores/search">
+        <div class="b-form-section">
+          <span id="b-store-search-field-icon" class="icon-search"></span>
+          <input id="mb-j-location-input" name="location" type="search" placeholder="Enter ZIP Code or City, State" value="{{location}}" autocomplete="off">
+          <div id="mb-j-stores-search-clear" class="mb-search-clear icon-searchClear"></div>
+        </div>
+        <div id="mb-j-store-autocomplete-container" class="mb-autocomplete-outer-container">
+          {{! the store Autocomplete template goes here }}
+        </div>
+      </form>
+
+      <button id="mb-j-stores-nearme">Near Me</button>
+    </div>
+
+    <section id="mb-j-stores-results" {{#if isLandingPage}}class="landing"{{/if}}>
+      <span id="mb-filter-container" class="b-filter-container">
+        <button class="mb-j-filter-results">NARROW SEARCH BY SERVICES</button>
+      </span>
+
+      <div id="b-j-toggle-view" class="mb-j-stores-latchkeys">
+        <span class="mb-j-stores-latchkey value-1 current">List View</span>
+        <span class="mb-j-stores-latchkey value-2">Map View</span>
+      </div>
+
+      <div id="mb-j-stores-list-view" class="selectedLatchKey">
+        {{> storeResultsList}}
+      </div>
+
+      <div id="mb-j-stores-map-view">
+        <div id="mb-j-map" style="width: 100%; height: 400px"></div>
+      </div>
+
+    </section>
+  </div>
+</section>

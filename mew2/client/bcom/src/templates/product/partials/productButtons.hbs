@@ -1,0 +1,24 @@
+<div class="b-pdp-info-section-container b-product-buttons {{#if isCheckoutEnabled}}b-product-checkout-enable{{/if}}">
+{{#if isCheckoutEnabled}}
+  <div class="b-product-checkout-buttons">
+  	{{#if requestParams.extra_parameter compare='BAG'}}
+  	  <button class="b-j-product-update-bag">Update Bag</button>
+      <button class="b-j-product-add-bag">Add Another item</button>
+  	{{else}}
+  	  <button class="b-j-product-add-bag">Add to Bag</button>
+  	{{/if}}
+
+    {{#if isRegistrable}}
+    	<button class="b-j-product-add-registry">Add to Registry</button>
+    {{/if}}
+  </div>
+{{else}}
+  <div class="b-product-phone-button-wrapper">
+    <a class="b-j-product-phone button" href="tel:18665932540">order by phone</a>
+    <div class="b-product-phone-content">
+      <div class="b-product-phone-number">Call 1-866-593-2540.</div>
+      <div class="b-product-phone-msg">Mon-Fri 8AM-10PM ET, Sat-Sun 10AM-9PM ET</div>
+    </div>
+  </div>
+{{/if}}
+</div>

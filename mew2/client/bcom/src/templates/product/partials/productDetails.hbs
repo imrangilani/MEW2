@@ -1,0 +1,32 @@
+<section class="b-pdp-info-section-container b-product-details">
+  <div class="b-pdp-info-section">
+    <div class="b-product-details-label b-pdp-info-label"> Product Details </div>
+    <div class="b-j-product-web-id b-pdp-info-extra">Web ID {{id}}</div>
+  </div>
+
+  {{#if isEGC}}
+    <p class="b-details-pre">Last minute? You? Never! If a birthday sneaks up on you, fret not. Our E-Gift Cards
+      E-liminate gifting woes. Sent on the spot via email, it's the ultimate in instant gift-ification.</p>
+  {{/if}}
+
+
+  {{! if theres one or more details, show them}}
+  {{#if details}}
+    <ul class="b-pdp-bullets"{{#unless isMaster}} itemprop="description"{{/unless}}>
+      {{#if warranty}}
+        <li id="b-j-product-warranty-link-{{id}}" class="b-product-warranty-link">Warranty Information</li>
+      {{/if}}
+      {{#each details}}
+        <li id="b-j-pdp-bullet-{{../id}}_{{@index}}" {{#if_string_contains this search="egcterms.jsp"}}class="b-j-gift-cards-terms-link"{{/if_string_contains}}>{{{this}}}</li>
+      {{/each}}
+    </ul>
+  {{!if not, show description instead}}
+  {{else}}
+    <p class="b-details-truncated" {{#unless isMaster}} itemprop="description"{{/unless}}>{{{longDescription}}}</p>
+  {{/if}}
+
+  {{#if isEGC}}
+    <p class="b-details-extra"><a href="#" id="b-j-gift-card-terms-link-{{../id}}" class="b-j-gift-cards-terms-link">Terms and conditions</a> are applied to gift certificates/gift cards.</p>
+  {{/if}}
+
+</section>

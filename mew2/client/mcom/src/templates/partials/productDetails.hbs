@@ -1,0 +1,49 @@
+<div id="m-product-details" class="m-rule-bottom" itemprop="description">
+  {{#if isMaster}}
+    <strong>Product Collection Details:</strong><br/><br/>
+  {{else}}
+    <strong>Product Details:</strong><br/><br/>
+  {{/if}}
+
+  <div class="content">
+    {{! in situations where there are more than one detail items, display in a list}}
+    {{#if_gt details.length compare="0"}}
+      <div class="m-product-details-bullets">
+        <ul class="no-margin">
+          {{#each details}}
+            <li>{{{this}}}</li>
+          {{/each}}
+          {{#if warranty}}
+            <li class="m-product-details-bullets-warranty"><a href="#">Warranty Information</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    {{/if_gt}}
+
+    {{! check for description and display}}
+    {{#if longDescription}}
+      <div class="m-product-details-description">{{longDescription}}</div>
+    {{/if}}
+  </div>
+  {{#if isMaster}}
+    {{#if members}}
+      {{#isAnyMemberOnSale}}
+        <div class="row">
+          <div class="m-pricing-policy-container small-8 columns">
+            Sale end dates vary. Please check item details for more information.
+          </div>
+          <div class="m-pricing-policy-link-container">
+            <a class="m-link m-pricing-policy" href="#" id="m-pricing-policy">Pricing Policy</a>
+          </div>
+        </div>
+      {{/isAnyMemberOnSale}}
+    {{/if}}
+  {{/if}}
+
+  {{#if masterCollection}}
+    <div class="m-product-details-in-collection">
+      This item is part of the <span style="font-weight: bold;">{{masterCollection.name}}</span> Collection.<br/>
+      <a id="m-view-collection" class="m-button" href="{{masterCollection.productUrl}}" style="margin-top: 10px">View the Collection</a>
+    </div>
+  {{/if}}
+</div>

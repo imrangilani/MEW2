@@ -1,0 +1,86 @@
+{{#unless stores}}
+	<div class="b-bops-error-nostores">
+		<b>Unfortunately there are no stores within {{requestParams.distance}} miles of where you live.</b> </br>
+  	You can always have your item(s) shipped or choose a preferred store outside of your area.
+	</div>
+{{else}}
+
+  {{#ifAllUnavailable}}
+  	<div class="b-bops-error-unavailable">
+	    <b>This item is not available within {{requestParams.distance}} miles of your location.</b> </br>
+	  	Please use the fields above to check another location.
+	  </div>
+  {{else}}
+
+    {{#if stores.bops}}
+    	<div class="small-12">
+          <button class="bops-store-select">Save My Location</button>
+      </div>
+      
+      <section id="b-bops-available">
+	    	<div class="b-bops-callout">
+	    		<div class="b-bops-message">Buy online, pick up in store at: </div> 
+	      	<div class="b-bops-totalstore-count">{{stores.bops.length}} Stores</div>
+	    	</div>
+	
+	      {{#each stores.bops}}
+	      	<article class="bops-result {{#if_eq @index compare=0}} bops-selected-store {{/if_eq}}" data-location="{{locationNumber}}">
+	      		<div>
+	      			<input type="radio" name="radio-storeSelector" class="b-bops-radio" id="b-bops-radio{{@index}}" {{#if_eq @index compare=0}} checked {{/if_eq}}><label for="b-bops-radio{{@index}}"></label>
+	      			{{> productBopsResult}}
+	      		</div>
+	      	</article>
+	      {{/each}}
+      </section>
+    {{else}}
+      <div class="b-bops-error-nostores">
+        <b>Unfortunately there are no stores within {{requestParams.distance}} miles of where you live.</b>
+      </div>
+    {{/if}}
+
+    {{#if_or stores.pickup stores.unavailable}}
+      <div class="b-separator"></div>
+    {{/if_or}}
+
+    {{#if stores.pickup}}
+      <section id="b-bops-pickup">
+    	  <div class="b-bops-callout">
+    		  <div class="b-bops-message">Not available for our buy online, pick up in store service, but in stock at: </div>
+      	  <div class="b-bops-totalstore-count">{{stores.pickup.length}} Stores</div>
+    	  </div>
+      
+        {{#each stores.pickup}}
+      	  <article class="bops-result" data-location="{{locationNumber}}">
+        	  {{> productBopsResult}}
+          </article>
+        {{/each}}
+      </section>
+
+      {{#if stores.unavailable}}
+        <div class="b-separator"></div>
+      {{/if}}
+    {{/if}}
+
+    {{#if stores.unavailable}}
+      <section id="b-bops-unavailable">
+	      <div class="b-bops-callout">
+	    	  Not available at:<br/>
+	      </div>
+        <article class="bops-result bops-unavailable">
+      	  {{#each stores.unavailable}}
+        	  <div>{{name}}</div>
+      	  {{/each}}
+        </article>
+      </section>
+    {{/if}}
+    
+    <div class="small-12">
+    	<button class="bops-store-select">Save My Location</button>
+    </div>
+    <div class="small-12">
+    	<button class="bops-store-cancel">Cancel</button>
+    </div>
+
+  {{/ifAllUnavailable}}
+
+{{/unless}}

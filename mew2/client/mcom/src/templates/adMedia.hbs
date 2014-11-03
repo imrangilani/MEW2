@@ -1,0 +1,19 @@
+
+{{#if items}}
+  <a id="m-j-invis-prev"></a>
+  <a id="m-j-invis-next"></a>
+  <div id="m-ad-swiper-container" class="swiper-container">
+      <div id="m-j-banners-list" class="swiper-wrapper">
+          {{#each items}}
+            
+              <div class="swiper-slide">
+                  {{> adMediaSlide }}
+              </div>
+            
+          {{/each}}
+      </div>
+  </div>
+{{/if}}
+
+
+

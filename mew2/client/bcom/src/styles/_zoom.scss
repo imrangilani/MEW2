@@ -1,0 +1,113 @@
+
+/** Testing increasing the modal header height to accomodate the
+  * tapping of the 'back' button on iOS7 Safari in landscape-fullscreen mode
+  */
+@media #{$landscape} {
+  #mb-product-zoom {
+    & > .mb-modal-header {
+      & > .row {
+        height: 55px;
+
+        .b-back {
+          margin-top: emCalc(12px);
+        }
+      }
+    }
+  }
+}
+/**
+  * /End of testing
+  */
+
+#mb-product-zoom {
+  position: relative;
+
+  & > .mb-modal-header {
+
+    @include backface-visibility(hidden);
+
+    .b-modalHeader-title {
+      text-transform: none;
+    }
+  }
+
+  & > .swiper-container {
+    overflow-y: visible;
+
+    & > .swiper-wrapper {
+      margin: 0px;
+
+      & > .swiper-slide {
+        position: relative;
+        @include unselectable;
+      }
+    }
+  }
+
+  .b-j-pdp-img-pagination {
+    margin-top: 36px;
+  }
+
+  .b-loading {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    z-index: 800;
+  }
+
+  .mb-modal-content {
+    padding: 0;
+  }
+}
+
+#mb-j-zoom-swiper > .swiper-wrapper > .swiper-slide {
+  padding-bottom: 23px;
+}
+
+#mb-zoom-controls {
+  @include grid-row;
+  position: fixed;
+  left: 0;
+  bottom: 8px;
+  z-index: 1000;
+
+  @include backface-visibility(hidden);
+}
+
+@media screen and (orientation: landscape) {
+  #mb-zoom-controls {
+    padding-left: 50px;
+    padding-right: 50px;
+    bottom: 12px;
+  }
+}
+
+.s7zoomview {
+  left: 0;
+  @include unselectable;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.s7container {
+  background-color: transparent;
+  z-index: 900;
+  margin: auto;
+}
+
+
+.b-zoom-control-amount {
+  @include grid-column(12);
+  text-align: center;
+}
+
+.b-zoom-control-icon {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+
+#b-zoom-offscreen {
+  display: none;
+}

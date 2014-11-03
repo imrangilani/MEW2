@@ -1,0 +1,8 @@
+<div class="form-label">{{label}}</div>
+<select class="mb-j-select" name="{{name}}">
+  <option value="" selected>SELECT</option>
+  {{#each values}}
+    <option value="{{value}}">{{label}}</option>
+  {{/each}}
+</select>
+<div class="mb-j-select-value-display"></div>

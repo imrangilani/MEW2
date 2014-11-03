@@ -1,0 +1,14 @@
+<div class="m-header boldtext">
+  technical issue
+  <button class="mb-j-overlay-close">&nbsp;</button>
+</div>
+<div class="small-11 small-centered columns">
+  <div class="m-error">
+    {{> errorText }}
+  </div>
+  {{#if_neq errorCode compare='globalNavError'}}
+    <div class="m-error-center m-error-button">
+      <button id="continue-shopping" class="button mb-j-overlay-continue">Continue Shopping</button>
+    </div>
+  {{/if_neq}}
+</div>

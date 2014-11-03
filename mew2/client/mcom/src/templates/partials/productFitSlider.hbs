@@ -1,0 +1,17 @@
+<div class="m-product-reviews-slider-rows">
+  {{#each rating.values}}
+    <div class="m-product-reviews-slider-row row">
+      <div class="m-product-reviews-slider-label1 small-3 columns">{{label1}}</div>
+      <div class="m-product-reviews-slider-wrapper small-6 columns">
+        <div class="m-product-reviews-slider">
+          <div class="slider-bg">
+             <div class="slider-ball-wrapper" style="left: {{percentage}}%">
+               <div class="slider-ball-outer"><div class="slider-ball-inner"></div></div>
+             </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-product-reviews-slider-label2 small-3 columns">{{label2}}</div>
+    </div>
+  {{/each}}
+</div>

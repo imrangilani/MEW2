@@ -1,0 +1,22 @@
+<div class="m-eletronic-gift-cards-container">
+
+  <label for="m-j-gift-card-amount">Amount</label>
+  <input type="text" id="m-j-gift-card-amount" maxlength="20" inputmode="numeric" required>
+  <div>Must be between $10.00 and $1000.00</div>
+
+  <div class="m-gift-error-sub" id="m-j-gift-error-amt-empty">Please enter a Gift Card amount.</div>
+  <div class="m-gift-error-sub" id="m-j-gift-error-amt-btw">Please make sure the amount entered is between 10 and 1000.</div>
+
+  <label for="m-j-gift-card-recipients">Recipient's Email</label>
+  <input type="email" id="m-j-gift-card-recipients" maxlength="254" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}" required>
+
+  <dev class="m-gift-error-sub" id="m-j-gift-error-email-empty">Please enter the recipient's email address.</dev>
+  <dev class="m-gift-error-sub" id="m-j-gift-error-email-frm">Please make sure the recipient's email address is in this format: jane@company.com.</dev>
+
+  <label for="m-gift-card-message-to">Your Message<span>(optional)</span></label>
+  <input type="text" id="m-j-gift-card-message-to" placeholder="To:" maxlength="60" class="m-gift-card-input-message">
+  <input type="text" id="m-j-gift-card-message-text" placeholder="Message:" maxlength="60" class="m-gift-card-input-message">
+  <input type="text" id="m-j-gift-card-message-from" placeholder="From:" maxlength="60" class="m-gift-card-input-message">
+  <div class="m-input-explanation">60 character max per line</div>
+
+</div>

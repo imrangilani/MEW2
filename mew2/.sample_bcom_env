@@ -1,0 +1,160 @@
+################################## VERSION INFO ##################################
+
+# @required
+# The release build version number
+BUILD_VERSION=14H_XXX
+
+################################## BUILD TIME ########################################
+
+# @required
+# Brand to build the app for
+BRAND=bcom
+
+# @required
+# Configures the folder to output to (dev or dist)
+ENV=dev
+
+# @required
+# Port to start node server on
+# Note that foreman adds 100 incrementally to each process
+# so the second process in the Procfile is PORT + 100 and the third is PORT + 200
+PORT=8081
+
+################################## RUN TIME ########################################
+
+# Configures node to run in a dev/prod environment which in dev mode allows
+# for a static API_HOST to always be used instead of using the client's hostname
+# Note: heroku sets this to `production`
+NODE_ENV=dev
+
+# @required
+# This host will be used when the client's hostname is `herokuapp.com`,
+# or when the NODE_ENV=dev, otherwise the requesting client's hostname will be used
+API_HOST=qa6codebloomingdales.fds.com
+
+# Redirection domain for MEW 1.0
+MEW10_HOST=origin-m-qa6.qa6codebloomingdales.fds.com
+
+# The host from which MEW (1.0 + 2.0) will be accessed. Necessary to send to MEW 1.0
+# on proxied http requests as MEW 1.0 needs to know how to write absolute links
+# @required
+INTEGRATION_HOST=m.qa6codebloomingdales.fds.com
+
+# Enable swagger UI at /swagger
+SWAGGER=true
+
+# @required
+# Subdomain to use for api requests (api or services)
+API_SUBDOMAIN=api
+
+# @required
+# Keys(and optionally hosts) for api. subdomain
+
+# Sample of how you could override a particular endpoint's host
+# CATEGORYINDEXV3_HOST=api.bloomingdales.com
+
+CATALOGREVIEWSV3_KEY=ruq7dvpjbys2yv2w6czfcptq
+CATEGORYINDEXV3_KEY=ruq7dvpjbys2yv2w6czfcptq
+BRANDINDEXV4_KEY=ruq7dvpjbys2yv2w6czfcptq
+CATALOGPRODUCTV4_KEY=ruq7dvpjbys2yv2w6czfcptq
+CATALOGBOPSV4_KEY=ruq7dvpjbys2yv2w6czfcptq
+ADMEDIAGLOBALV3_KEY=uuh974fcm2rf5p98rbt7pwc2
+CATALOGCATEGORYBROWSEPRODUCTV3_KEY=ruq7dvpjbys2yv2w6czfcptq
+SHOPPINGBAGV2_KEY=3gzdgku5xhn8dtmh9yd5srmm
+CATALOGSEARCHV4_KEY=ruq7dvpjbys2yv2w6czfcptq
+CATALOGRECOMMENDATIONSV4_KEY=ruq7dvpjbys2yv2w6czfcptq
+WRITEREVIEWV3_KEY=ruq7dvpjbys2yv2w6czfcptq
+STOREV2_KEY=ruq7dvpjbys2yv2w6czfcptq
+
+# @required
+# Keys for services. subdomain
+SERVICES_KEY=testclient_1.0_kweu3w323a
+
+# SEO 3rd party (brombone) URL
+SEO_SERVICE_URL=http://bloomingdales.brombonesnapshots.com/
+
+# Host to be used on Brombone url (Optional)
+# If it's not set the Brombone request will be based on local host name
+# SEO_BROMBONE_HOST=m2qa1.qa6codebloomingdales.fds.com
+
+############################### CONFIG/FEATURES (RUN TIME) #######################
+
+# @required
+# When a config variable changes below, update CONFIG_BUILD_VERSION to be unique
+CONFIG_BUILD_VERSION=14h_XXX_1
+
+# Search autocomplete
+# possible values: "on", "off"
+CONFIG_AUTOCOMPLETE=on
+
+# Should be set to Y on production environments
+# Used by coremetrics to set clientID and by geolocation to choose a correct url
+CONFIG_PRODUCTION=N
+
+# Google Maps api key - must be changed for production
+CONFIG_GEOKEY=AIzaSyAzXauC8RAX_qxgaP_qC9rPQye5HQHy8fc
+
+# A/B Testing for the soft launch.
+# possible values: "on", "off"
+CONFIG_ABTESTING_SOFTLAUNCH=on
+
+# bypass brombone proxy for dark launch
+# set ot "on" for dark-launch and "off" for production
+# possible values: "on", "off"
+CONFIG_BYPASS_BROMBONE_DARKLAUNCH=on
+
+# used to turn on/off reviews report and thumbs up/down
+# possible values: "on", "off"
+CONFIG_FEEDBACK=on
+
+# used to enable / disable the inital welcome overlay tutorial
+# possible values: "on", "off"
+CONFIG_MARKETORIAL=on
+
+# used to turn on/off bops facets for search
+# possible values: "on", "off"
+CONFIG_SEARCHBOPSFACET=on
+
+# used to turn on/off bops facets for browse
+# possible values: "on", "off"
+CONFIG_BROWSEBOPSFACET=on
+
+# used to turn on/off bops on pdp
+# possible values: "on", "off"
+CONFIG_BOPS_PDP=on
+
+# used to turn on/off "store locator": fallback to 1.0 experience if off
+# possible values: "on", "off"
+CONFIG_STORE_PAGES=on
+
+# used to turn on/off auto-expanding nav in deeplink situations for catsplash
+# possible values: "on", "off"
+CONFIG_NAV_AUTOEXPAND_CATSPLASH=on
+
+# used to turn on/off auto-expanding nav based on the "aen" param
+# possible values: "on", "off"
+CONFIG_NAV_AUTOEXPAND_PARAM=on
+
+# This host will be used when the client's hostname is `herokuapp.com`,
+# or when the NODE_ENV=dev, otherwise the requesting client's hostname will be used
+CONFIG_AUTOCOMPLETE_HOST=$API_HOST
+
+# MSecure application url for 'Sign-In' and 'Forgot Password' requests
+CONFIG_MSECURE_URL=https://secure-m
+
+# used to turn on/off html size charts
+# possible values: "on", "off". "on" if this property is absent
+CONFIG_HTMLSIZECHART=on
+
+#Used to turn on/off PROS informant calls
+#Set to 'off' to disable functionaity (is it used by bcom?)
+CONFIG_PROS_INFORMANT_CALLS=off
+
+# used to determine whether or not to launch the native app (if installed) for supported urls
+# possible values: "on", "off"
+CONFIG_LAUNCH_NATIVE=off
+
+CONFIG_SIGNIN_IN_EXPERIENCE=1.0
+
+# used to turn on/off category redirects when response is 301
+CONFIG_SUGGESTER=on

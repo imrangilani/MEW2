@@ -1,0 +1,48 @@
+{{#if items}}
+  <div {{#if swipable}} class="swiper-container"{{/if}}>
+    <div class="b-j-banners-list{{#if swipable}} swiper-wrapper{{/if}}">
+  
+      {{#each items}}
+        {{#if this.imageFileName}}
+          <div style="{{#unless ../../swipable}}padding-bottom: {{aspectRatio width height}}%;{{/unless}}"
+               class="{{#unless ../../swipable}}b-banner-img-wrapper{{/unless}}
+                      {{#if ../../swipable}} swiper-slide{{/if}}" data-banner-position="{{@index}}">
+            
+            {{#if url}}
+              <a href="{{url}}" class="b-banner-img-link">
+            {{/if}}
+                <img class="b-banner-img" src="{{imageFileName}}" alt="{{altText}}"
+                  {{#if map}}
+                    usemap="#map{{seq}}"
+                  {{/if}}
+                />
+            {{#if url}}
+              </a>
+            {{/if}}
+            {{#if map}}
+              <map name="#map{{seq}}">
+                {{#each map}}
+                  <area shape="rect" coords="{{coords}}" href="{{url}}" alt="{{altText}}">
+                {{/each}}
+              </map>
+            {{/if}}
+            
+          </div>
+        {{/if}}
+      {{/each}}
+  
+    </div>
+  </div>
+  {{#if ../swipable}}
+    <div class="b-j-banners-pagination"></div>
+  {{/if}}
+
+{{else}}
+
+  <div class="b-single-banners-list">
+    <div>
+      <img class="b-banner-img" src="mew20/images/evergreen.png" alt="defaultImage"/>
+    </div>
+  </div>
+
+{{/if}}

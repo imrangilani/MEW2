@@ -1,0 +1,129 @@
+.mb-fixed-modal-wrapper {
+  @include single-transition(-webkit-transform, .5s, ease-in-out);
+  background: #fff;
+  position: fixed;
+  @include translate(100%, 0);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+
+  &.no-transition {
+    transition: none;
+  }
+
+  .mb-modal-content {
+    padding: emCalc(25px) emCalc(10px);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+    width: 100%;
+  }
+}
+
+.mb-modal-wrapper {
+  @include single-transition(-webkit-transform, 0.5s, ease-in-out);
+
+  @include translate(100%, 0);
+  position: fixed;
+  top: 0px;
+
+  background: #fff;
+  width: 100%;
+  z-index: 100;
+
+  &.no-transition {
+    transition: none;
+  }
+
+  .mb-modal-content {
+    padding: emCalc(55px) emCalc(10px) emCalc(10px);
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .mb-modal-header {
+    @include m-header(modal);
+
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 103;
+
+    .mb-modalHeader-right-button {
+      display: block;
+      float: right;
+      font-weight: bold;
+      margin-top: emCalc(7px);
+    }
+  }
+
+  .mobile-level-2 .mb-modal-header{
+    z-index: 105;
+  }
+}
+
+.mb-modal-wrapper .mb-modal-header.brand-modal-header {
+  background: #a9a9a9;
+}
+
+#brand-modal-button-right {
+  display: block;
+  float: right;
+  font-weight: bold;
+  margin-top: emCalc(7px);
+}
+
+.brand-modal-header {
+  .small-9 {
+    padding-right: 0;
+  }
+
+  .brand-search-form {
+    margin: emCalc(5px) 0 0 0;
+  }
+
+  .brand-search-clear {
+    visibility: hidden;
+    position: absolute;
+    top: emCalc(6px);
+    right: emCalc(7px);
+    -webkit-user-select: none;
+  }
+}
+
+.modal-level-1 {
+  z-index: 100;
+}
+
+.modal-level-2 {
+  z-index: 101;
+}
+
+.modal-level-3 {
+  z-index: 102;
+}
+
+
+body.modal-visible {
+
+  #mb-page-wrapper {
+    overflow: hidden;
+  }
+}
+
+.mb-fixed-modal-wrapper.modal-visible {
+  @include translate(0, 0);
+}
+
+.modal-vertical{
+  @include translate(0, 100%);
+}
+
+.mb-modal-wrapper.modal-visible {
+  @include translate(0, 0);
+}
+
+.mb-fix-fixed .mb-modal-header {
+  position: absolute;
+}

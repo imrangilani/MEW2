@@ -1,0 +1,20 @@
+<section class="m-product-types">
+  <div id="m-product-type-name">
+    <div class="row">
+      <div class="small-8 columns truncate-column">
+        <strong><span class="m-facet-name-reference">Type</span>: <span class="m-selected-type-name">{{productTypeName types activeType}}</span></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-scrollable horiz"><table class="m-types-scroll"><tr>
+    {{#if_gt types.length compare="1"}}
+      {{#each types}}
+        <td>
+          <div class="m-j-product-type {{#if_eq ../activeType compare=id}}selected{{/if_eq}}" data-id="{{id}}">
+      	  <div class="truncate-column">{{name}}</div></div>
+        </td>
+      {{/each}}
+    {{/if_gt}}
+  </tr></table></div>
+</section>

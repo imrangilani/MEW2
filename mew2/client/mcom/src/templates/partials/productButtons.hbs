@@ -1,0 +1,42 @@
+<div class="m-product-buttons">
+{{#if isCheckoutEnabled}}
+  <div class="m-product-checkout-buttons row">
+    <div class="small-12 columns">
+      <button class="m-j-product-add-bag spinner">add to bag</button>
+    </div>
+    {{#unless isEGC}}
+
+      {{#if isRegistrable}}
+        <div class="small-{{#ifFeatureEnabled 'wishlist'}}6{{else}}12{{/ifFeatureEnabled}} columns">
+          <button class="m-j-product-add-registry spinner">add to registry</button>
+        </div>
+        {{#ifFeatureEnabled 'wishlist'}}
+          <div class="small-6 columns">
+            <button class="m-j-product-add-wishlist">add to wish list</button>
+          </div>
+        {{/ifFeatureEnabled}}
+      {{else}}
+        {{#ifFeatureEnabled 'wishlist'}}
+          <div class="small-12 columns">
+            <button class="m-j-product-add-wishlist">add to wish list</button>
+          </div>
+        {{/ifFeatureEnabled}}
+      {{/if}}
+    {{/unless}}
+  </div>
+{{else}}
+  <div class="m-product-phone-button-wrapper">
+    <a class="m-j-product-phone button" href="tel://18002896229">order by phone</a>
+    <div class="m-product-phone-content">
+      {{#if isMemberOfMaster}}
+        <div class="m-product-phone-order-now">ORDER NOW</div>
+      {{/if}}
+
+      <div class="m-product-phone-info">
+        <div class="m-product-phone-number">Call <a class="m-j-product-phone link" href="tel://18002896229">1-800-BUY-MACYS</a> (289-6229)</div>
+        <div class="m-product-phone-msg">We're available Mon-Sun 8am-Midnight EST</div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+</div>

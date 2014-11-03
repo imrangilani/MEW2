@@ -1,0 +1,45 @@
+<div class="m-header boldtext">
+  <button class="mb-j-overlay-close m-modal-button">&nbsp;</button>
+  <span>
+    {{product.activeQty}} item
+      {{#if_gt product.activeQty compare="1" }}s{{/if_gt}}
+    added to your {{#if showSignIn}}guest{{/if}} wish list
+  </span>
+</div>
+<div class="m-content">
+  <div class="m-image-gr">
+    <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image.image}}" class="m-upc-img" />
+    {{#if image.swatch}}
+      <img src="{{#displayConfig}}{{paths.product.image}}{{/displayConfig}}{{image.swatch}}" class="m-upc-swatch" />
+    {{/if}}
+  </div>
+
+  <div class="m-upc-details">
+    <h6>{{product.name}}</h6>
+
+    {{> addToDetails }}
+
+    <div class="m-product-price-gr">
+      {{#each product.prices}}
+        <div class="m-product-price {{stripNonAlpha label}}">
+          {{#if label}}
+            <span class="m-product-price-label">{{label}} </span>
+          {{/if}}
+          <span class="m-product-price-amt">{{amt}}</span>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  {{#if showSignIn}}
+  <p>Added to your guest wish list.</p>
+    <p><a class="m-wishlist-signin m-j-cm-link" href="?cm_sp=mew_wishlist-_-pdp-_-sign_in'" id="mb-add-to-wish-list-sign-in">Sign In</a> to tie this list to your profile.</p>
+  {{/if}}
+
+</div>
+<div class="m-footer">
+  <div class="m-bag-buttons">
+    <button class="mb-j-overlay-continue">continue shopping</button>
+    <a class="m-wishlist-link m-j-cm-link" href="/wishlist/mylist?cm_sp=mew_wishlist-_-pdp-_-{{#unless userId}}guest{{/unless}}wish_list">view {{#if showSignIn}}guest{{/if}} wish list</a>
+  </div>
+</div>

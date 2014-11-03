@@ -1,0 +1,112 @@
+<div id="b-write-review-modal">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns b-modalHeader-left">
+        <div class="mb-j-events-modal-close b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title truncated">
+        Write a Review
+      </div>
+      <div class="small-3 columns"></div>
+    </div>
+  </div>
+  <div class="mb-modal-content">
+    <form id="mb-write-review-form">
+
+      <section class="form-section form-section-fit-rating">
+        <div class="form-item" id="rating-form-item">
+          <div class="form-label">Overall Rating</div>
+          <div id="mb-write-review-rating"></div>
+        </div>
+
+        <div id="form-collapsible-fit-rating" class="hide">
+          {{!-- <div class="form-label">Product Fit Rating</div> --}}
+          <div class="form-collapsible-content"></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="form-item" id="title-form-item">
+          <div class="form-label">Review Summary</div>
+          <div class="form-label-right">Example: Best Product!</div>
+          <div class="clearfix"></div>
+          <input type="text" name="title" />
+        </div>
+
+        {{> writeReviewTextarea}}
+
+        {{> writeReviewNickname}}
+
+      </section>
+
+      <section class="form-section form-section-small">
+        <div id="write-instructions" class="form-item b-expandable b-expandable-closed" data-expandable="container">
+          <div class="b-expandable-title" data-expandable="button">
+            Helpful Instructions
+            <div class="b-expandable-icon"></div>
+          </div>
+          <div class="b-expandable-content hide" data-expandable="content">
+            <ul class="form-bullets">
+              <li>Focus on the product</li>
+              <li>Do not write about customer service; please contact us if you have concerns</li>
+              <li>Do not mention competitors or the specific price you paid for the product</li>
+              <li>Do not include any personally identifiable information, such as your full name</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div id="recommend-product" class="form-item">
+          <div class="b-checkbox">
+            <input type="checkbox" value="Yes" name="isrecommended" id="recommend-checkbox"/><span class="b-checkbox-placeholder"></span>
+            <label for="recommend-checkbox">Yes, I would recommend this product.</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section form-section-small">
+        <div id="form-collapsible-about-self" class="form-item b-expandable b-expandable-closed" data-expandable="container">
+          <div class="form-label b-expandable-title" data-expandable="button">Tell Us About Yourself <span class="form-label-optional">(optional)</span><div class="b-expandable-icon"></div></div>
+          <div class="form-collapsible-content b-expandable-content hide" data-expandable="content"></div>
+        </div>
+      </section>
+
+      <section class="form-section b-form-section-send-email-checkbox">
+        <div class="form-item">
+          <div class="form-label">Your Email Address</div>
+          <input type="text" name="UserEmail" />
+          <div class="clearfix"></div>
+          <div id="b-send-email-checkbox-wrapper" class="b-checkbox">
+            <input type="checkbox" name="SendEmailAlertWhenPublished" value="yes" id="send-email-checkbox" /><span class="b-checkbox-placeholder"></span>
+            <label for="send-email-checkbox">Send me an email when my review is posted</label>
+          </div>
+          <button id="mb-j-write-review-submit" class="b-black-button">Submit</button>
+        </div>
+      </section>
+
+      <section class="form-section form-section-small">
+        <a href="http://reviews.bloomingdales.com/content/7130aa/termsandconditions.htm" target="_blank">
+          <div class="form-item b-external-link">
+            <input type="hidden" name="agreedtotermsandconditions" value="yes" />
+            <div class="b-external-link-label">Terms and Conditions</div>
+            <div class="b-external-link-icon"></div>
+          </div>
+        </a>
+      </section>
+
+      <section class="form-section form-section-small">
+        <a href="http://reviews.bloomingdales.com/content/7130aa/guidelines.htm" target="_blank">
+          <div class="form-item b-external-link">
+            <div class="b-external-link-label">Review Guidelines</div>
+            <div class="b-external-link-icon"></div>
+          </div>
+        </a>
+      </section>
+
+    </form>
+  </div>
+
+</div>

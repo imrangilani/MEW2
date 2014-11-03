@@ -1,0 +1,73 @@
+
+<div class="b-footer-container">
+  <div id="b-footer-links">
+    <span id="b-footer-sign-in-out">
+      {{#if signedIn}}
+        <a id="b-footer-sign-out-link" href="{{secureUrl '/signin/signout.ognc'}}" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-SIGN_OUT">Sign out</a>
+      {{else}}
+        <a id="b-footer-sign-in-link" href="{{mSecureUrl 'signIn'}}" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-SIGN_IN">Sign in</a>
+      {{/if}}
+    </span>
+    <span id="b-footer-sign-up">
+      <a id="b-footer-sign-up-link" href="{{secureUrl '/signup'}}" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-EMAIL_SIGNUP">Sign up for emails &amp; texts</a>
+    </span>
+    <div class="clearboth"></div>
+  </div>
+
+  {{#unless simple}}
+    <div id="b-footer-social-links">
+      <div>
+        <span>
+          <a class="icon-facebook" id="b-footer-facebook-link" href="http://www.facebook.com/Bloomingdales" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-FACEBOOK"></a>
+        </span>
+        <span>
+          <a class="icon-twitter" id="b-footer-twitter-link" href="http://mobile.twitter.com/Bloomingdales" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-TWITTER"></a>
+        </span>
+        <span>
+          <a class="icon-pin" id="b-footer-pinterest-link" href="http://www.pinterest.com/Bloomingdales" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-PINTEREST"></a>
+        </span>
+        <span>
+          <a class="icon-instagram" id="b-footer-instagram-link" href="http://instagram.com/bloomingdales" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-INSTAGRAM"></a>
+        </span>
+      </div>
+      
+      <div class="b-footer-app-link">
+        {{#if ios}}
+          <a class="icon-phone" id="b-footer-iphone-app-link" href="itms-apps://itunes.apple.com/us/app/bloomingdales-big-brown-bag/id525536985?mt=8" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-APPIOS">Download the Big Brown Bag App</a>
+        {{else}}
+          <a class="icon-phone" id="b-footer-android-app-link" href="https://play.google.com/store/apps/details?id=com.bloomies.android" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-APPANDROID">Download the Big Brown Bag App</a>
+        {{/if}}
+      </div>
+
+      <div class="clearboth"></div>
+    </div>
+  {{/unless}}
+
+  <div id="b-footer-bottom-links">
+    <span class="b-customer-service">
+      <a id="b-footer-customer-service-link" href="https://customerservice.bloomingdales.com/app/home/" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-CUSSERVICE">Customer Service</a>
+    </span>
+    <span class="b-fullSite">
+      <a id="b-footer-full-site-link" href="http://www.bloomingdales.com/index.ognc?stop_mobi=yes" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-FULLSITE">Full Site</a>
+    </span>
+    <span class="b-choose-your-country">
+      <a id="b-footer-choose-your-country-link" href="http://www.bloomingdales.com/internationalContext/index.ognc?stop_mobi=yes" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_LINKS-_-INTERNATIONAL_SHOPPING">Choose Your Country</a>
+    </span>
+    <br/>
+    <span class="b-careers">
+      <a id="b-footer-careers-link" href="http://www.bloomingdalesjobs.com" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_NAV-_-CAREERS">Careers</a>
+    </span>
+    <span class="b-privacy-practice">
+      <a id="b-footer-privacy-practive-link" href="https://customerservice.bloomingdales.com/app/answers/detail/a_id/769/" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_LINKS-_-PRIVACY_PRACTICES">Privacy Practices</a>
+    </span>
+    <span class="b-customers-bill-of-rights">
+      <a id="b-footer-customers-bill-of-rights-link" href="http://www.macysinc.com/social-responsibility/customer-bill-of-rights/default.aspx" data-cm-link-click="NAVIGATION_MEW-_-BOTTOM_LINKS-_-BILLOFRIGHTS">Customers' Bill of Rights</a>
+    </span>
+    <div class="clearboth"></div>
+  </div>
+
+  <div id="b-footer-copy-right">
+    &copy; {{getCurrentYear}} Bloomingdale's, dba bloomingdales.com.
+  </div>
+
+ </div>

@@ -1,0 +1,778 @@
+//
+// MCOM Library of variables and mixins
+//
+
+/*************** BEGIN brand-specific (custom) variables ***************/
+// @see foundation-vars.scss to ensure there isn't a foundation variable that should be used
+
+$m-header-height: emCalc(45px);
+$m-rule-color: #727272;
+
+$font-sm-base: 12px;
+$font-sm: emCalc($font-sm-base);
+$multiplier-sm: $em-base / $font-sm-base;
+
+$font-med-base: 14px;
+$font-med: emCalc($font-med-base);
+$multiplier-med: $em-base / $font-med-base;
+
+/*************** END brand-specific (custom) variables ***************/
+
+// vertically align any div. parent must have height set.
+@mixin vertical-align() {
+  @include translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+/*************** BEGIN library of brand-specific style mixins ***************/
+
+@mixin m-separator($direction: bottom, $border-color: $section-border-color, $border-width: $section-border-size) {
+  border-#{$direction}: $border-width $section-border-style $border-color;
+}
+
+@mixin m-gradient-separator($direction: bottom) {
+  overflow: visible;
+  position: relative;
+
+  @if $direction == top {
+    margin-top: 5px;
+
+    &:before {
+      @include background-image(linear-gradient(#999, #fff));
+      content: "";
+      top: -5px;
+      height: 5px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  } @else {
+    &:after {
+      @include background-image(linear-gradient(#999, #fff));
+      content: "";
+      bottom: -5px;
+      height: 5px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+@mixin m-dropshadow($size: 1px 1px 1px, $color: #666) {
+  @if $experimental {
+    -webkit-box-shadow: $size $color;
+    -moz-box-shadow: $size $color;
+  }
+  box-shadow: $size $color;
+}
+
+// @TODO should start with "m-", or be common
+@mixin nav-border() {
+  border-width: 2px;
+  box-shadow: inset 0px 0px 10px black;
+}
+
+// @TODO should start with "m-", or be common
+@mixin content-section-border($direction) {
+  border-#{$direction}: 1px solid $secondary-color;
+}
+
+// @TODO should start with "m-", or be common
+@mixin overlay-shadow() {
+  box-shadow: 0px 0px 4px hsla(0, 0%, 0%, .4);
+}
+
+// @TODO should start with "m-", or be common
+@mixin image-shadow() {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+}
+
+@mixin m-placeholder($style: italic, $color: #999) {
+  &::-webkit-input-placeholder {
+    font-style: $style;
+    color: $color;
+  }
+  &::-moz-input-placeholder {
+    font-style: $style;
+    color: $color;
+  }
+  &::input-placeholder {
+    font-style: $style;
+    color: $color;
+  }
+}
+
+/*************** END library of brand-specific style mixins ***************/
+
+/*************** BEGIN library of brand-specific UI components ***************/
+
+$m-title-line-height: $base-font-size;
+@mixin m-truncate($lines: 3, $line-height: $m-title-line-height) {
+  line-height: $m-title-line-height;
+  max-height: ($lines * $m-title-line-height);
+  overflow: hidden;
+}
+
+@mixin m-link($font-size: emCalc(12px), $font-weight: bold) {
+  color: $primary-color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-decoration: underline;
+}
+
+.m-link {
+  @include m-link;
+
+  &.med {
+    font-size: $font-med;
+  }
+
+  &.full {
+    font-size: 1em;
+  }
+
+  &.normal {
+    font-weight: normal;
+  }
+}
+
+@mixin m-button($type: white, $full-width: true, $padding: $button-med) {
+  @include button-base;
+  @include button-size($padding, $full-width);
+  @include button-style(false, true, false);
+
+  border: 0px none;
+  color: $button-font-color;
+  font-size: emCalc(14px);
+  padding-left: emCalc(10px);
+  padding-right: emCalc(10px);
+
+  @if $type == red {
+    background-color: #c00;
+  } @else if $type == gray {
+    background-color: #666;
+  } @else if $type == black {
+    background-color: #000;
+  } @else {
+    background-color: #efefef;
+    color: $button-font-color-alt;
+    border: $button-border-width $button-border-style #999;
+  }
+
+  // Small buttons have no drop-shadows, and are normal font weight
+  @if $padding == $button-sml {
+   @include radius($button-radius / 2);
+   @include m-dropshadow(0 0 0);
+   font-weight: normal;
+  }
+
+  &.spinner {
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999em; // Hide text from button when spinner is showing
+
+    @if $type == red {
+      background-image: url('../../images/spinner_white-on-red_30.gif');
+    } @else if $type == black {
+      background-image: url('../../images/spinner_white-on-black_30.gif');
+    }
+  }
+
+  &:hover, &:focus {
+    color: $button-font-color;
+  }
+}
+
+.m-button {
+  @include m-button(red);
+
+  &.black {
+    @include m-button(black);
+  }
+
+  &.inactive {
+    background-color: #ccc;
+    color: #666;
+  }
+}
+
+@mixin m-bg-arrow($direction: right) {
+  background-repeat: no-repeat;
+
+  @if $direction == left {
+    background-image: url('../../images/arrow-left.svg');
+    background-position: left center;
+    background-size: 50% 50%;
+  } @else if $direction == down {
+    background-image: url('../../images/arrow-down.png');
+    background-position: right center;
+  } @else {
+    // Default to right
+    background-image: url('../../images/arrow-right.svg');
+    background-position: right center;
+    background-size: emCalc(18px);
+  }
+}
+.m-bg-arrow {
+  @include m-bg-arrow;
+}
+
+.m-button-bar {
+  $m-button-bar-height: emCalc(32px);
+
+  text-align: center;
+
+  ul.button-group {
+    display: inline-block;
+    float: none;
+    margin: 0;
+
+    li {
+      a {
+        background-color: #ffffff;
+        border: 1px solid $secondary-color;
+        color: #999;
+        height: $m-button-bar-height;
+        line-height: $m-button-bar-height;
+        padding: 0;
+        font-size: $em-base;
+        font-weight: bold;
+        transition: none;
+        width: emCalc(125px);
+
+         &:hover,
+         &:focus {
+          background: #fff;
+          color: #999;
+        }
+
+        &.selected {
+          background: $primary-color;
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            background: $primary-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.m-select-wrapper {
+  $m-select-height: emCalc(32px);
+  position: relative;
+
+  .m-select-button {
+    @include border-radius($button-radius);
+
+    background-color: #ffffff;
+    border: 1px solid $secondary-color;
+    font-weight: bold;
+    height: $m-select-height;
+    line-height: $m-select-height;
+    margin: 0;
+    padding: 0px emCalc(15px);
+
+    .display {
+      @include m-bg-arrow(down);
+    }
+  }
+
+  .m-select {
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-appearance: button;
+  }
+}
+
+@media #{$small} {
+  .m-button-bar ul.button-group li a {
+    width: emCalc(205px);
+  }
+
+  .color-wrapper .m-select-wrapper .m-select-button {
+    width: emCalc(410px);
+  }
+}
+
+.m-form-section {
+  @include border-radius($global-radius);
+  background: #e5e5e5;
+  margin: emCalc(10px) 0;
+  padding: emCalc(5px);
+}
+
+.m-separator {
+  @include m-separator(bottom, $m-rule-color, 1px);
+  margin: emCalc(20px) 0;
+}
+
+@mixin m-clickable() {
+  @include m-separator(bottom, $m-rule-color, 1px);
+  @include m-separator(top, $m-rule-color, 1px);
+
+  $height: emCalc(45px);
+
+  background-color: #efefef;
+  cursor: pointer;
+  display: block;
+  font-size: emCalc(15px);
+  height: $height;
+  line-height: $height;
+  padding: 0 emCalc(10px);
+  text-decoration: none;
+}
+.m-clickable {
+  @include m-clickable;
+}
+
+@mixin m-product-promotion($productType) {
+  font-family: arial;
+  font-size: 14px;
+  color: #cc0000;
+  margin-bottom: emCalc(5px);
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.3;
+  border-width: 1px 0;
+
+  @if $productType == member {
+
+    font-size: emCalc(14px);
+
+  } @else if $productType == memberOfMaster {
+    font-size: emCalc(14px);
+    min-width: emCalc(190px);
+
+  } @else if $productType == master {
+    a {
+      text-decoration: none;
+      color: #cc0000;
+    }
+
+  }
+}
+
+@mixin m-header($type: page, $padding: 0) {
+  background: #efefef;
+  font-weight: bold;
+
+  @if $type == modal {
+    text-transform: uppercase;
+  }
+
+  height: $m-header-height;
+  line-height: $m-header-height;
+  overflow: hidden;
+  padding: 0px $padding;
+}
+
+.m-header { @include m-header; }
+
+.m-header-first {
+  padding: 0;
+  text-align: left;
+
+  .m-back {
+    background-position: emCalc(10px) center;
+    padding: 0 emCalc(10px);
+
+    &.link {
+      padding: 0;
+
+      a {
+        padding: 0 emCalc(10px);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.m-header-title {
+  display: block;
+  font-size: emCalc(15px);
+  font-weight: bold;
+  height: $m-header-height;
+  line-height: $m-header-height;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.small-8 {
+    text-align: left;
+  }
+}
+
+.m-header-last {
+  text-align: right;
+}
+
+.m-back {
+  @include m-bg-arrow(left);
+  cursor: pointer;
+
+  a {
+    display: block;
+    width: 100;
+  }
+}
+
+.m-rating {
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+
+  .m-rating-stars {
+    float: left;
+
+    .m-rating-stars-inner {
+      background: url("../../images/star.svg") 0 0 repeat-x;
+      height: 19px;
+      width: 95px;
+
+      & > div {
+        background: url("../../images/star.svg") 0 -28px repeat-x;
+        height: 19px;
+      }
+    }
+  }
+
+  .m-rating-count {
+    float: left;
+    font-size: emCalc(14px);
+    line-height: 19px;
+    margin-left: emCalc(8px);
+  }
+}
+
+.m-scrollable.horiz {
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.m-rule-bottom {
+  @include m-gradient-separator;
+  margin-bottom: emCalc(20px);
+  padding-bottom: emCalc(20px);
+
+  &:after {
+    left: -($column-gutter / 2);
+    right: -($column-gutter / 2);
+  }
+}
+
+.m-nearme {
+  background: url('../../images/icon-nearme.svg') right 5px no-repeat;
+  background-size: 24px auto;
+  height: 35px;
+}
+
+.icon-search-clear {
+  background: url('../../images/icon_x.svg') center center no-repeat;
+  background-size: 40% auto;
+  cursor: pointer;
+  height: 35px;
+  visibility: hidden;
+  width: 35px;
+}
+
+.m-address {
+  padding-right: 5px;
+  position: relative;
+
+  input.box-search {
+    padding-right: emCalc(40px);
+  }
+
+  .icon-search-clear {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+  }
+
+  &.nopad {
+    padding-right: 5px;
+  }
+}
+
+#mb-private-browsing-container {
+  color: $primary-color;
+  font-weight: bold;
+  margin: emCalc(15px) emCalc(10px) emCalc(10px) emCalc(10px);
+  padding: emCalc(5px);
+  border: 3px solid $primary-color;
+  display: none;
+}
+
+.spinner {
+  &.white-30 {
+    background: url('../../images/spinner_white_30.gif') no-repeat center center;
+    height: 50px;
+  }
+
+  &.white-60 {
+    background: url('../../images/spinner_white_60.gif') no-repeat center center;
+    height: 80px;
+  }
+
+  &.black-30 {
+    background: url('../../images/spinner_black_30.gif') no-repeat center center;
+    height: 50px;
+  }
+
+  &.black-60 {
+    background: url('../../images/spinner_black_60.gif') no-repeat center center;
+    height: 80px;
+  }
+}
+
+.m-toast {
+  background: #fff;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  font-size: $font-med;
+  font-weight: bold;
+  left: 2%;
+  padding: emCalc(10px) * $multiplier-med;
+  position: absolute;
+  text-align: center;
+  width: 96%;
+}
+
+/*************** END library of brand-specific UI components ***************/
+
+/*************** BEGIN override of general styles ***************/
+
+h1,h2,h3,h4,h5,h6 { line-height: $header-line-height; }
+h1 {
+  font-size: $h1-font-size;
+
+  &.base {
+    font-size: $em-base;
+  }
+}
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+h4 {
+  font-size: $h4-font-size;
+  margin-bottom: emCalc(5px);
+}
+h5 {
+  color: $primary-color;
+  font-size: $h5-font-size;
+  text-transform: uppercase;
+}
+
+table {
+  background-color: transparent;
+  border: 0;
+  border-collapse: separate;
+  margin: 0;
+  padding: 0;
+
+  tr td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+ul,
+ol,
+dl {
+  font-size: 1em;
+  line-height: 1em;
+
+  &.no-margin { margin: 0; }
+}
+
+ul li ul,
+ul li ol {
+  margin: 0;
+  font-size: inherit;
+}
+
+button {
+  @include m-button(red, false, $button-sml);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  @include border-radius($button-radius);
+}
+
+
+.nopad {
+  padding: 0;
+}
+
+.clearfix {
+  @include clearfix;
+  clear: both;
+}
+
+input.box-search {
+  @include border-radius(50px);
+
+  background-image: url('../../images/icon_search-light-gray.svg');
+  background-position: emCalc(10px) center;
+  background-repeat: no-repeat;
+  background-size: auto 60%;
+  border: 1px solid #ccc;
+  font-size: $font-med;
+  font-style: norml;
+  color: #000;
+  @include m-placeholder;
+  margin: 0 0 emCalc(5px) 0;
+  height: emCalc(35px) * $multiplier-med;
+  line-height: emCalc(29px) * $multiplier-med;
+  padding-top: emCalc(3px) * $multiplier-med;
+  padding-right: emCalc(8px) * $multiplier-med;
+  padding-bottom: emCalc(3px) * $multiplier-med;
+  padding-left: emCalc(30px) * $multiplier-med;
+
+  &:focus {
+    border: 1px solid #ccc;
+  }
+}
+
+.m-page-content {
+  margin: emCalc(20px) emCalc(10px) emCalc(40px);
+}
+
+.form-item {
+  margin: emCalc(20px) 0;
+
+  &.error input,
+  &.error textarea,
+  &.error select {
+    background-color: #fff;
+    border-color: $secondary-color;
+  }
+
+  &.error .form-label {
+    color: $primary-color;
+  }
+}
+
+.form-label {
+  @include form-label();
+}
+
+.form-label-right {
+  float: right;
+  font-size: $font-sm;
+  font-style: italic;
+  margin-top: -($font-sm * $multiplier-sm) + -($form-label-bottom-margin * $multiplier-sm) - 0.1em;
+}
+
+.form-collapsible {
+  $collapsible-arrow-width: emCalc(8px);
+  $collapsible-arrow-height: emCalc(8px);
+
+  /**
+   * Had to remove transition since its based on max-height,
+   * which is variable w/ dynamic content (can't transition to height: auto)
+   */
+  // @include single-transition(max-height, 200ms, ease-out);
+  // max-height: 1em * $multiplier-med;
+  height: 1em * $multiplier-med;
+
+  line-height: 1em * $multiplier-med;
+  margin-bottom: emCalc(20px);
+  overflow: hidden;
+
+  .form-collapsible-label {
+    color: $primary-color;
+    font-size: $font-med;
+    position: relative;
+    text-decoration: underline;
+
+    &:after {
+      border-left: $collapsible-arrow-width solid transparent;
+      border-right: $collapsible-arrow-width solid transparent;
+      border-top: $collapsible-arrow-height solid $primary-color;
+      margin-left: emCalc(6px);
+      top: 6px;
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  .form-collapsible-label-right {
+    line-height: emCalc(15px) * $multiplier-sm;
+    margin-top: emCalc(-15px) * $multiplier-sm;
+    overflow: hidden;
+  }
+
+  .form-collapsible-content {
+    margin-top: emCalc(16px) * $multiplier-sm;
+
+    ul {
+      margin-left: emCalc(25px) * $multiplier-sm;
+
+      li {
+        margin-bottom: emCalc(10px) * $multiplier-sm;
+      }
+    }
+
+    .form-item {
+      .form-label {
+        font-size: $font-med;
+      }
+    }
+  }
+
+  &.expanded {
+    /**
+     * Had to remove transition since its based on max-height,
+     * which is variable w/ dynamic content (can't transition to height: auto)
+     */
+    // @include single-transition(max-height, 500ms, ease-in);
+    // max-height: 200px;
+    height: auto;
+
+    .form-collapsible-label {
+      &:after {
+        border-top: 0 none;
+        border-bottom: $collapsible-arrow-height solid $primary-color;
+      }
+    }
+  }
+}
+
+/*************** END override of general styles ***************/

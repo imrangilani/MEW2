@@ -1,0 +1,115 @@
+#m-freeship-container {
+  font-family: Helvetica, Arial, san-serif;
+  font-weight: lighter;
+
+  margin: emCalc( 10px ) 0px;
+
+  #m-freeship-image{
+  	float: right;
+  	width: 85px;
+  }
+
+  #m-freeship-returns-image{
+  	float: right;
+  	width: 85px;
+  	margin-top: -10px;
+  	margin-right: 5px;
+  }
+
+  #m-freeship-title{
+  	padding-top:35px;
+  	font-size: emCalc( 15px);
+  	font-weight: lighter;
+  }
+
+  .m-freeship-callouts{
+  	max-width: 400px;
+  	background: rgb(255, 255, 255);
+	background: -webkit-linear-gradient(269deg, rgb(240, 240, 240) 0%, rgb(255, 255, 255) 24%);
+	background: -o-linear-gradient(269deg, rgb(240, 240, 240) 0%, rgb(255, 255, 255) 24%);
+	background: linear-gradient(359deg, rgb(240, 240, 240) 0%, rgb(255, 255, 255) 24%);
+
+	p{
+		font-size: emCalc(15px);
+		margin: 0px;
+	}
+	.m-bymail{
+		width: 25px;
+	}
+  }
+
+  #m-freeship-start{
+  	margin: 33px auto;
+  }
+
+  .m-freeship-callout{
+  	font-size: emCalc( 22px);
+  	font-weight: normal;
+  	line-height: emCalc(22px);
+  	display: inline;
+
+
+  }
+
+  .m-freeship-callout-details{
+  	font-size: emCalc( 9px);
+  	display: inline-block;
+  	width: 60px;
+  }
+
+  .m-freeship-new-callout{
+  	color: #c00;
+  	font-size: 22px;
+  	font-style: italic;
+  	font-weight: bold;
+  }
+
+  .m-freeship-now{
+  	font-weight: bold;
+  	padding-top: 20px;
+  }
+
+  .m-freeship-info{
+  	padding: 30px 0px;
+  	
+  	font-size: 24px;
+  	text-align: center;
+  	max-width: 320px;
+  }
+
+  .m-freeship-details-standout{
+  	color: #c00;
+  }
+
+  .m-freeship-details-small{
+  	font-size: 12px;
+  	padding-top: 10px;
+  }
+
+  .m-freeship-divider{
+  	height: 1px;
+  	border-bottom: 2px solid #ccc;
+  	margin: 0px 10px;
+  }
+
+  #m-freeship-shop-categories{
+  	padding-top: 20px;
+
+  	h4{
+  		display: none;
+  	}
+  }
+
+  .m-freeship-fine-details{
+  	font-size: 8px;
+  }
+
+  .m-freeship-links{
+  	font-size: 8px;
+  	padding-bottom: 30px;
+  	
+  	a{
+  		padding-right: 30px;
+  	}
+  }
+}

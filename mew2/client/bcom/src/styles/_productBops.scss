@@ -1,0 +1,277 @@
+
+#b-product-bops-modal {
+  .mb-modal-content{
+    overflow: auto;
+  }
+  #bops-product-info {
+    margin-bottom: emCalc(20px);
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    .b-bops-img {
+      float: left;
+      width: 35%;
+      position: relative;
+
+      .b-product-img {
+        width: 100%;
+        position: relative;
+      }
+      
+      .b-product-swatch-img {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border: 1px solid #999;
+        padding: 2px;
+        right: 5px;
+        bottom: 5px;
+        background-color: #fff;
+      }
+    }
+    .b-bops-prod-details {
+      float: right;
+      margin-left: 2%;
+      width: 63%;
+      font-size: 13px;
+      line-height: 15px;
+
+      .b-bops-prod-name{
+        font-weight: bold;
+      }
+    }
+  }
+
+  #mb-bops-nearme {
+    @include b-button(gray, true);
+    width: 88px;
+    height: 45px;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  #bops-modal-errorContainer {
+    display: none;
+    padding: 5px 0 5px 30px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background: url("../../images/error.png") no-repeat #ED0000;
+    background-position: 10px 3px;
+    margin-top: 10px;
+  }
+
+  #bops-form-section {
+    #bops-form {
+      margin: 5px 0;
+
+      input, select {
+        margin: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      
+      .showError{
+        border: 2px solid #ed0000;
+      }
+      .showErrorLabel{
+        color: #ed0000;
+      }
+
+      label {
+        margin: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-transform: normal;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      #b-bops-distance-wrapper {
+        padding-top: 4px;
+        width: 100%;
+      }
+
+      .b-bops-search-wrapper {
+        padding: 20px 0px ;
+      }
+
+      .b-bops-address-wrapper {
+        position: relative;
+        margin-right: 98px;
+
+        #mb-bops-search-icon {
+          position: absolute;
+          display: inline-block;
+          left: 14px;
+          top: 14px;
+          height: 15.5px;
+        }
+
+        #mb-bops-address {
+          display: inline-block;
+          height: 45px;
+          padding-left: 32px;
+          padding-right: 25px;
+          font-size: 13px;
+        }
+
+        .mb-bops-search-clear {
+          visibility: hidden;
+          position: absolute;
+          height: 29px;
+          top: 8px;
+          right: 0px;
+          -webkit-user-select: none;
+        }
+
+      }
+      #mb-bops-search {
+        @include b-button(black, true);
+        text-transform: uppercase;
+      }
+
+    }
+
+  }
+
+  #bops-results {
+    .bops-result {
+      $bops-font-base: 13px;
+      $bops-font-size: emCalc($bops-font-base);
+
+      border: 1px solid #CCC;
+      font-size: $bops-font-size;
+      margin: emCalc(15px) 0;
+      padding: emCalc(15px) emCalc(10px);
+
+      .bops-result-name,
+      .bops-result-hours-label {
+        font-weight: bold;
+        margin-bottom: emCalc(5px);
+      }
+
+      .bops-result-mapping {
+        $mult: $em-base / $bops-font-base;
+
+        font-size: emCalc(12px) * $mult;
+        margin: emCalc(8px) 0;
+        width: 75%;
+        display: inline-block;
+
+        a.bops-result-map-link {
+          font-size: 1em;
+        }
+      }
+
+      .bops-result-distance{
+        float: right;
+        text-align: right;
+        margin: 0.5em 0;
+      }
+
+      .bops-result-hours {
+        padding-top: 10px;
+        .bops-result-hours-lable{
+          display: inline-block;
+          min-width: 115px;
+          font-weight: bold;
+        }
+        .bops-result-hours-value {
+          display: inline-block;
+        }
+      }
+
+      input[type="radio"] {
+        display: none;
+        & + label {
+          background: url("../../images/radio.png") -31px no-repeat;
+          content: '';
+          width: 23px;
+          height: 24px;
+          margin: -5px 0 0 -5px;
+          float: left;
+        }
+        &:checked + label {
+          background: url("../../images/radio.png") 0px no-repeat;
+          float: left;
+        }
+      }
+
+      .b-bops-store-details {
+        margin-left: 25px;
+        line-height: 14px;
+        position: relative;
+
+        a{
+          color: black;
+          text-decoration: underline;
+        }
+      }
+
+    }
+
+    .bops-result.bops-selected-store {
+      background-color: #ccc;
+    }
+
+    .b-bops-callout {
+      font-size: 13px;
+      padding-top: 10px;
+      line-height: 14px;
+      .b-bops-message{
+        display: inline-block;
+        width: 75%;
+      }
+      .b-bops-totalstore-count {
+        float: right;
+      }
+    }
+
+    .bops-result.bops-unavailable {
+      line-height: 20px;
+      padding-left: 20px;
+    }
+
+    .bops-store-select {
+      @include b-button(black, true);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .bops-store-cancel {
+      @include b-button(gray, true);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .b-bops-error-unavailable, .b-bops-error-nostores {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 30px;
+      line-height: 17px;
+      margin-top: 30px;
+    }
+  }
+
+  #bops_legal_copy {
+    font-size: 10px;
+    color: #999;
+    line-height: 13px;
+
+    .bops_copy_note {
+      font-weight: bold;
+    }
+  }
+}
+
+#b-map-modal{
+  #b-map-header{
+    padding: 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,348 @@
+.m-j-login-modal-signin-btn, .m-j-login-forgot-password-next-btn {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 0 0;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 1em;
+  padding-bottom: 1.0625em;
+  width: 100%;
+  border-radius: 5px;
+  border: 0px none;
+  color: white;
+  font-size: 0.875em;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  background-color: #c00;
+}
+
+.m-j-login-modal-create-account-btn {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 0 0;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.75em;
+  padding-bottom: 0.8125em;
+  width: 100%;
+  border-radius: 5px;
+  border: 0px none;
+  color: white;
+  font-size: 0.875em;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  background-color: #000;
+  margin-top: 0.625em;
+}
+
+.m-j-login-modal-forgot-password {
+  text-align: center;
+}
+
+.m-j-login-modal-benefits-account {
+  border-top: 1px solid #727272;
+  border-bottom: 1px solid #727272;
+}
+
+.m-j-login-modal-privacy-policy {
+  border-bottom: 1px solid #727272;
+}
+
+#m-stay-safe-rules-post, #m-stay-safe-rules {
+  color: #333333;
+  font-size: $font-sm;
+}
+
+#mb-login-modal-form {
+
+  input{
+    color: #000;
+  }
+
+  #mb-j-signup-password-label {
+    display: inline-block
+  }
+
+  .error-messages-hide{
+    display: none;
+  }
+
+  .error-messages-show {
+    display: block;
+  }
+
+  #mb-j-signup-password-warning {
+    float: right;
+    display: inline-block;
+    font-style: italic;
+    font-size: $font-sm;
+    color: #000000;
+  }
+
+  .m-j-login-modal-div {
+    div:first-child{
+      padding-bottom: 15px;
+    }
+    .m-j-login-modal-form-field {
+      height: 35px;
+    }
+  }
+
+  .m-j-login-modal-div-rules {
+    #m-stay-safe-rules-pre{
+      font-size: 16px;
+    }
+    padding-top: 20px;
+    .m-j-login-modal-form-field {
+      height: 30px;
+    }
+  }
+
+  .m-j-login-modal-list {
+    padding: 15px 0 15px 0;
+  }
+
+  .down-arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 13px solid #f00;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .up-arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 13px solid #f00;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  div.m-j-login-modal-benefits-account a, div.m-j-login-modal-privacy-policy a {
+    text-decoration: none;
+  }
+
+  a.mb-j-forgot-password-button {
+    color: #c00;
+  }
+
+  .empty-field{
+    color: #c00;
+  }
+
+  #m-forgot-password-label {
+    text-align: center;
+  }
+
+  .m-forgot-password-view-title {
+    font-weight: bold;
+    color: #000000;
+    padding: 5px 0 5px 0;
+  }
+
+  #mb-forgot-password-view-container p {
+    color: #000000;
+  }
+
+  #m-j-forgot-password-email-label {
+    padding-bottom: 15px;
+  }
+
+  .m-forgot-password-reset-label {
+    /*color: #000000;*/
+    padding: 5px 0 10px 0;
+  }
+
+  #m-forgot-password-captcha-block {
+    padding: 10px 0 10px 0;
+  }
+
+  #m-stay-safe-rules{
+    margin-left: 15px;
+  }
+
+  #m-stay-safe-rules ul{
+    list-style: disc;
+  }
+
+  #m-forgot-password-captcha{
+    width: 200px;
+  }
+
+  #mb-j-signup-password-warning{
+    padding-bottom: 15px;
+    padding-top: 3px;
+  }
+
+  #m-stay-safe-rules-pre{
+    padding: 5px 0 10px 0;
+  }
+
+  #m-stay-safe-rules-bullets{
+    color: #333333;
+    font-size: 12pt;
+  }
+
+  #m-stay-safe-rules-bullets li label{
+    color: #000000;
+  }
+
+  .m-sigin-in-field-error{
+    color: #c00;
+    font-weight: normal;
+    font-size: 10pt;
+    height: 100%;
+    text-align: left;
+  }
+
+  .m-j-captcha-refresh{
+    background: url("../../images/captcha_refresh.svg") no-repeat center center;
+  }
+
+  .m-j-captcha-refresh-css{
+    height: 50px;
+    width: 50px;
+    background-size: 40px 40px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #mb-j-forgot-password-hint-answer-label{
+    padding-bottom: 15px;
+  }
+}
+
+.m-sign-in-deactivate {
+  opacity: 0.5;
+}
+
+.m-j-login-forgot-password-content {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  div{
+    padding-bottom: 20px;
+  }
+  .m-j-forgot-password-label{
+    font-weight: bold;
+  }
+  
+}
+
+#mb-forgot-password-view-container p{
+    margin: 0.5em 0 !important;
+  }
+
+
+.m-checkbox {
+  position: relative;
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    color: #000000;
+    margin: 0 0 0 5px;
+    width: 85%;
+    width: -moz-calc(100% - 32px);
+    width: -webkit-calc(100% - 32px);
+    width: calc(100% - 32px);
+  }
+
+  input[type=checkbox] {
+    display: none;
+
+    &+ .m-checkbox-placeholder {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
+      border: solid 1px #B0B0B0;
+
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+
+      background: -webkit-linear-gradient(top, #FDFDFD 0%, #D6D6D6 100%);
+      background: -moz-linear-gradient(top, #FDFDFD 0%, #D6D6D6 100%);
+      background: -o-linear-gradient(top, #FDFDFD 0%, #D6D6D6 100%);
+      background: -ms-linear-gradient(top, #FDFDFD 0%, #D6D6D6 100%);
+      background: linear-gradient(top, #FDFDFD 0%, #D6D6D6 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDFDFD', endColorstr='#D6D6D6',GradientType=0 );
+    }
+
+    &:checked:not([disabled]) + .m-checkbox-placeholder {
+      background: #FFFFFF;
+    }
+
+    &:disabled + .m-checkbox-placeholder {
+      border: solid 1px #DBDBDB;
+
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+
+      background: -webkit-linear-gradient(top, #FEFEFE 0%, #E7E7E7 100%);
+      background: -moz-linear-gradient(top, #FEFEFE 0%, #E7E7E7 100%);
+      background: -o-linear-gradient(top, #FEFEFE 0%, #E7E7E7 100%);
+      background: -ms-linear-gradient(top, #FEFEFE 0%, #E7E7E7 100%);
+      background: linear-gradient(top, #FEFEFE 0%, #E7E7E7 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEFEFE', endColorstr='#E7E7E7 ',GradientType=0 );
+    }
+
+    &+ .m-checkbox-placeholder:after {
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      content: '';
+      position: absolute;
+      width: 13px;
+      height: 8px;
+      background: transparent;
+      top: 5px;
+      left: 4px;
+      border: 3px solid #000000;
+      border-top: none;
+      border-right: none;
+
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    &:checked + .m-checkbox-placeholder {
+        &:after {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+          filter: alpha(opacity=100);
+          opacity: 1;
+        }
+
+        &:hover::after {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+          filter: alpha(opacity=30);
+          opacity: 0.3;
+        }
+    }
+
+    &:disabled:checked + .m-checkbox-placeholder:after {
+      box-shadow: -1px 1px 0px 0px #DBDBDB, inset 1px -1px 0px 0px #DBDBDB;
+    }
+
+  }
+
+}
+

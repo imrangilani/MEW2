@@ -1,0 +1,28 @@
+//Common attributes of all swipers
+//Swiper-specific attributes are defined inside of their corresponding container selector
+
+.swiper-container{
+  width: 100%;
+  background: #fff;
+  color: #fff;
+  text-align: center;
+  box-sizing: content-box;
+
+  div {
+    box-sizing: content-box;
+  }
+  img {
+    display: block;
+  }
+
+  .swiper-slide {
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+  }
+}
+
+
+

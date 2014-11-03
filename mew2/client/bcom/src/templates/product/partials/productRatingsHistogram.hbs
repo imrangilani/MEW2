@@ -1,0 +1,44 @@
+<div class="b-product-reviews-histogram">
+{{#if rating.detailedRatings}}
+  <section class="b-padding-bottom-ten">
+    <span class="b-product-rating-value">5 Hearts </span>
+    <span class="b-product-rating-cnt">{{rating.detailedRatings.countFor5Star}}</span>
+    <div class="b-product-reviews-histogram-map">
+      <div style="max-width: 100%; width: {{formatRatingsHistogram rating.detailedRatings.countFor5Star rating.cnt}}%"></div>
+    </div>
+  </section>
+  
+  <section class="b-padding-bottom-ten">
+    <span class="b-product-rating-value">4 Hearts </span>
+    <span class="b-product-rating-cnt">{{rating.detailedRatings.countFor4Star}}</span>
+    <div class="b-product-reviews-histogram-map">
+      <div style="max-width: 100%; width: {{formatRatingsHistogram rating.detailedRatings.countFor4Star rating.cnt}}%"></div>
+    </div>
+  </section>
+  
+  <section class="b-padding-bottom-ten">
+    <span class="b-product-rating-value">3 Hearts </span>
+    <span class="b-product-rating-cnt">{{rating.detailedRatings.countFor3Star}}</span>
+    <div class="b-product-reviews-histogram-map">
+      <div style="max-width: 100%; width: {{formatRatingsHistogram rating.detailedRatings.countFor3Star rating.cnt}}%"></div>
+    </div>
+  </section>
+  
+  <section class="b-padding-bottom-ten">
+    <span class="b-product-rating-value">2 Hearts </span>
+    <span class="b-product-rating-cnt">{{rating.detailedRatings.countFor2Star}}</span>
+    <div class="b-product-reviews-histogram-map">
+      <div style="max-width: 100%; width: {{formatRatingsHistogram rating.detailedRatings.countFor2Star rating.cnt}}%"></div>
+    </div>
+  </section>
+  
+  <section>
+    <span class="b-product-rating-value">1 Heart </span>
+    <span class="b-product-rating-cnt">{{rating.detailedRatings.countFor1Star}}</span>
+    <div class="b-product-reviews-histogram-map">
+      <div style="max-width: 100%; width: {{formatRatingsHistogram rating.detailedRatings.countFor1Star rating.cnt}}%"></div>
+    </div>
+  </section>
+      
+{{/if}}
+</div>

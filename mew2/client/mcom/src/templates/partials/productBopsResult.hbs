@@ -1,0 +1,27 @@
+<div class="bops-result-name">{{name}}</div>
+
+<div class="bops-result-address">{{> storeAddress address}}</div>
+
+<div class="bops-result-mapping">
+  <div style="float:left">
+    <button id="mj-bops-result-map-link-{{locationNumber}}" class="bops-result-map-link">view map</button>
+  </div>
+  <div style="float: right">
+    <div class="bops-result-distance">{{distance}} {{units}}</div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+{{#if hours}}
+  <div class="bops-result-hours">
+    <div class="bops-result-hours-label">Hours:</div>
+
+    {{#if hours.today}}
+      <div class="bops-result-hours-today">Today: {{hours.today}}</div>
+    {{/if}}
+
+    {{#if hours.tomorrow}}
+      <div class="bops-result-hours-tomorrow">Tomorrow: {{hours.tomorrow}}</div>
+    {{/if}}
+  </div>
+{{/if}}

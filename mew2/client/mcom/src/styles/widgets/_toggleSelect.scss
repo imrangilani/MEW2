@@ -1,0 +1,25 @@
+.mb-toggleselect-widget {
+  @include border-radius($button-radius);
+  border: 1px solid $secondary-color;
+
+  .mb-j-toggleselect-item {
+    font-weight: bold;
+    padding: emCalc(6px) emCalc(12px);
+    text-align: center;
+    width: 50%;
+
+    &.value-1 {
+      @include border-left-radius($button-radius);
+      border-right: 1px solid $secondary-color;
+    }
+
+    &.value-2 {
+      @include border-right-radius($button-radius);
+    }
+
+    &.active {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+}

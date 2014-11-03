@@ -1,0 +1,23 @@
+<div id="m-store-event-details-modal">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Event Details</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    {{> storeEvent}}
+
+    <section class="m-event-description">
+      {{{shortDesc}}}
+    </section>
+
+    <section class="m-event-calendar">
+      <a href="{{addToCalendarLink}}" class="m-j-add-event-to-calendar m-button">add to my calendar</a>
+    </section>
+
+  </div>
+
+</div>

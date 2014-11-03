@@ -1,0 +1,29 @@
+<div class="m-product-reviews-sliders">
+
+  {{#if rating.recommended}}
+    <div class="m-product-reviews-sliders-top">
+      <div class="small-{{#if isRatingsModal}}12{{else}}11{{/if}} columns nopad">
+        <span class="m-product-reviews-recommended">{{rating.recommended}}%</span> of reviewers recommend this product.
+      </div>
+
+      {{#unless isReviewsModal}}
+        <div class="small-1 columns nopad">
+          <div class="m-product-reviews-launch-modal right"><div class="m-bg-arrow"></div></div>
+        </div>
+      {{/unless}}
+    </div>
+  {{/if}}
+
+  {{#if rating.values}}
+    <div class="m-product-reviews-sliders-bottom">
+      <div class="m-product-reviews-experience">
+        Product Experience:
+
+        {{>productFitSlider}}
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  {{/if}}
+
+</div>

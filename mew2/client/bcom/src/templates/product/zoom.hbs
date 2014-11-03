@@ -1,0 +1,47 @@
+<section id="mb-product-zoom">
+  <div class="mb-modal-header">
+    <div class="row">
+      <div class="small-3 columns">
+        <div class="mb-j-modalHeader-left b-back">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class="small-6 columns b-modalHeader-title">
+        <span id="mb-j-image-sequence">{{this.currentImageSequence}}</span> of {{this.images.length}}
+      </div>
+      <div class="small-3 columns">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <div id="mb-j-zoom-swiper" class="swiper-container">
+      <div class="swiper-wrapper">
+        {{#each images}}
+          <div class="swiper-slide" data-image-index="{{@index}}">
+            <div class="mb-zoom-img-{{@index}}">
+              <img class="b-loading" src="/mew20/images/ajax-loader.gif" />
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <div id="mb-zoom-controls">
+      <span class="b-zoom-control-amount">
+        <span aria-hidden="true" draggable="false" class="b-zoom-control-icon b-zoom-control-icon-plus zoom-plus"></span>
+        <span aria-hidden="true" draggable="false" class="b-zoom-control-icon b-zoom-control-icon-reset zoom-reset"></span>
+        <span aria-hidden="true" draggable="false" class="b-zoom-control-icon b-zoom-control-icon-minus zoom-minus"></span>
+      </span>
+      <div class="b-j-pdp-img-pagination"></div>
+    </div>
+    <div id="b-zoom-offscreen">
+      {{#each images}}
+        <div id="mb-zoom-img-{{@index}}">
+          <img class="b-loading" src="/mew20/images/ajax-loader.gif" />
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+</section>

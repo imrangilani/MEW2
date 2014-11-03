@@ -1,0 +1,23 @@
+{{#each this}}
+  <article id="m-product-pool-container">
+    <section id="m-product-pool-header">
+      <div id="m-browse-header-label" class="m-product-pool-header-column">{{poolname}} </div>
+    </section>
+
+    <section id="m-product-pool-content" class="m-product-grid">
+      <ul id="m-browse-results-list" class="m-product-grid-results-list small-block-grid-2 large-block-grid-3">
+        {{#each products}}
+          {{> productThumbnail this}}
+        {{/each}}
+      </ul>
+    </section>
+
+    {{#if shopall}}
+      <section id="m-product-pool-footer">
+        <a id="m-j-product-size-chart-clickable" class="m-clickable m-j-cm-link" href="{{shopall}}">
+          <div id="m-product-pool-footer-label" class="m-product-pool-footer-column m-bg-arrow">Shop All</div>
+        </a>
+      </section>
+    {{/if}}
+  </article>
+{{/each}}

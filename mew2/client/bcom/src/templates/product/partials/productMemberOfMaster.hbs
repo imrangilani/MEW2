@@ -1,0 +1,66 @@
+<article data-id="{{id}}" data-member="true" class="b-product-wrapper b-product-member-of-master">
+
+  <div class="b-product-member-summary">
+    <p class="b-product-member-name truncated">{{name}}</p>
+
+    <div class="b-product-member-data">
+      <div class="b-product-member-images-wrapper">
+        {{> productImagesMember}}
+      </div>
+      <div class="b-product-member-basic-info-wrapper">
+        <div class="b-product-member-basic-info {{#unless images}}no-image{{/unless}}">
+            {{> productPriceTiered}}
+
+            <div class="b-product-prices-info">
+              {{#if saleEndDate}}
+                <div class="b-product-saleEndDate">
+                  <span class="b-product-sale-label">Sale ends</span>
+                  <span class="b-product-price-amt">{{saleEndDate}}</span>
+                </div>
+              {{/if}}
+              {{#if promotions}}
+                <span class="b-offer-callout">{{whichOffer promotions}} </span>
+              {{/if}}
+              {{#if onsale}}
+                {{> productPricingPolicy}}
+              {{/if}}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="b-product-member-details-buy {{#unless expanded}}b-expandable-closed{{/unless}}" data-expandable="container">
+
+    <div class="b-j-product-member-details-buy-button" data-expandable="button">
+      <span class="b-product-member-details-buy-toogle"> Get details &amp; buy</span>
+    </div>
+
+    <div class="b-product-member-details-buy-content" data-expandable="content" {{#unless expanded}}style="display: none"{{/unless}}>
+
+      {{#if colors}}{{> productSwatches}}{{/if}}
+
+      {{#if sizes}}{{> productSizes}}{{/if}}
+
+      {{#if isCheckoutEnabled}}<div>{{> productQuantity}}</div>{{/if}}
+
+      {{> productButtons}}
+
+      <div id="b-j-product-availability-container-{{id}}" class="b-j-product-availability b-pdp-info-section-container"></div>
+
+      {{> productDetails}}
+
+      {{! Show link to the PDPmem for this member product }}
+      {{#if productUrl}}
+        <a class="b-j-product-link b-j-product-member-link" href="{{productUrl}}">GO TO PRODUCT PAGE</a>
+      {{/if}}
+      
+      <div class="b-j-product-member-details-buy-button b-pdp-info-section" data-expandable="button">
+        <span class="b-product-member-details-buy-toogle"> Close</span>
+      </div>
+
+    </div>
+
+  </section>
+
+</article>

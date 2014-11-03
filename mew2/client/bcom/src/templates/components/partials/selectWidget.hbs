@@ -1,0 +1,11 @@
+<div class="form-label">{{label}}</div>
+<div class="b-select-wrapper">
+  <select name="{{name}}" class="{{!-- mb-j-select --}} b-select">
+    <option value="" selected>SELECT</option>
+
+    {{#each values}}
+      <option value="{{value}}">{{label}}</option>
+    {{/each}}
+  </select>
+</div>
+{{!-- <div class="mb-j-select-value-display"></div> --}}

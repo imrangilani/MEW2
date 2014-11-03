@@ -1,0 +1,40 @@
+<div class="b-electronic-gift-cards-container">
+  {{! the "amount" input field section}}
+  <div class="b-pdp-form-control-group">
+    <label for="b-gift-card-amount" class="b-gift-card-label">Enter Amount</label>
+    <span class="b-input-explanation pull-right">Must be between 10.00 and 1000.00</span>
+    <input type="text" id="b-j-gift-card-amount" placeholder="$0.00" class="b-gift-card-input" data-prefix="$" maxlength="30" required />
+    <div class="b-input-field-error-explanation b-j-gift-card-error-amount b-inline hide">
+      <div class="b-input-field-error-explanation-text">
+        Please enter valid amount between $10.00 and $1000.00
+      </div>
+    </div>
+    <div class="b-input-explanation">Please include a decimal point.</div>
+  </div>
+
+  {{! the "recipient's email address" input field section}}
+  <div class="b-pdp-form-control-group">
+    <label for="b-gift-card-recipients" class="b-gift-card-label">Recipients Email Address</label>
+    <input type="email" id="b-j-gift-card-recipient" class="b-gift-card-input" maxlength="75" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}" />
+    <div class="b-input-field-error-explanation b-j-gift-card-error-no-recipient b-inline hide">
+      <div class="b-input-field-error-explanation-text">
+        Please enter your recipient's email address. Once you have updated the email address,
+        then click ADD TO BAG again.
+      </div>
+    </div>
+    <div class="b-input-explanation">Please double-check address before adding to Shopping Bag.</div>
+    <div class="b-input-explanation">This item may only be shipped using Email.</div>
+    <div class="b-input-explanation">Our Normal Gift Boxing is not available for this item.</div>
+  </div>
+
+  {{! the "message" input fields section}}
+  <div class="b-pdp-form-control-group">
+    <label for="b-gift-card-message-to" class="b-gift-card-label">Enter Your Personal Message</label>
+    <span class="b-input-explanation pull-right">(Optional)</span>
+    <input type="text" id="b-j-gift-card-message-to" placeholder="To:" maxlength="60" class="b-gift-card-input" />
+    <input type="text" id="b-j-gift-card-message-text" placeholder="Message:" maxlength="60" class="b-gift-card-input" />
+    <input type="text" id="b-j-gift-card-message-from" placeholder="From:" maxlength="60" class="b-gift-card-input" />
+    <div class="b-input-explanation">3 lines 60 character max per line</div>
+  </div>
+
+</div>

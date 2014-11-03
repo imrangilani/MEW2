@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="2.613" y="2.613" width="44.773" height="44.774"/>
+		</defs>
+		<defs>
+			<rect id="SVGID_2_" x="2.63" y="2.854" width="44.515" height="44.532"/>
+		</defs>
+		<defs>
+			<path id="SVGID_3_" d="M8.181,19.554c0-6.148,4.984-11.133,11.133-11.133s11.133,4.984,11.133,11.133
+				c0,6.149-4.984,11.134-11.133,11.134S8.181,25.703,8.181,19.554L8.181,19.554z M46.278,42.322L33.032,29.074
+				c1.878-2.703,2.981-5.981,2.981-9.521c0-9.223-7.479-16.699-16.7-16.699s-16.7,7.477-16.7,16.699s7.479,16.7,16.7,16.7
+				c3.54,0,6.819-1.104,9.521-2.982L42.081,46.52c1.153,1.156,3.044,1.156,4.197,0C47.437,45.367,47.437,43.477,46.278,42.322"/>
+		</defs>
+		<defs>
+			<path id="SVGID_4_" d="M2.613,2.613h44.773v44.774H2.613V2.613z M2.613,2.613"/>
+		</defs>
+		<clipPath id="SVGID_5_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<clipPath id="SVGID_6_" clip-path="url(#SVGID_5_)">
+			<use xlink:href="#SVGID_2_"  overflow="visible"/>
+		</clipPath>
+		<clipPath id="SVGID_7_" clip-path="url(#SVGID_6_)">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<clipPath id="SVGID_8_" clip-path="url(#SVGID_7_)">
+			<use xlink:href="#SVGID_4_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_8_)">
+			<defs>
+				<rect id="SVGID_9_" x="2.613" y="2.357" width="45.031" height="45.03"/>
+			</defs>
+			<clipPath id="SVGID_10_">
+				<use xlink:href="#SVGID_9_"  overflow="visible"/>
+			</clipPath>
+			<g clip-path="url(#SVGID_10_)">
+				
+					<image overflow="visible" width="48" height="47" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEARgBGAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+EAMCAwYAAAGNAAABtQAAAeX/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
+Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
+JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIADEAMQMBIgACEQEDEQH/
+xABxAAEBAQEBAAAAAAAAAAAAAAAAAgEDBgEBAAAAAAAAAAAAAAAAAAAAABAAAQQDAQAAAAAAAAAA
+AAAAAAECEgNAERMhEQEAAQMFAAAAAAAAAAAAAAABACExoRBQEWFxEgEAAAAAAAAAAAAAAAAAAABA
+/9oADAMBAAIRAxEAAAD3OUJUJpp1BKhKhKgAAAAAAAAB/9oACAECAAEFAMD/2gAIAQMAAQUAwP/a
+AAgBAQABBQB1liO6WHSw6WHSwre9XCt9iRIkRiacaIkSJERNZ3//2gAIAQICBj8AB//aAAgBAwIG
+PwAH/9oACAEBAQY/AEGnPUvgl8Evgl8EBaaPu1f/2Q==" transform="matrix(1.0234 0 0 -1.0234 1.0186 48.9834)">
+				</image>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,29 @@
+<section id="b-pdp-shipping-returns" class="b-pdp-info-section-container b-expandable-closed" data-expandable="container">
+  <div class="b-pdp-info-section" data-expandable="button">
+    <div class="b-pdp-info-label">Shipping &amp; Returns</div>
+    <div class="b-expandable-icon"></div>
+  </div>
+  <div id="b-pdp-shipping-returns-content" data-expandable="content">
+    <ul class="b-pdp-bullets">
+      {{#unless shipping.giftWrappable}}<li>Our Normal Gift Boxing is not available for this item.</li>{{/unless}}
+      {{#if shipping.surcharge}}<li>This item has a Size/Weight Surcharge. Additional Shipping Fee of ${{formatNumber shipping.surcharge}}.</li>{{/if}}
+      {{#if shipping.stateRestrictions}}<li>This item may not be shipped to {{prettyList shipping.stateRestrictions}}.</li>{{/if}}
+      {{#if_eq shipping.methods.length compare=1}}<li>This item may only be shipped using {{shipping.methods.[0]}}.</li>{{/if_eq}}
+      {{#if_eq shipping.methods.length compare=2}}<li>This item may be shipped using {{shipping.methods.[0]}}, {{shipping.methods.[1]}}.</li>{{/if_eq}}
+      {{#unless isCheckoutEnabled}}<li>Call 1-866-593-2540 to order. Mon-Fri 8am-10pm ET, Sat-Sun 10am-9pm ET.</li>{{/unless}}
+      {{#each shipping.notes}}<li>{{this}}</li>{{/each}}
+      {{#if shipping.returnConstraint}}
+          {{#if_eq shipping.returnConstraint compare="NV"}}<li>Must be returned directly to vendor.</li>{{/if_eq}}
+          {{#if_contained shipping.returnConstraint list="NX,SX"}}<li>Please call customer service for returns.</li>{{/if_contained}}
+      {{/if}}
+    </ul>
+    <p>For complete details, read our
+    <a href="{{#displayConfig}}{{paths.rightnowUrl}}{{/displayConfig}}/app/answers/list/c/22" target="_blank">
+      <span id="b-pdp-shipping-link">SHIPPING</span></a>
+    and
+    <a href="{{#displayConfig}}{{paths.rightnowUrl}}{{/displayConfig}}/app/answers/list/c/23" target="_blank">
+      <span id="b-pdp-return-link">RETURNS</span></a>
+    policies.
+    </p>
+  </div>
+</section>

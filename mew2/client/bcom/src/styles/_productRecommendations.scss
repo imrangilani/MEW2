@@ -1,0 +1,91 @@
+/*----------------------------------  PRODUCT RECOMMENDATIONS----------------------------------*/
+
+#mb-j-product-recommendations-container:empty {
+  display: none;
+}
+
+#mb-product-recommendations-swiper-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .mb-product-recommendations-arrow {
+    position: absolute;
+    display: block;
+
+    width: 11px;
+    height: 21px;
+
+    cursor: pointer;
+  }
+  .icon-right-arrow-gray {
+    float: right;
+    margin: 2px 2px 0 0;
+  }
+  #mb-product-recommendations-arrow-left {
+    left: 0px;
+
+    &.mb-j-off {
+      left: -40px;
+    }
+  }
+  #mb-product-recommendations-arrow-right {
+    right: 0px;
+
+    &.mb-j-off {
+      right: -40px;
+    }
+  }
+
+}
+
+#mb-product-recommendations-swiper {
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+#mb-product-recommendations-products {
+
+  .mb-product-recommendations-product {
+    padding: 0 1.25em;
+    font-size: 12px;
+    line-height: 1.5;
+
+    a, a:hover {
+      display: block;
+      color: #000000;
+    }
+
+    .mb-product-recommendations-img-outter {
+      width: 100%;
+      padding-top: 125%;
+      position: relative;
+      overflow: hidden;
+
+      .mb-product-recommendations-img-wrapper {
+
+        position: absolute;
+        top: 0%;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .mb-product-recommendations-name {
+      margin-top: 10px;
+      &.truncated {
+        max-height: 54px;
+      }
+    }
+    .b-product-price {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .b-pdp-rating {
+      float: none;
+    }
+  }
+
+}

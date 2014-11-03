@@ -1,0 +1,38 @@
+{{#if isNewNavMenu}}
+  {{#each newMenuItems}}
+    <li id="{{this.id}}" class="{{this.classes}} fob{{this.id}}">
+    <a {{#if this.sitePromotion}}data-cm-link-click="{{this.sitePromotion}}"{{/if}} href=
+      {{#if this.secure}}
+        "{{secureUrl this.url}}">
+      {{else}}
+        {{#if this.viewless}}
+          "{{viewlessUrl this.url}}">
+        {{else}}
+          "{{absoluteUrl this.url}}">
+        {{/if}}
+      {{/if}}
+      {{{this.name}}}
+      </a>
+    </li>
+  {{/each}}
+{{else}}
+  {{#each newMenuItems}}
+    {{! Header rows don't animation into position }}
+    {{#unless this.headerRow}}
+      <li id="{{this.id}}" class="{{this.classes}}mb-j-hidden-list-item fob{{this.id}}">
+        <a {{#if this.sitePromotion}}data-cm-link-click="{{this.sitePromotion}}"{{/if}} href=
+          {{#if this.secure}}
+            "{{secureUrl this.url}}">
+              {{else}}
+                {{#if this.viewless}}
+              "{{viewlessUrl this.url}}">
+            {{else}}
+              "{{absoluteUrl this.url}}">
+            {{/if}}
+          {{/if}}
+          {{{this.name}}}
+        </a>
+      </li>
+    {{/unless}}
+  {{/each}}
+{{/if}}

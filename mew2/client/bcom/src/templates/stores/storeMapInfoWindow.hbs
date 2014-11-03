@@ -1,0 +1,8 @@
+<div class="mb-j-store-list-entry b-map-info-window" data-location="{{locationNumber}}">
+  <div class="b-store-name">{{name}}</div>
+  <div class="attribute-name">{{address.city}}, {{address.state}}</div>
+  <span class="b-store-list-entry-distance">{{formatNumber distance 1 1}} Miles</span>
+  <span class="b-store-list-entry-open">
+    {{#if isOpenNow}}Open{{else}}Closed{{/if}}
+  </span>
+</div>

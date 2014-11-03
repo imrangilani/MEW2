@@ -1,0 +1,68 @@
+$headerMargin : 10px;
+$headerImgWidth : 150px;
+$headerButtonWidth : 50px;
+$headerButtonHeight : 40px;
+$headerContainerHeight : 45px;
+
+#mb-j-nav-button {
+	float: left;
+	border-right: 1px solid #CCCCCC;
+	width: $headerButtonWidth;
+	height: $headerButtonHeight;
+}
+
+#mb-j-nav-button-icon {
+	margin: 11px 0 0 14px;
+	float: left;
+}
+
+#mb-j-header-image {
+	display: inline-block;
+	height: 25px;
+	margin-top: 7px;
+	cursor: pointer;
+}
+
+#mb-header-image-container {
+	margin : 0px auto 0 auto;
+	width : $headerImgWidth;
+}
+
+#header {
+	height: $headerContainerHeight;
+	@include view-border(bottom);
+}
+
+#mb-j-shopping-bag-image {
+	float : right;
+	margin: 5px 11px 0 9px;
+	height: 30px;
+	width: 25px;
+	line-height: 30px;
+}
+
+#b-shopping-bag-count {
+	padding-top: 6px;
+	line-height: 26px;
+	font-size: emCalc(12px);
+	font-weight: bold;
+	color: #000;
+}
+
+#mb-j-header-container {
+	text-align: center;
+	@include view-border(bottom);
+	height: $headerContainerHeight;
+	background-color: #FFF;
+}
+
+#bagContainer{
+	width: 50px;
+	height: 40px;
+	border-left: 1px solid #CCCCCC;
+	float: right;
+}
+
+#logoContainer{
+	display: inline-block;
+}

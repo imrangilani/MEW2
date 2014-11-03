@@ -1,0 +1,71 @@
+{{! if we don't have upcs, it means that the product is not available (sold out) }}
+{{! if this is a furniture item, we don't show the availability nor the bops message }}
+{{#if product.upcs}}
+{{#unless product.isBigTicket}}
+  <div class="b-product-availability">
+    <div class="b-pdp-info-section">
+      <div class="b-pdp-info-label">Item Availability</div>
+    </div>
+
+    {{#unless activeUpcData}}
+      {{! No UPC selected - print default messaging}}
+      Select a {{#upcUnselectedMessage product}}{{/upcUnselectedMessage}} above in order to view availability.
+    {{else}}
+      {{! UPC is selected - print item ship messaging and bops messaging }}
+
+      {{! Display shipping message}}
+      {{#if activeUpcData.availMsg}}
+        <div class="b-product-bops-section b-product-bops-shipping">
+          <span class="b-product-bops-label" id="b-product-bops-label-shipping-{{product.id}}">Ship: </span>
+          <span id="b-product-bops-shipping-copy-line1">{{#extractShippingAvailabilityMessage activeUpcData.availMsg 'first' product.id}}{{/extractShippingAvailabilityMessage}}</span>
+          <div id="b-product-bops-shipping-copy-line2">
+            {{#extractShippingAvailabilityMessage activeUpcData.availMsg 'last'}}{{/extractShippingAvailabilityMessage}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#ifFeatureEnabled 'bops_pdp'}}
+        {{#if locationNumber}}
+          {{! A location has previously been chosen. }}
+          {{#unless suppressBopsMessaging}}
+          {{#if activeAvailability.bopsEligible}}
+          {{! As this product is eligible for bops, we can display the bops messaging }}
+            <div class="b-product-bops-section b-j-product-bops-message-section b-product-bops-availability">
+              <div id="b-j-product-bops-learn-more-{{product.id}}" class="b-j-product-bops-learn-more">
+                <span class="b-product-bops-label" id="b-product-bops-label-store-{{product.id}}">Pick up in store: </span>
+                <span class="icon icon-question-mark"></span>
+              </div>
+              <div id="b-product-bops-availability-copy">
+                {{#if activeAvailability.bopsAvailable}}
+                  Available at <span class="b-product-bops-store-name">{{bops.store.name}}</span>
+                {{else}}
+                  Not available for in-store pickup at <span class="b-product-bops-store-name">{{bops.store.name}}</span>
+                {{/if}}
+              </div>
+            </div>
+
+            <br>
+            <div>
+              <a id="b-j-bops-store-lookup-{{product.id}}" class="b-j-bops-store-lookup upper">Check another store</a>
+            </div>
+          {{else}}
+            {{#unless activeAvailability.bopsAvailable}}
+              {{! This product is not bops eligible. Display the message for in-store availability }}
+              {{> productAvailabilityCheckStores product}}
+            {{/unless}}
+          {{/if}}
+          {{/unless}}
+
+        {{else}}
+          {{! No location is chosen. Display the message for in-store availability if the product is bops eligible }}
+          {{#unless suppressBopsMessaging}}
+            {{> productAvailabilityCheckStores product}}
+          {{/unless}}
+        {{/if}}
+
+      {{/ifFeatureEnabled}}
+
+    {{/unless}}
+  </div>
+{{/unless}}
+{{/if}}

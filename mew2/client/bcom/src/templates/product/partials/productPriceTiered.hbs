@@ -1,0 +1,10 @@
+<div class="b-product-tiered-prices">
+  {{#each prices}}
+    <div class="b-product-price {{stripNonAlpha label}}">
+      {{#if label}}
+        <span class="b-product-price-label">{{stripNonAlpha label}} </span>
+      {{/if}}
+      <span class="b-product-price-amt">{{amt}}</span>
+    </div>
+  {{/each}}
+</div>

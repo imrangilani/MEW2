@@ -1,0 +1,608 @@
+$b-modal--search-header-height: emCalc(40px);
+
+.facetLabel {
+  font-weight: bold;
+  margin-bottom: emCalc(5px);
+}
+
+.facet-button-clear{
+  margin: 20px 0px 10px 0px;
+
+  button{
+    width: 100%;
+    padding: 9px;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  button:hover{
+    background-color: #999;
+  }
+}
+
+.mb-modal-header {
+  .row {
+    height: 45px;
+    border-bottom: 5px solid #000;
+
+    button {
+        width: 59px;
+        height: 29px;
+        margin-top: 6px;
+        padding: 0;
+        background: #000;
+        font-size: 12px;
+        font-weight: bold;
+        padding-left: 0px;
+        padding-right: 0px;
+        text-transform: capitalize;
+        font-weight: normal;
+    }
+    .mb-j-modalHeader-right{
+        float: right;
+    }
+    .mb-j-modalHeader-left{
+        background: #000;
+        float: left;
+    }
+    .b-modalHeader-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      padding: 0px;
+      overflow: hidden;
+      height: 40px;
+      padding-top: 14px;
+    }
+  }
+}
+
+.facet-list-item.hide {
+  display: none;
+}
+
+.facet-list-item {
+
+  .b-unavailable-values {
+    border-left: 2px solid #e9e9e9;
+    border-right: 2px solid #e9e9e9;
+    padding: 18px;
+    margin-top: -18px;
+    background: white;
+  }
+
+  .b-unavailable-values-label {
+    color: #cc0000;
+    border-top: 1px solid gainsboro;
+    padding-top: 5px;
+    margin: 0;
+  }
+
+  border-bottom: 1px solid #CCC;
+  font-size: 15px;
+
+  &:first-child {
+      //border-top: 1px solid #CCC;
+  }
+
+  .truncated .display {
+    padding-right: 15px;
+  }
+
+  .content {
+    display:none;
+  }
+
+  .select {
+    color: #222;
+    cursor: pointer;
+    height: emCalc(45px);
+    line-height: emCalc(45px);
+    padding: 0 emCalc(5px);
+    text-transform: uppercase;
+    @include b-right-arrow;
+  }
+
+  .clearFacet{
+    text-align: center;
+    background-color: #999;
+    padding: 9px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+}
+
+
+li.facet-value {
+  /* 2px - iOS 7 issue with dotted line (Designer Facet Search) */
+  border-bottom: 2px dotted rgba(204, 204, 204, 0.5);
+  cursor: pointer;
+  height: emCalc(50px);
+  line-height: emCalc(50px);
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+
+  &> .display {
+
+    &> .facet-value-action-icon {
+      display: inline-block;
+      box-sizing: content-box;
+      width: 17px;
+      margin: 10px 7px 14px 11px;
+      vertical-align: middle;
+    }
+
+    &> .display-inner {
+      display: inline-block;
+
+      &> .display-name-wrapper {
+        display: inline-block;
+
+        &> .display-name {
+          display: inline;
+        }
+
+        &> .count-display-name {
+          display: inline;
+          color: #999;
+        }
+
+        .match {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &.facet-value-selected {
+    &> .display {
+      &> .facet-value-action-icon {
+        @extend .faceted-checkmark;
+      }
+    }
+  }
+}
+
+li.facet-value.facet-value-none {
+  display: none;
+}
+
+#facet-list-items li.facet-value:last-child {
+  border-width: 0;
+}
+
+ul.facet-selection-items {
+  margin: 0;
+
+  &.remove-items {
+
+    &> li.facet-value > .display > .facet-value-action-icon {
+      @extend .faceted-close-x;
+      display: inline-block;
+    }
+
+    &.facet-COLOR_NORMAL,
+    &.facet-SIZE_NORMAL {
+      @include block-grid(4);
+      padding: 10px 10px 0 0;
+      margin: 0;
+
+      &> li.facet-value {
+        display: inline;
+        height: auto;
+        padding: 10px 0 0 0;
+
+        &> .display {
+          border: 1px solid #a7a7a7;
+        }
+      }
+      .facet-value-disabled {
+        .display {
+          background: url("../../images/unavailable.png") -26px no-repeat;
+          &> .facet-value-action-icon {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .facet-value-disabled {
+      opacity: 0.5;
+    }
+
+  }
+}
+
+#mb-facetListModal-container,
+#mb-facetBopsModal-container,
+#mb-facetSelectionModal-container {
+  .mb-j-modalHeader-left{
+      background: #999;
+      float: left;
+  }
+}
+
+#mb-facetListModal-container.facetSelected{
+  .facet-list-item:first-child {
+    border-top: 1px solid #CCC;
+  }
+
+  ul.facet-selection-items{
+    border-top: 1px solid #CCC;
+  }
+}
+
+#mb-facetSelectionModal-container.facetValueSelected {
+  ul.facet-COLOR_NORMAL,
+  ul.facet-SIZE_NORMAL {
+    li.facet-value:first-child {
+      border-top: none;
+    }
+  }
+}
+
+#mb-facetListModal-container,
+#mb-facetBopsModal-container,
+#mb-facetSelectionModal-container {
+
+  .mb-modal-header{
+
+    .b-modalHeader-left {
+      padding-left: 0.3em;
+    }
+
+    .mb-j-modalHeader-left{
+      min-width: 47px;
+      max-width: 47px;
+      left: 10px;
+
+      span{
+        font-size: 12px;
+        margin-left: -4px;
+      }
+    }
+
+    .mb-j-modalHeader-left.b-back:after {
+      border-bottom: 15px solid transparent;
+      border-right: 10px solid #999;
+      border-top: 14px solid transparent;
+      content: "";
+      height: 0;
+      left: -10px;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+  }
+}
+
+ul.facet-selection-items {
+  margin: 0;
+
+  &.facet-COLOR_NORMAL,
+  &.facet-SIZE_NORMAL {
+    @include block-grid(5);
+    margin: 0;
+    width: 100%;
+    padding: 10px 0 0 0;
+
+
+    li.facet-value {
+      border: 0px none;
+      margin: 0 0 emCalc(15px) 0;
+      padding: 0;
+      text-align: center;
+      clear: none;
+
+      &> .display {
+        border: 1px solid #999;
+        height: 50px;
+        margin: 0 auto;
+        padding: 4px;
+        width: 50px;
+        font-weight: bold;
+
+        // action icon should be positioned to the top right corner
+        &> .facet-value-action-icon {
+          float: right;
+          margin: -13px -12px 0;
+        }
+
+
+        &> .display-inner {
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          &> .display-name-wrapper {
+            height: 40px;
+            width:  40px;
+
+            &> .count-display-name{
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.facet-value-selected > .display {
+        border: 2px solid #000;
+      }
+
+    }
+
+    li.facet-value.facet-value-selected {
+      .facet-value-action-icon{
+        display: none;
+      }
+    }
+
+    .facet-value-none {
+      opacity: 0.5;
+      .display {
+        background: url("../../images/unavailable.png") -26px no-repeat;
+
+        .display-inner {
+
+          .display-name-wrapper {
+              z-index: -1;
+          }
+        }
+      }
+    }
+
+  }
+
+  &.facet-SIZE_NORMAL {
+    li.facet-value {
+      font-size: 12px;
+      line-height: 1em;
+
+      &> .display {
+        padding: 0px;
+
+        &> .display-inner {
+          overflow: hidden;
+
+          &> .display-name-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+            
+            &> .display-name {
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.facet-COLOR_NORMAL {
+    li.facet-value {
+      .display {
+        margin-bottom: 20px;
+        overflow: visible;
+
+        .display-inner {
+
+          .display-name-wrapper {
+            position: relative;
+
+            .display-name {
+              font-size: 11px;
+              position: absolute;
+              left: 0;
+              top: 35px;
+              min-width: 100%;
+              font-weight: normal;
+              max-height: 40px;
+              overflow-x: visible;
+              overflow-y: hidden;
+            }
+          }
+        }
+      }
+
+      &.facet-value-Black .display .display-inner .display-name-wrapper {
+        background: #000;
+      }
+
+      &.facet-value-Blue .display .display-inner .display-name-wrapper {
+        background: #2969D3;
+      }
+
+      &.facet-value-Brown .display .display-inner .display-name-wrapper {
+        background: #71431B;
+      }
+
+      &.facet-value-Gray .display .display-inner .display-name-wrapper {
+        background: #999999;
+      }
+
+      &.facet-value-Green .display .display-inner .display-name-wrapper {
+        background: #048649;
+      }
+
+      &.facet-value-Orange .display .display-inner .display-name-wrapper {
+        background: #F39153;
+      }
+
+      &.facet-value-Pink .display .display-inner .display-name-wrapper {
+        background: #FA8AC8;
+      }
+
+      &.facet-value-Purple .display .display-inner .display-name-wrapper {
+        background: #6D36A5;
+      }
+
+      &.facet-value-Red .display .display-inner .display-name-wrapper {
+        background: #E71F28;
+      }
+
+      &.facet-value-TanBeige .display .display-inner .display-name-wrapper {
+        background: #E0C09C;
+      }
+
+      &.facet-value-Yellow .display .display-inner .display-name-wrapper {
+        background: #FFF400;
+      }
+
+      &.facet-value-White .display .display-inner .display-name-wrapper {
+        background: #FFF;
+        border: 1px solid #F7EFEF;
+      }
+
+      &.facet-value-IvoryCream .display .display-inner .display-name-wrapper {
+        @include background-image(linear-gradient(-45deg, #FFFDE5 50%, #F6F5E7 100%));
+      }
+
+      &.facet-value-Silver .display .display-inner .display-name-wrapper {
+        background: linear-gradient(-45deg,  #CCCCCC, #EEEEEE);
+        background: -webkit-linear-gradient(135deg,  #CCCCCC, #EEEEEE);
+        background: -o-linear-gradient(-45deg,  #CCCCCC, #EEEEEE);
+        background: -moz-linear-gradient(-45deg,  #CCCCCC, #EEEEEE);
+      }
+
+      &.facet-value-Gold .display .display-inner .display-name-wrapper {
+        background: linear-gradient(-45deg, #E9C153, #FDF4CF);
+        background: -webkit-linear-gradient(135deg, #E9C153, #FDF4CF);
+        background: -o-linear-gradient(-45deg, #E9C153, #FDF4CF);
+        background: -moz-linear-gradient(-45deg, #E9C153, #FDF4CF);
+      }
+
+      &.facet-value-Multi .display .display-inner .display-name-wrapper {
+        background: linear-gradient(to right, purple, red, orange, yellow);
+        background: -webkit-linear-gradient(left, purple, red, orange, yellow);
+        background: -o-linear-gradient(right, purple, red, orange, yellow);
+        background: -moz-linear-gradient(right, purple, red, orange, yellow);
+      }
+
+    }
+
+    li.facet-value.facet-value-selected {
+      background: none;
+      .display {
+        .display-inner {
+          .display-name-wrapper {
+            height: 38px;
+            width:  38px;
+          }
+        }
+      }
+    }
+  }
+
+  &.facet-PRICE {
+    .facet-value-none {
+      opacity: 0.5;
+      display: block;
+    }
+  }
+
+}
+.no-values {
+  padding-top: 1em !important;
+  text-align: center;
+}
+
+#facet-brand-search-modal-list-wrapper {
+  margin-top: $mb-modal-header-height + $b-modal--search-header-height;
+  overflow: auto;
+}
+
+#facet-brand-search-modal-list {
+  padding: 0 10px;
+}
+
+.mb-modal-header.brand-modal-header {
+  top: $mb-modal-header-height;
+  padding: 0;
+  margin-bottom: 0;
+
+  .brand-search-clear {
+    visibility: hidden;
+    position: absolute;
+    height: 29px;
+    top: 5px;
+    right: 6px;
+    -webkit-user-select: none;
+  }
+}
+
+.box-search {
+  -webkit-appearance: none !important;
+  border-radius: 0 !important;
+}
+
+
+
+#mb-facetSelectionModal-container {
+  #mb-search-field-icon {
+    position: relative;
+    display: inline-block;
+    left: 14px;
+    top: 13px;
+    height: 15.5px;
+  }
+
+  .mb-j-brand-search,
+  .brand-search {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 12px 0px 10px 38px;
+    background-position-x: 0px;
+    background-color: transparent;
+    @include radius(0px);
+    border: none;
+    border-bottom: 2px solid #000;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 14px;
+    outline-color: #d90eac;
+    margin-top: -18px;
+    margin-bottom: 0px;
+  }
+
+  .brand-search-form {
+    margin: 0;
+
+    .brand-search{
+      margin: 0px;
+    }
+
+    #mb-search-field-icon {
+      position: absolute;
+      display: inline-block;
+      left: 14px;
+      top: 13px;
+      height: 15.5px;
+    }
+  }
+}
+
+#mb-facetSelectionModal-container .mb-modal-content.b-brand-search-header {
+  padding-right: 0px;
+  padding-left: 0px;
+
+  .facet-selection-items, .facet-button-clear{
+    padding: 0 10px 20px 10px;
+  }
+}
+
+/*---------------------------------- BOPS FACET ----------------------------------*/
+
+#b-facet-bops.mb-modal-content {
+  #b-facet-bops-search {
+    padding-top: 13px;
+  }
+  #mb-facet-bops-results {
+    padding-top: 20px;
+  }
+}

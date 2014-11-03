@@ -1,0 +1,44 @@
+section.m-shop{
+
+    padding: 10px;
+    overflow: hidden;
+    div{
+            float:left;
+            border: $section-border-size $section-border-style $section-border-color;
+            border-radius: 6px;
+            box-shadow:         5px 5px 5px $secondary-color;
+            margin:     3px;
+            overflow:   hidden;
+            display:    table-cell;
+            vertical-align: middle;
+            text-align: center;
+
+
+
+
+            .m-image-box img{
+                margin: auto;
+                width:      140px;
+                height:     140px;
+
+            }
+
+    }
+
+    div.m-image-box-s{
+
+        width:      140px;
+        height:     140px;
+        line-height: 140px;
+    }
+
+    div.m-image-box-dbl{
+        width: 290px;
+    }
+
+    div.m-other-brands{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}

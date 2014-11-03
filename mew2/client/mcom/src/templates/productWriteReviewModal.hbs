@@ -1,0 +1,114 @@
+<div id="m-write-review-modal">
+  <div class="m-header mb-modal-header">
+
+    <div class="row">
+      <div class="small-1 columns m-header-first"><div class="mb-j-modalHeader-left m-back">&nbsp;</div></div>
+      <div class="small-10 columns m-header-title left nopad">Write a Review</div>
+    </div>
+  </div>
+
+  <div class="mb-modal-content">
+    <form id="mb-write-review-form">
+
+      <div class="form-item" id="rating-form-item">
+        <div class="form-label">Overall Product Rating</div>
+        <div id="mb-write-review-rating"></div>
+      </div>
+
+      <div class="form-item" id="title-form-item">
+        <div class="form-label">Review Headline</div>
+        <div class="form-label-right">e.g. Best Product Ever!</div>
+        <div class="clearfix"></div>
+        <input type="text" name="title" maxlength="150" />
+      </div>
+
+      {{> writeReviewTextarea}}
+
+      <div class="form-collapsible" id="form-collapsible-tips">
+        <div class="form-collapsible-label">Tips for writing a good review</div>
+        <div class="form-collapsible-content">
+          <ul>
+            <li>Focus on the product's features & be specific</li>
+            <li>Avoid info that changes, such as price & promotional details, info about other companies and websites</li>
+          </ul>
+        </div>
+      </div>
+
+      {{> writeReviewNickname}}
+
+      <div class="form-item" id="recommend-form-item">
+        <div class="form-label left no-margin">Recommend This Product?</div>
+        <div id="mb-recommend-toggle" class="right"></div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="form-collapsible hide" id="form-collapsible-fit-rating">
+        <div class="form-collapsible-label">Product Fit Rating</div>
+        <div class="form-collapsible-label-right form-label-right">(optional)</div>
+        <div class="form-collapsible-content spinner white-30"></div>
+      </div>
+
+      <div class="form-collapsible" id="form-collapsible-about-self">
+        <div class="form-collapsible-label">Tell Us About Yourself</div>
+        <div class="form-collapsible-label-right form-label-right">(optional)</div>
+        <div class="form-collapsible-content spinner white-30"> </div>
+      </div>
+
+      <div class="form-collapsible" id="form-collapsible-rate-macys">
+        <div class="form-collapsible-label">Rate Macy's</div>
+        <div class="form-collapsible-label-right form-label-right">(optional)</div>
+        <div class="form-collapsible-content">
+
+          <div class="form-item" id="rate-macys-form-item">
+            <div class="form-label">How likely are you to recommend Macy's?</div>
+            <div class="row">
+              <div class="small-3 columns" id="low-recommend">Do Not<br/>Recommend</div>
+              <div class="small-6 columns nopad">
+                <div id="mb-rate-macys-slider-text">
+                  <div class="left" data-rating="0">0</div>
+                  <div id="mb-j-rate-macys-current">5</div>
+                  <div class="right" data-rating="10">10</div>
+                  <div class="clearfix"></div>
+                </div>
+                <div id="mb-rate-macys-slider"></div>
+              </div>
+              <div class="small-3 columns" id="high-recommend">Highly<br/>Recommend</div>
+            </div>
+          </div>
+
+          <div class="form-item" id="rate-macys-reason-form-item">
+            <div class="form-label">Please Tell Us Why</div>
+            <div class="form-label-right">(will not appear on site)</div>
+            <div class="clearfix"></div>
+            <textarea name="netpromotercomment" maxlength="1000"></textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row" id="rant-rave-win">
+        <div class="small-3 columns" id="macys-cc">
+          <img src="/mew20/images/icon_gift-card.svg" >
+        </div>
+        <div class="small-9 columns" id="rant-rave-win-text">
+          <div class="top">rant. rave. win.</div>
+          <div class="remaining">
+            Once you successfully submit your review,
+            you'll be entered for a chance to win a
+            $1,000 Macy's gift card! <span id="m-j-rules" class="m-link med normal">learn more</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-item" id="buttons-form-item">
+        <div id="write-review-submit"><button id="mb-j-write-review-submit" class="m-button inactive" type="submit">submit</button></div>
+        <div id="write-review-cancel"><button id="mb-j-write-review-cancel" class="m-button black">cancel</button></div>
+      </div>
+
+      <div id="m-terms-wrapper">By submitting a review, you agree to our <span class="m-link full normal" id="m-j-terms">Terms & Conditions</span></div>
+      <div class="m-link med normal" id="m-j-guidelines">Read our Review Guidelines</div>
+
+    </form>
+  </div>
+
+</div>

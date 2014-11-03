@@ -1,0 +1,42 @@
+#b-home {
+  
+  #b-hp-footer-links {
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+    
+    #b-hp-footer-store-promotions {
+        @include block-grid(2);
+        padding: emCalc(10px) 0;
+        text-align: center;
+        margin: 0;
+        
+        li:first-child{
+          border-right: 2px solid #000;
+        }
+        
+        li {
+          padding: 0 emCalc(15px);
+    
+          a {
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 40px;
+            margin: 0px auto;
+            width: 130px;
+          }
+        }
+        
+        li#b-hp-footer-promotions a {
+          background-image: url('../../images/promotions.png');
+          background-size: 68%;
+        }
+
+        li#b-hp-footer-store a {
+          background-image: url('../../images/findastore.png');
+          background-size: 71%;
+        }
+        
+    }
+  }
+}

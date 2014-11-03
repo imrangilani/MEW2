@@ -1,0 +1,11 @@
+<ul class="mb-autocomplete-container">
+
+  {{#each results}}
+    <li>
+      <a href="/shop/store/search?reference={{this.reference}}" class="mb-select-autocomplete" data-name="{{this.description}}" data-reference="{{this.reference}}">
+        <div class="select">{{this.description}}</div>
+      </a>
+    </li>
+  {{/each}}
+
+</ul>
